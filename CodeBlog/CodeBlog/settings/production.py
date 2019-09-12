@@ -39,4 +39,4 @@ EMAIL_MESSAGES_RECEIVER = 'zach@site.com'
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
 BASE_URL = 'https://www.nerdventure.com'
 
-ALLOWED_HOSTS = ['https://www.nerdventure.com'] 
+ALLOWED_HOSTS = ['www.nerdventure.com', 'nerdventure.net'] 
