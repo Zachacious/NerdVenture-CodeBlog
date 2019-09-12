@@ -6,7 +6,7 @@ DEBUG = False
 
 MESSAGE_LEVEL = 20
 
-SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 try:
     from .local import *

@@ -17,6 +17,7 @@ manifesto = "*"
 slimit = "*"
 wagtail-cache = "*"
 wagtail-themes = "*"
+python-dotenv = "*"
 
 [requires]
 python_version = "3.7"
