@@ -20,7 +20,7 @@ PIPELINE = {
                 'defer': True,
             },
         },
-        # 'contact_form': {
+        # 'contact_form': { 
         #     'source_filenames': (
         #         'blog/js/contactForm.js',
         #     ),

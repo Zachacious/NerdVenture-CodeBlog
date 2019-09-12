@@ -20,6 +20,9 @@ WAGTAIL_CACHE = True
 
 NEWSLETTER_FROM_EMAIL = 'Zach@Zach.com'
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_MESSAGES_RECEIVER = 'zach@site.com'
+
 # WAGTAILFRONTENDCACHE = {
 #     'cloudflare': {
 #         'BACKEND': 'wagtail.contrib.frontend_cache.backends.CloudflareBackend',
@@ -31,4 +34,6 @@ NEWSLETTER_FROM_EMAIL = 'Zach@Zach.com'
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
-BASE_URL = 'localhost.com/8000'
+BASE_URL = 'https://www.nerdventure.com'
+
+ALLOWED_HOSTS = ['https://www.nerdventure.com'] 
