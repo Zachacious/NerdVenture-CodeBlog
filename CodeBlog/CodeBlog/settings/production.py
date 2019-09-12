@@ -14,7 +14,7 @@ except ImportError:
     pass
 
 apps = [
-    'Manifesto',
+    'manifesto',
 
     # 'wagtail.contrib.frontend_cache',
 ]
