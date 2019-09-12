@@ -1,0 +1,16 @@
+{% load wagtailcore_tags subscribe_tags %}
+{% get_subscribed %}
+
+{% if not subscribed %}
+
+<div name='optin' class=" bg-success sketch-border text-light p-3">
+    {% for block in value.body %}
+        <div class="p-2 block-{{ block.block_type }}">
+            {% with value as optinName %}
+            {% include_block block %}
+            {% endwith %}
+        </div>
+    {% endfor %}
+</div>
+
+{% endif %}

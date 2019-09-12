@@ -1,0 +1,28 @@
+{% for header in headers %}
+    <nav id='header' class="navbar navbar-expand-md 
+        sticky-top  px-xs-50" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">
+                    <h1>{% image header.logo_image width-200 %}
+                    {{ settings.blog.HeaderSettings.logo_text }}</h1>
+                </a>
+
+                
+            </div>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#CustomNavbar"
+                aria-controls="navbarSupportContent" aria-expanded="false" aria-label="Toggle Navigation">
+                    <span class="navbar-toggler-icon">
+                    {% comment %} <i class="fa fa-navicon"></i> {% endcomment %}
+                    </span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="CustomNavbar">
+                    <ul class="navbar-nav">
+                        {% comment %} {% main_menu template="menus/main_menu.html" %} {% endcomment %}
+                    </ul>
+                  
+                </div>
+        </div>
+    </nav>
+{% endfor %}

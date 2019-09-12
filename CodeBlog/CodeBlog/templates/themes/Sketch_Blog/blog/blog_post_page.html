@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% block content %}
+<div class="row">
+<div class="col">
+
+    {% if page.header_image %}
+        <div id="post-header">
+            {% image page.header_image max-1600x1600 as headerimg %}
+            <img src="{{ headerimg.url }}" class="post-header-img sketch-border mb-2"/>
+        </div>
+    {% endif %}
+
+    <h2 id="post-title">{{ page.title }}</h2>
+        <small class="faded-text">
+        <i>Posted {{ page.date }}
+        {% if page.author_profile %}
+        By {{ page.author_profile.full_name }}
+        {% endif %}
+        </i></small>
+        <hr>
+    
+</div>
+</div>
+
+<div class="row">
+
+    <article id="article" class="col">
+
+        {% for block in self.body %}
+            <div class="trans-ease block-{{ block.block_type }}">
+                {% include_block block %}
+            </div>
+        {% endfor %}
+
+        {% include 'social/social_share.html'%}
+
+        {% if page.author_profile %}
+            <hr>
+            <div class="row sketch-border bg-light p-2">
+                <div class="col-sm-3 col-lg-2 my-auto">
+                    {% if page.author_profile.photo %}
+                        {% image page.author_profile.photo fill-100x100 as authorpic %}
+                        <img src="{{ authorpic.url }}" class="d-block mx-auto mr-md-0 rounded-circle" />
+                    {% endif %}
+                </div>
+                <div class="col my-sm-auto mr-auto text-center text-sm-left">
+                    <h5><small>By</small> {{ page.author_profile.full_name }}</h5>
+                    <span>{{ page.author_profile.desc|richtext }}</span>
+                </div>
+            </div>
+            <hr>
+        {% endif %}
+
+    
+    </article>
+    
+    {% include 'sidebar/sidebar.html' %}
+</div>
+{% endblock %}

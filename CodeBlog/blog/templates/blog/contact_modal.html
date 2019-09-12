@@ -1,0 +1,62 @@
+{% load static pipeline %}
+<div class="modal fade trans-ease" id="contact-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    
+    <div id="contactform" name="contactform" class="contactform mx-auto my-auto p-5 bg-light sketch-border">
+
+       <button type="button" class="trans-ease close p-2 pb-3 modal-close-btn bg-light" 
+       data-dismiss="modal" aria-label="Close">
+        <span class="mx-auto my-auto" aria-hidden="true">&times;</span>
+      </button>
+
+      <div id="form-content" class="trans-ease">
+      <span class="">
+        <b class="uppercase"><h1>I like coffee too! ☕</h1></b>
+      </span>
+
+      <form id="contact" class="my-4" method="post">
+          <input type="hidden" id="apiURL" name="apiURL" 
+          value="{{ request.scheme }}://{{ request.get_host }}{% url 'blog-contactSendView' %}">
+
+          <div class="form-group">
+            <input name='emailInput' type="email" class="form-control sketch-border" id="emailInput" 
+             placeholder="Enter email" autofocus required>
+          </div>
+
+
+        <div class="form-group">
+          <textarea name="message" class="form-control sketch-border" id="msgInput" rows="10" 
+          placeholder="Message" required></textarea>
+        </div>
+
+        <div id="subscribe-check-box" class="form-check">
+        <small>
+          <input name="subcribe-checkbox" type="checkbox" class="form-check-input sketch-border" 
+          id="subsccribeCheck" checked>
+          <label class="form-check-label" for="subsccribeCheck">Subscribe?</label>
+        </small>
+        </div> 
+
+        <button name="sendBtn" type="submit" 
+        class="btn btn-outline-success sketch-border float-right">
+        Send
+        <span name="btn-loader" class="d-none trans-ease mx-1 spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        </button>
+      
+      
+      </form>
+      </div>
+
+      <div id="form-thanks" class="trans-ease">
+        <span class="form-thanks-content text-center">
+        <span class=" p-3 m-4 uppercase" 
+        style="font-size: 2em; background-color: #cfc; border-radius: 50%;">✔️</span>
+          <h3 class="">Thanks for getting in touch.</h3>
+          <h4>We'll talk soon... 🖖</h4>
+        </span>
+      </div>
+       
+    </div>
+</div>
+
+{% javascript 'contact_form' %}
+{% comment %} <script defer src="{% static 'blog/js/contactForm.js' %}"></script> {% endcomment %}

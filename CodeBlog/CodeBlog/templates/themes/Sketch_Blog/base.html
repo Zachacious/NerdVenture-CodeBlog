@@ -1,0 +1,241 @@
+{% load static wagtailuserbar %}
+{% comment %} {% load menu_tags %} {% endcomment %}
+{% load wagtailsettings_tags %}
+{% get_settings %}
+{% load wagtailimages_tags %}
+{% load pipeline %}
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
+        <meta charset="utf-8" />
+        <title>
+            {% block title %}
+                {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}
+            {% endblock %}
+            {% block title_suffix %}
+                {% with self.get_site.site_name as site_name %}
+                    {% if site_name %}- {{ site_name }}{% endif %}
+                {% endwith %}
+            {% endblock %}
+        </title>
+        {% if self.header_image %}
+            {% image page.header_image width-300 as headerimg %}
+        {% endif %}
+        {% if settings.siteSettings.SiteSettings.header.logo_image %}
+            {% image settings.siteSettings.SiteSettings.header.logo_image width-200 as logoimg %}
+        {% endif %}
+        {% if page.author_profile.photo %}
+            {% image page.author_profile.photo width-300 as authorpic %}
+        {% endif %}
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="description" content="{% if self.summary %}{{ self.summary }}{% endif %}" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <meta property='og:site_name' content='{{ request.site.site_name }}' />
+        <meta property="og:locale" content="en_US">
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}" />
+        <meta property="og:description" content="{{ self.summary }}" />
+        <meta property="og:url" content="{{ request.build_absolute_uri  }}" />
+        <meta property="og:image" content="{{ page.get_site.root_url }}{{ headerimg.url }}" />
+        <meta property="og:image:secure_url" content="{{ page.get_site.root_url }}{{ headerimg.url }}" />
+        <meta property="og:image:width" content="{{ headerimg.width }}" />
+        <meta property="og:image:height" content="{{ headerimg.height }}" />
+        <meta property="article:published_time" content="{{ self.date }}">
+        {% comment %} <meta property='article:author' content='https://www.facebook.com/YOUR-NAME' /> {% endcomment %}
+        {% comment %} <meta property='article:publisher' content='https://www.facebook.com/YOUR-PAGE' /> {% endcomment %}
+        {% comment %} <meta property="fb:app_id" content="?"> {% endcomment %}
+
+        <meta property="twitter:card" content="summary">
+        <meta property="twitter:title" content="{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}">
+        <meta property="twitter:description" content="{{ self.summary }}">
+        <meta property="twitter:image" content="{{ page.get_site.root_url }}{{ headerimg.url }}">
+        <meta property="twitter:url" content="{{ request.build_absolute_uri  }}">
+
+        {# Global stylesheets #}
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        {% comment %} <link rel="stylesheet" type="text/css" href="{% static 'css/CodeBlog.css' %}"> {% endcomment %}
+        {% stylesheet 'general' %}
+
+        <!-- Schema.org -->
+        <script type="application/ld+json">
+        {
+            "@context":"https://schema.org",
+            "@graph": [{
+                "@type": "organization",
+                "@id": "{{ page.get_site.root_url }}/#organization",
+                "name": "{{ self.get_site.site_name }}",
+                "url": "{{ page.get_site.root_url }}",
+                "sameAs": [
+                    "facebook url",
+                    "twitter url",
+                ],
+                "logo": {
+                    "@type": "ImageObject",
+                    "@id": "{{ request.build_absolute_uri  }}{{ logoimg.url }}/#logo",
+                    "url": "{{ request.build_absolute_uri  }}{{ logoimg.url }}",
+                    "caption": "{{ page.get_site.site_name }}",
+                },
+                "image":{
+                    "@id": "{{ page.get_site.root_url }}/#logo"
+                },
+            },
+            {
+                "@type": "WebSite",
+                "@id": "{{ page.get_site.root_url }}/#website",
+                "url": "{{ page.get_site.root_url }}",
+                "name": "{{ page.get_site.site_name }}",
+                "publisher": {
+                    "@id": "{{ page.get_site.root_url }}/#organization"
+                },
+                "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": "{{ page.get_site.root_url }}/search/?query={search_term_string}&submit=Search",
+                    "query-input": "required name=search_term_string"
+                }
+            },
+            {
+                "@type": "WebPage",
+                "@id": "{{ request.build_absolute_uri  }}#webpage",
+                "url": "{{ request.build_absolute_uri  }}",
+                "inLanguage": "en-US",
+                "name": "{{ page.title }} &bull; {{ page.get_site.site_name }}",
+                "isPartOf": {
+                    "@id": "{{ page.get_site.root_url }}/#website"
+                },
+                "image": {
+                    "@type": "ImageObject",
+                    "@id": "{{ request.build_absolute_uri  }}#primaryimage",
+                    "url": "{{ request.build_absolute_uri  }}{{ headerimg.url }}",
+                    "width": {{ headerimg.width }},
+                    "height": {{ headerimg.height }},
+                    "caption": "{{ page.title }}"
+                },
+                "primaryImageOfPage": {
+                    "@id": "{{ request.build_absolute_uri  }}#primaryimage"
+                },
+                "datePublished": "{{ self.date }}",
+                "dateModified": "{{ self.last_published_at }}",
+                "description": "{{ page.specific.summary }}",
+            },
+            {
+                "@type": "Article",
+                "@id": "{{ request.build_absolute_uri  }}#article",
+                "isPartOf": {
+                    "@id": "{{ request.build_absolute_uri  }}#webpage"
+                },
+                "author": {
+                    "@id": "{{ page.get_site.root_url }}/author/{{ page.author_profile.full_name_condensed }}/#author",
+                    "name": "{{ page.author_profile.full_name }}"
+                },
+                "publisher": {
+                    "@id": "{{ page.get_site.root_url }}/#organization"
+                },
+                "headline": "{{ page.title }}",
+                "datePublished": "{{ self.date }}",
+                "dateModified": "{{ self.last_published_at }}",
+                "commentCount": 0,
+                "mainEntityOfPage": "{{ request.build_absolute_uri  }}#webpage",
+                "image": {
+                    "@id": "{{ request.build_absolute_uri  }}#primaryimage"
+                },
+                "keywords": "{{ page.keywords }}"
+            },{
+
+                "@type": "Person",
+                "@id": "{{ page.get_site.root_url }}/author/{{ page.author_profile.full_name_condensed }}/#author",
+                "name": "{{ page.author_profile.full_name }}",
+                "image": {
+                    "@type": "ImageObject",
+                    "@id": "{{ page.get_site.root_url }}/#personlogo",
+                    "url": "{{ request.build_absolute_uri  }}{{ authorpic.url }}",
+                    "caption": "{{ page.author_profile.full_name }}"
+                },
+                "description": "{{ page.author_profile.desc }}",
+                "sameAs": [""]
+
+            },{
+                "@type": "BlogPosting",
+                "headline": "{{ page.title }}",
+                "alternativeHeadline": "{{ page.title }}",
+                "image": "{{ request.build_absolute_uri  }}{{ headerimg.url }}",
+                "genre": "{{ page.genre }}", 
+                "keywords": "{{ page.keywords }}", 
+                "wordcount": "{{ page.wordcount }}",
+                "publisher": "{{ page.get_site.site_name }}",
+                "url": "{{ request.build_absolute_uri }}",
+                "datePublished": "{{ page.date }}",
+                "dateModified": "{{ self.last_published_at }}",
+                "description": "{{ page.summary }}",
+                "author": {
+                    "@type": "Person",
+                    "@id": "{{ page.get_site.root_url }}/author/{{ page.author_profile.full_name_condensed }}/#author",
+                    "name": "{{ page.author_profile.full_name }}",
+                    "image": {
+                        "@type": "ImageObject",
+                        "@id": "{{ page.get_site.root_url }}/#personlogo",
+                        "url": "{{ request.build_absolute_uri  }}{{ authorpic.url }}",
+                        "caption": "{{ page.author_profile.full_name }}"
+                    },
+                    "description": "{{ page.author_profile.desc }}",
+                    "sameAs": [""]
+                }                
+            }]
+        }
+        </script>
+        <!-- End Schema.org -->
+       
+        {% javascript 'general' %}
+        {% comment %} <script defer src="{% static 'js/notify.js' %}"></script> {% endcomment %}
+        {% comment %} <script defer src="{% static 'js/cookies.js' %}"></script> {% endcomment %}
+        <script>
+            var settings = {
+                debug: true,
+            };
+
+        </script>
+
+        {% block extra_css %}
+            {# Override this in templates to add extra stylesheets #}
+        {% endblock %}
+    </head>
+
+
+
+    <body class="{% block body_class %}{% endblock %}">
+
+    {% include 'blog/contact_modal.html' %}
+    
+    <div id="page-wrapper">
+    {% include "header/header.html "%}
+    {% include "messages.html" %}
+    {% block notifications %}{% endblock %}
+
+    {% wagtailuserbar %}
+
+    {% comment %} <main class="d-flex flex-column"> {% endcomment %}
+    <div id="content-wrap">
+        {% comment %} <div class="container container-wide my-2 flex-fill fade-in"> {% endcomment %}
+        <div class="container container-wide my-3 fade-in">
+            {% block content %}{% endblock %}
+        </div>
+
+    </div>
+
+    {% include "footer/footer.html" %}
+
+
+    {% block extra_js %}
+        {# Override this in templates to add extra javascript #}
+    {% endblock %}
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap.native@2.0.15/dist/bootstrap-native-v4.min.js"></script>
+
+
+    </div>
+    
+    </body>
+
+
+</html>

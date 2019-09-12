@@ -1,0 +1,9 @@
+{% load wagtailimages_tags %}
+
+{% image value original as img %}
+{% image value width-55 as imgTiny %}
+<div class="overflow-hidden w-100 d-inline-block "> 
+    <a href="{{ img.url }}" class="progressive replace img-fluid overflow-hidden p-2">
+        <img {{ imgTiny.attrs }} class="preview img-fluid overflow-hidden p-2" /> 
+    </a>
+</div>

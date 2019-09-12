@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags wagtailimages_tags %}
+{% load wagtailroutablepage_tags %}
+
+{% if self.header %}
+{% block content_top %}
+
+    <div id="header-contents">
+    {% for block in self.header %}
+        <div class="trans-ease block-{{ block.block_type }} mb-5">
+            {% include_block block %}
+        </div>
+    {% endfor %}
+    </div>
+
+{% endblock %}
+{% endif %}
+
+{% block content %}
+
+<div id="page-content" class="row">
+
+    <article id="article" class="col ml-xl-0 ml-md-3 ml-sm-0">
+
+        <div id="custom-page-contents">
+        {% for block in self.body %}
+            <div class="trans-ease block-{{ block.block_type }} mb-5">
+                {% include_block block %}
+            </div>
+        {% endfor %}
+        </div>
+    
+    </article>
+    
+    {% include 'sidebar/sidebar.html' %}
+</div>
+{% endblock %}

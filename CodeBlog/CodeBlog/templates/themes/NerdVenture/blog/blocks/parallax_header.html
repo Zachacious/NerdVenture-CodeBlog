@@ -1,0 +1,91 @@
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% if value.background %}
+<style>
+    
+    #page-header{
+        background-color: rgba(0,0,0,0.5)
+        background-position: center;
+        background-size: cover auto;
+        position: relative;
+        min-height: 50vh;
+        max-height: 100vh;
+        display: flex;
+    }
+
+
+    @media (max-width: 768px) {
+        {% image value.background fill-800x600 as headerimg %}
+        #page-header{
+            background: url({{ headerimg.url }}) no-repeat fixed;
+        }
+    } 
+
+    @media (min-width: 768.1px) and (max-width: 992px) {
+        {% image value.background fill-1000x600 as headerimg %}
+        #page-header{
+            background: url({{ headerimg.url }}) no-repeat fixed;
+        }
+    }
+
+    @media (min-width: 992.1px) {
+        {% image value.background fill-1500x800 as headerimg %}
+        #page-header{
+            background: url({{ headerimg.url }}) no-repeat fixed;
+        }
+    }
+
+    @media (min-width: 1500.1px) {
+        #page-header{
+            background-size: cover;
+            background-position: center bottom;
+        }
+    }
+
+    .content {
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        position: relative;
+        z-index: 2;
+    }
+
+    #page-header-wrap{
+        position: absolute;
+        height: 100vh;
+        background-color: rgba(50,50,150,0.8);
+    }
+
+    #page-header-content{
+        margin: auto;
+       /* position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        transform: translate(-50%, -50%);*/
+    }
+
+
+</style>
+{% endif %}
+
+<div id="page-header" class="overflow-hidden px-0 container-fluid bg-main-blue-dark text-light skewed-border">
+    <div id="page-header-wrap" class="w-100 text-light skewed-border"></div>
+        <div id="page-header-content">
+        <div class="row py-3">
+            <div class="col my-5 py-5">
+
+                <div id="page-title-wrap" class="text-center ">
+                    <h1 id="post-title" class="px-4">{{ value.title }}</h1>
+                    
+                    {% for block in value.body %}
+                        <div class="px-4 trans-ease block-{{ block.block_type }} mb-2">
+                            {% include_block block %}
+                        </div>
+                    {% endfor %}
+                    
+                </div>
+                
+            </div>
+        </div>
+        </div>
+</div>

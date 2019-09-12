@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% block content %}
+<div class="row">
+<div class="col">
+<div class="">
+    {% if route_title %}
+        {% if route_title == 'Search' %}
+            <h2>Showing results for "{{ page.search_term }}"</h2>
+        {% elif route_title == 'Author'%}
+            <h2>Posts by '{{ page.get_author_profile.full_name }}'</h2>
+        {% else %}
+            <h2>{{ route_title }}</h2>
+        {% endif %}
+    {% endif %}
+
+    <div class='post-wrapper'>
+    {% for post in posts %}
+    {% if forloop.counter0|divisibleby:2 %} <div class="row"> {%  endif %}
+        <div class="col-sm p-2 post-card">
+            <div id="post-summary-card" class="card sketch-border p-2">
+                <div id="post-summary-contents" class="my-auto">
+                    {% if post.specific.header_image %}
+                        {% image post.specific.header_image fill-400x200 as card_pic %}
+                        <img src="{{ card_pic.url }}" class="card-img sketch-border"/>
+                    {% endif %}
+
+                    <div class="card-body text-center">
+                        <h3>{{ post.title }}</h3>
+                        <p>{{ post.summary }}</p>
+                    </div>
+
+                    <a href="{% pageurl post %}" class="stretched-link">
+                    </a>
+                </div>
+            </div>
+        </div>
+    {% if forloop.counter|divisibleby:2 or forloop.last %}</div>{% endif %}
+    {% endfor %}
+
+    </div>
+
+</div>
+</div>
+{% include 'sidebar/sidebar.html' %}
+</div>
+
+{% if posts.paginator.num_pages > 1 %}
+        <div class="pagination justify-content-center mx-auto my-auto text-center">
+        
+        {% if posts.has_previous %}
+            <li class="page-item">
+            <a href="?page={{ posts.previous_page_number }}" class="page-link">
+                <span>&laquo;</span>
+            </a>
+            </li>
+        {% endif %}
+
+        {% for page_num in posts.paginator.page_range %}
+            <li class="page-item {% if page_num == posts.number %} active{% endif %}">
+            <a href="?page={{ page_num }}" class="page-link">
+                {{ page_num }}
+            </a>
+            </li>
+        {% endfor %}
+
+        {% if posts.has_next %}
+            <li class="page-item">
+            <a href="?page={{ posts.next_page_number }}" class="page-link">
+                <span>&raquo;</span>
+            </a>
+            </li>
+        {% endif %}
+
+        </div>
+{% endif %}
+
+{% endblock %}

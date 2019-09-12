@@ -1,0 +1,165 @@
+{% load wagtailimages_tags wagtailroutablepage_tags%}
+{% load menu_tags %}
+
+<svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<symbol id="icon-search" viewBox="0 0 32 32">
+<title>search</title>
+<path d="M31.715 28.953c0.381 0.381 0.381 0.999 0 1.381l-1.381 1.381c-0.382 0.381-1 0.381-1.381 0l-9.668-9.668c-0.105-0.105-0.175-0.229-0.222-0.361-1.983 1.449-4.418 2.314-7.063 2.314-6.627 0-12-5.373-12-12s5.373-12 12-12c6.627 0 12 5.373 12 12 0 2.645-0.865 5.080-2.314 7.063 0.132 0.047 0.256 0.116 0.361 0.222l9.668 9.668zM12 4c-4.418 0-8 3.582-8 8s3.582 8 8 8 8-3.582 8-8c0-4.418-3.582-8-8-8z"></path>
+</symbol>
+</defs>
+</svg>
+
+<svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<symbol id="icon-cancel" viewBox="0 0 32 32">
+<title>cancel</title>
+<path d="M30.721 6.774l-9.197 9.253 9.197 9.198c0.385 0.384 0.385 1.007 0 1.392l-4.176 4.175c-0.383 0.385-1.006 0.385-1.391 0l-9.182-9.182-9.127 9.182c-0.384 0.385-1.007 0.385-1.392 0l-4.175-4.175c-0.384-0.385-0.384-1.008 0-1.392l9.127-9.182-9.126-9.126c-0.384-0.384-0.384-1.007 0-1.392l4.175-4.175c0.384-0.385 1.007-0.385 1.392 0l9.11 9.11 9.199-9.253c0.385-0.385 1.008-0.385 1.391 0l4.176 4.175c0.383 0.385 0.383 1.008-0.001 1.392z"></path>
+</symbol>
+</defs>
+</svg>
+
+<svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<symbol id="icon-menu" viewBox="0 0 24 24">
+<title>menu</title>
+<path d="M3 13h18c0.552 0 1-0.448 1-1s-0.448-1-1-1h-18c-0.552 0-1 0.448-1 1s0.448 1 1 1zM3 7h18c0.552 0 1-0.448 1-1s-0.448-1-1-1h-18c-0.552 0-1 0.448-1 1s0.448 1 1 1zM3 19h18c0.552 0 1-0.448 1-1s-0.448-1-1-1h-18c-0.552 0-1 0.448-1 1s0.448 1 1 1z"></path>
+</symbol>
+</defs>
+</svg>
+
+<div id="header" class="fixed-top bounce-in-top ">
+{% with settings.siteSettings.SiteSettings.header as header %}
+    <nav id='navigation' class="trans-ease navbar navbar-expand-lg bg-transparent  
+        py-0 navbar-dark px-xs-50 text-light" role="navigation">
+        <div class="container">
+            <div class="navbar-header trans-ease">
+                <a class="navbar-brand trans-ease grow" href="/">
+                    <h1 class="py-0 my-0">{% image header.logo_image width-225 %}</h1>
+                </a>
+
+            </div>
+            <input type="checkbox" id="navbar-toggle-cbox" >
+                <label for="navbar-toggle-cbox" class="my-auto trans-ease navbar-toggler collapsed" data-toggle="collapse" data-target="#CustomNavbar"
+                aria-controls="navbarSupportContent" aria-expanded="false" aria-label="Toggle Navigation">
+                    {% comment %} <span id="nav-menu-icon" class="trans-ease navbar-toggler-icon"></span> {% endcomment %}
+                    <svg id="nav-menu-icon" class="trans-ease navbar-toggler-icon icon icon-menu"><use xlink:href="#icon-menu"></use></svg>
+                    <svg id="nav-menu-close" class="trans-ease d-none text-light icon icon-cancel"><use xlink:href="#icon-cancel"></use></svg>
+                </label>
+
+                {% comment %} <div id='CustomNavBar' class='navbar-collapse collapse trans-ease'>
+                    <ul class="navbar-nav mr-auto my-auto">
+                        {% if header.menu %}
+                            {% for item in header.menu.menu_items.all %}
+                                <ol class="nav-item px-2">
+                                    <a class="nav-link px-0 {% get_menu_item_active_class item page.url %}
+                                    {% if item.mobile_only %} menu-item-mobile {% endif %}
+                                    {% if item.desktop_only %} menu-item-desktop {% endif %}" href="{{ item.link }}" 
+                                    {% if item.open_in_new_tab %} 
+                                    target="_blank"{% endif %}
+                                    {{ item.extra_attributes }} >
+                                    {{ item.title }}
+                                    <span class="sr-only">(current)</span>
+                                    </a>
+                                </ol>
+                            {% endfor %}
+                        {% endif %}
+                    </ul> {% endcomment %}
+                
+
+                <div class="collapse navbar-collapse trans-ease" id="menu-overlay">
+                    {% comment %} <div class=""> {% endcomment %}
+                    <ul class="navbar-nav mr-auto">
+                        {% if header.menu %}
+                            {% for item in header.menu.menu_items.all %}
+                                <li class="nav-item px-2">
+                                    <a class="nav-link text-light px-0 {% get_menu_item_active_class item page.url %}
+                                    {% if item.mobile_only %} menu-item-mobile {% endif %}
+                                    {% if item.desktop_only %} menu-item-desktop {% endif %}" href="{{ item.link }}" 
+                                    {% if item.open_in_new_tab %} 
+                                    target="_blank"{% endif %}
+                                    {{ item.extra_attributes }} >
+                                    {{ item.title }}
+                                    <span class="sr-only">(current)</span>
+                                    </a>
+                                </li>
+                            {% endfor %}
+
+                        {% endif %}
+                    </ul>  
+
+                {% comment %} <div class="collapse navbar-collapse trans-ease" id="CustomNavbar">
+                    <ul class="navbar-nav mr-auto my-auto">
+                        {% if header.menu %}
+                            {% for item in header.menu.menu_items.all %}
+                                <ol class="nav-item px-2">
+                                    <a class="nav-link px-0 {% get_menu_item_active_class item page.url %}
+                                    {% if item.mobile_only %} menu-item-mobile {% endif %}
+                                    {% if item.desktop_only %} menu-item-desktop {% endif %}" href="{{ item.link }}" 
+                                    {% if item.open_in_new_tab %} 
+                                    target="_blank"{% endif %}
+                                    {{ item.extra_attributes }} >
+                                    {{ item.title }}
+                                    <span class="sr-only">(current)</span>
+                                    </a>
+                                </ol>
+                            {% endfor %}
+
+                        {% endif %}
+                    </ul>  {% endcomment %}
+
+                    {% comment %} search bar {% endcomment %}
+                    {% if settings.siteSettings.SiteSettings.header.search %}
+                        <a href="#" id="search-toggle" class=" trans-ease grow" onclick="searchToggle()">
+                            <svg class="icon icon-search text-light"><use xlink:href="#icon-search"></use></svg>
+                        </a>
+                        <form id="search-form" class=" hide-el trans-ease my-auto" action="{% routablepageurl settings.siteSettings.SiteSettings.search_page.specific "search_post" %}" method="get">
+                            <div class="nd-input input-group mb-2 mr-sm-2 my-auto">
+                                <input class="nd-input form-control search-query " type="text" name="query"  placeholder="Search" aria-label="Search">
+
+                                <div class="input-group-append">
+                                    <button type="submit" value="Search" name="submit"
+                                     class="input-group-icon btn">
+                                        <svg class="icon icon-search text-light"><use xlink:href="#icon-search"></use></svg>
+                                    </button>
+                                </div>
+                                
+                            </div>
+                        </form>
+                    {% endif %}
+
+                    
+                    
+                </div>
+                {% comment %} </div> {% endcomment %}
+
+        </div>
+        
+    </nav>
+{% endwith %}
+
+<div id="notify-bar" class="row container mx-auto justify-content-center"></div>
+
+</div>
+
+<script>
+
+function searchToggle(){
+    var searchForm = document.getElementById('search-form');
+    var toggler = document.getElementById('search-toggle');
+
+    if(searchForm.classList.contains('hide-el')){
+        searchForm.classList.remove('hide-el');
+        toggler.classList.add('hide-el');
+        searchForm.classList.add('fade-in');
+        toggler.classList.add('fade-out');
+    } else {
+        searchForm.classList.remove('fade-in');
+        searchForm.classList.add('fade-out');
+        searchForm.classList.add('hide-el');
+        toggler.classList.remove('hide-el');
+    }
+}
+
+</script>
+

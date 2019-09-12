@@ -1,0 +1,105 @@
+{% load wagtailimages_tags wagtailroutablepage_tags%}
+{% load menu_tags %}
+
+<svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<symbol id="icon-search" viewBox="0 0 32 32">
+<title>search</title>
+<path d="M31.715 28.953c0.381 0.381 0.381 0.999 0 1.381l-1.381 1.381c-0.382 0.381-1 0.381-1.381 0l-9.668-9.668c-0.105-0.105-0.175-0.229-0.222-0.361-1.983 1.449-4.418 2.314-7.063 2.314-6.627 0-12-5.373-12-12s5.373-12 12-12c6.627 0 12 5.373 12 12 0 2.645-0.865 5.080-2.314 7.063 0.132 0.047 0.256 0.116 0.361 0.222l9.668 9.668zM12 4c-4.418 0-8 3.582-8 8s3.582 8 8 8 8-3.582 8-8c0-4.418-3.582-8-8-8z"></path>
+</symbol>
+</defs>
+</svg>
+
+<div id="header" class="sticky-top bounce-in-top">
+{% with settings.siteSettings.SiteSettings.header as header %}
+    <nav id='navigation' class="navbar navbar-expand-md bg-light 
+        sketch-border btm-sketch-border py-0
+        navbar-light px-xs-50" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">
+                    <h1>{% image header.logo_image width-200 %}</h1>
+                </a>
+
+            </div>
+                <button type="button" class="navbar-toggler sketch-border" data-toggle="collapse" data-target="#CustomNavbar"
+                aria-controls="navbarSupportContent" aria-expanded="false" aria-label="Toggle Navigation">
+                    <span class="navbar-toggler-icon">
+                        {% comment %} <svg class="icon icon-menu"><use xlink:href="#icon-menu"></use></svg> {% endcomment %}
+                        {% comment %} <i class="fa fa-navicon"></i> {% endcomment %}
+                    </span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="CustomNavbar">
+                    <ul class="navbar-nav mr-auto">
+                        {% if header.menu %}
+                            {% for item in header.menu.menu_items.all %}
+                                <ol class="nav-item px-2">
+                                    <a class="nav-link px-0 {% get_menu_item_active_class item page.url %}
+                                    {% if item.mobile_only %} menu-item-mobile {% endif %}
+                                    {% if item.desktop_only %} menu-item-desktop {% endif %}" href="{{ item.link }}" 
+                                    {% if item.open_in_new_tab %} 
+                                    target="_blank"{% endif %}
+                                    {{ item.extra_attributes }} >
+                                    {{ item.title }}
+                                    <span class="sr-only">(current)</span>
+                                    </a>
+                                </ol>
+                            {% endfor %}
+                        {% endif %}
+                    </ul>
+
+                    {% comment %} search bar {% endcomment %}
+                    {% if settings.siteSettings.SiteSettings.header.search %}
+                        <a href="#" id="search-toggle" class="trans-ease grow" onclick="searchToggle()">
+                            <svg class="icon icon-search"><use xlink:href="#icon-search"></use></svg>
+                        </a>
+                        <form id="search-form" class="hide-el trans-ease" action="{% routablepageurl settings.siteSettings.SiteSettings.search_page.specific "search_post" %}" method="get">
+                            <div class="input-group mb-2 mr-sm-2">
+                                <input class="form-control search-query sketch-border" type="text" name="query"  placeholder="Search" aria-label="Search">
+
+                                <div class="input-group-append">
+                                    <button type="submit" value="Search" name="submit"
+                                     class="input-group-icon btn btn-outline-success sketch-border">
+                                        <svg class="icon icon-search"><use xlink:href="#icon-search"></use></svg>
+                                    </button>
+                                </div>
+                                
+                            </div>
+                        </form>
+                    {% endif %}
+
+                    
+                    
+                </div>
+
+        </div>
+        
+    </nav>
+{% endwith %}
+
+<div id="notify-bar" class="row container mx-auto justify-content-center"></div>
+
+</div>
+
+<script defer>
+
+function searchToggle(){
+    var searchForm = document.getElementById('search-form');
+    var toggler = document.getElementById('search-toggle');
+
+    if(searchForm.classList.contains('hide-el')){
+        searchForm.classList.remove('hide-el');
+        toggler.classList.add('hide-el');
+        searchForm.classList.add('fade-in');
+        toggler.classList.add('fade-out');
+    } else {
+        searchForm.classList.remove('fade-in');
+        searchForm.classList.add('fade-out');
+        searchForm.classList.add('hide-el');
+        toggler.classList.remove('hide-el');
+    }
+}
+
+</script>
+

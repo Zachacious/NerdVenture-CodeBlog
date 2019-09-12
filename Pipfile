@@ -1,0 +1,22 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+django-rest-framework = "*"
+django-rest-auth = "*"
+django-cors-headers = "*"
+wagtail-modelchooser = "*"
+wagtailcodeblock = "*"
+wagtail = "==2.5.1"
+django-pipeline = "*"
+manifesto = "*"
+slimit = "*"
+wagtail-cache = "*"
+wagtail-themes = "*"
+
+[requires]
+python_version = "3.7"

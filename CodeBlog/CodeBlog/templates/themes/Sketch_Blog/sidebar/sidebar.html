@@ -1,0 +1,21 @@
+{% load wagtailcore_tags %}
+
+{% if page.sidebar %}
+
+<div class="col-sm-3 d-none d-lg-block sidebar">
+
+    {% if page.sidebar.fixed %}
+    <div class="rounded sticky-top sidebar-offset">
+    {% else %}
+    <div class="rounded">
+    {% endif %}
+
+        {% for block in page.sidebar.body %}
+            <div class="block-{{ block.block_type }} mb-2 text-center">
+                {% include_block block %}
+            </div>
+        {% endfor %}
+    </div>
+
+</div>
+{% endif %}

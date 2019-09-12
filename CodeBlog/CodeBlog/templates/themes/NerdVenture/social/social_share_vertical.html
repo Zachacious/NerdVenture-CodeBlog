@@ -1,0 +1,66 @@
+{% load wagtailcore_tags %}
+
+{% include 'social/icons.html' %}
+
+{% with settings.social.SocialSettings as social_settings %}
+<div id="social-stack-wrap" class="fade-in">
+    <div id="social-share-vert-bar" class='text-center py-2 bg-light p-1 sketch-border'>
+    {% if social_settings.fb_share %} 
+            <a class="d-block" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri  }}">
+            <svg class="trans-ease icon icon-facebook-square social-share-icon" style="color: #3b5998;">
+            <use xlink:href="#icon-facebook-square">
+            </use>
+            </svg>
+            </a>
+    {% endif %}
+
+    {% if social_settings.twitter_share %}
+            <a class="d-block" target="_blank" href="https://twitter.com/intent/tweet?url={{ request.build_absolute_uri  }}">
+            <svg class="icon icon-twitter-square social-share-icon trans-ease grow" style="color: #0084b4;">
+            <use xlink:href="#icon-twitter-square">
+            </use>
+            </svg>
+            </a>
+    {% endif %}
+
+    {% if social_settings.linkedin_share %}
+            <a class="d-block" target="_blank" href="https://www.linkedin.com/shareArticle?url={{ request.build_absolute_uri  }}&title={{ self.title }}&summary={{ self.summary }}">
+            <svg class="icon icon-linkedin-square social-share-icon trans-ease grow" style="color:  #0e76a8 ;">
+            <use xlink:href="#icon-linkedin-square">
+            </use>
+            </svg>
+            </a>
+    {% endif %}
+
+    {% if social_settings.reddit_share %}
+            <a class="d-block" target="_blank" href="http://reddit.com/submit?url={{ request.build_absolute_uri  }}">
+            <svg class="icon icon-reddit-square social-share-icon trans-ease grow" style="color:  #FF5700 ;">
+            <use xlink:href="#icon-reddit-square">
+            </use>
+            </svg>
+            </a>
+    {% endif %}
+
+    {% if social_settings.email_share %}
+            <a class="d-block" href="mailto:?subject={{ self.title }}&body={{ request.build_absolute_uri  }}>{{ self.title }}</a> ">
+            <svg class="icon icon-envelope-square social-share-icon trans-ease grow" style="color:  #cf5454 ;">
+            <use xlink:href="#icon-envelope-square">
+            </use>
+            </svg>
+            </a>
+    {% endif %}
+    </div>
+</div>
+{% endwith %}
+
+<script>
+
+// Setup an infinte animation every X seconds
+(function (){
+
+    
+    
+
+})();
+
+</script>

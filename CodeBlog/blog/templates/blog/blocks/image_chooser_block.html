@@ -1,0 +1,6 @@
+{% load wagtailimages_tags %}
+
+{% image value original as img %}
+<div id="img-wrap .overflow-hidden" style="width: 90%;"> 
+    <img {{ img.attrs }} class="img-fluid .overflow-hidden p-2"> 
+</div>

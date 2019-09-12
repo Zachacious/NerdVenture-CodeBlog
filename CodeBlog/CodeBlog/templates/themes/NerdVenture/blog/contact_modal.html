@@ -1,0 +1,77 @@
+{% load static pipeline %}
+
+<div class="light-modal fade-in" id="contactform" name="contactform" role="dialog" aria-labelledby="light-modal-label" aria-hidden="false">
+  <div class="light-modal-content bg-main-blue-dark">
+    {% comment %} <!-- light modal header -->
+    <div class="light-modal-header">
+        <h3 class="light-modal-heading">Modal Title</h3>
+        <a href="#" class="light-modal-close-icon" aria-label="close">&times;</a>
+    </div> {% endcomment %}
+    <!-- light modal body -->
+
+    <div class="light-modal-body contactform-modal">
+                  
+      <a id="contact-close-btn" href="#" class="mx-auto trans-ease close p-2 pb-3 modal-close-btn bg-light" 
+      aria-label="Close">
+        <span class="mx-auto my-auto p-2 text-center justify-content-center" aria-hidden="true">&times;</span>
+      </a>
+
+      <div id="form-content" class="trans-ease">
+        <span class="">
+          <b class="uppercase"><h1>Let's Talk ☕</h1></b>
+        </span>
+
+      <form id="contact" class="my-4" method="post">
+        <input type="hidden" id="apiURL" name="apiURL" 
+        value="{{ request.scheme }}://{{ request.get_host }}{% url 'blog-contactSendView' %}">
+
+        <div class="form-group">
+          <input name='emailInput' type="email" class="form-control nd-input " id="emailInput" 
+            placeholder="Enter email" autofocus required>
+        </div>
+
+
+        <div class="form-group">
+          <textarea name="message" class="form-control nd-input" id="msgInput" rows="10" 
+          placeholder="Message" required></textarea>
+        </div>
+
+        <div id="subscribe-check-box" class="form-check pb-2">
+        <small>
+          <input name="subcribe-checkbox" type="checkbox" class="form-check-input sketch-border" 
+          id="subsccribeCheck" checked>
+          <label class="form-check-label" for="subsccribeCheck">Enjoy the benefits of subscribership?</label>
+        </small>
+        </div> 
+
+        <button name="sendBtn" type="submit" value="submit" name="submit"
+        class="btn btn-light float-right">
+        Send
+        <span name="btn-loader" class="d-none trans-ease mx-1 spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        </button>
+      
+      
+      </form>
+      </div>
+
+      <div id="form-thanks" class="trans-ease">
+        <span class="form-thanks-content text-center">
+        <span class=" p-3 m-5 uppercase" 
+        style="font-size: 2em; background-color: #cfc; border-radius: 50%;">✔️</span>
+          <h3 class="">Thanks for getting in touch.</h3>
+          <h4>We'll talk soon... 🖖</h4>
+        </span>
+      </div>
+       
+    </div>
+
+
+    </div>
+    {% comment %} <!-- light modal footer -->
+    <div class="light-modal-footer">
+        <a href="#" class="light-modal-close-btn" aria-label="close">Close</a>
+    </div> {% endcomment %}
+</div>
+    
+
+{% comment %} {% javascript 'contact_form' %} {% endcomment %}
