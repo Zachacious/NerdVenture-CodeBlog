@@ -14,6 +14,8 @@ except ImportError:
     pass
 
 apps = [
+    Manifesto,
+
     # 'wagtail.contrib.frontend_cache',
 ]
 
@@ -40,3 +42,5 @@ EMAIL_MESSAGES_RECEIVER = 'zach@site.com'
 BASE_URL = 'https://www.nerdventure.com'
 
 ALLOWED_HOSTS = ['www.nerdventure.net', 'nerdventure.net'] 
+
+STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'

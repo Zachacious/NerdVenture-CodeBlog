@@ -235,7 +235,7 @@ SITE_ID = 1
 
 
 ADMINS = [
-    ('Zach Moore', 'back4moore@gmail.com'),
+    ('nerdventure', 'back4moore@gmail.com'),
 ]
 MANAGERS = ADMINS
 
