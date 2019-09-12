@@ -1,9 +1,12 @@
 from .base import *
 from .pipelineConf_Prod import *
+import os
 
 DEBUG = False
 
 MESSAGE_LEVEL = 20
+
+SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
 
 try:
     from .local import *
