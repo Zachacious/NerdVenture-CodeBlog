@@ -2,7 +2,7 @@
 PIPELINE = {
     'PIPELINE_ENABLED': True,
     'DISABLED_WRAPPER': True,
-    'JS_COMPRESSOR': 'pipeline.compressors.slimit.SlimItCompressor',
+    # 'JS_COMPRESSOR': 'pipeline.compressors.slimit.SlimItCompressor',
     'JAVASCRIPT': {
         'general': {
             'source_filenames': (
@@ -66,4 +66,5 @@ PIPELINE = {
     },
 }
 
-# PIPELINE['JS_COMPRESSOR'] = 'pipeline.compressors.slimit.SlimItCompressor'
+PIPELINE['JS_COMPRESSOR'] = 'pipeline.compressors.slimit.SlimItCompressor'
+PIPELINE['CSS_COMPRESSOR'] = 'pipeline.compressors.cssmin.CSSMinCompressor'
