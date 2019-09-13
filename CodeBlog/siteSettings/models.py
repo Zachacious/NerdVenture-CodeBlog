@@ -10,7 +10,7 @@ class SiteSettings(BaseSetting):
     header = models.ForeignKey(
         'header.Header',
         null=True,
-        blank=True
+        blank=True,
         on_delete=models.SET_NULL,
         related_name='+'
     )
@@ -18,7 +18,7 @@ class SiteSettings(BaseSetting):
     footer = models.ForeignKey(
         'footer.Footer',
         null=True,
-        blank=True
+        blank=True,
         on_delete=models.SET_NULL,
         related_name='+'
     )
