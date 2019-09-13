@@ -3,8 +3,8 @@ if(typeof notifyJSLoaded ==='undefined'){
     // (function (){
 
     function deleteNotification(uuid, animcls){
-        let id = 'notify-' + uuid
-        let target = document.getElementById(id);
+        var id = 'notify-' + String(uuid)
+        var target = document.getElementById(id);
         if(target){
             if(animcls){
                 target.classList.add(animcls);
@@ -26,8 +26,8 @@ if(typeof notifyJSLoaded ==='undefined'){
     }
 
     function createNotification(alertcls, anim_startcls, anim_endcls, header, msg, timed=false){
-        let uuid = Date.now() + Math.random();
-        let div = document.createElement('div');
+        var uuid = Date.now() + Math.random();
+        var div = document.createElement('div');
         div.className = 'row';
         div.innerHTML =  '\
         <div id="notify-' + uuid + '" class="alert sketch-border ' + 
