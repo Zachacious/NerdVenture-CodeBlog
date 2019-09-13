@@ -9,7 +9,7 @@ var menu_opened = false;
         if(!ticking){
             window.requestAnimationFrame(function(){
                 var nav = document.getElementById('navigation');
-                if(!nav) return;
+                if(!nav) {return};
 
                 if(ypos > 20){
                     navOnTop = false;
