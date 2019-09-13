@@ -6,12 +6,12 @@ PIPELINE = {
     'JAVASCRIPT': {
         'general': {
             'source_filenames': (
-                'js/header.js',
                 'js/notify.js',
                 'js/cookies.js',
-                'social/js/social.js',
-                'blog/js/contactForm.js',
+                'js/header.js',
                 'optin/js/optin.js',
+                'blog/js/contactForm.js',
+                'social/js/social.js',
                 'js/progressive-image.js',
             ),
             'output_filename': 'js/general.min.js',
