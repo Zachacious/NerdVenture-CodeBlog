@@ -10,7 +10,7 @@ class SiteSettings(BaseSetting):
     header = models.ForeignKey(
         'header.Header',
         null=True,
-        blank=False,
+        blank=True
         on_delete=models.SET_NULL,
         related_name='+'
     )
@@ -18,7 +18,7 @@ class SiteSettings(BaseSetting):
     footer = models.ForeignKey(
         'footer.Footer',
         null=True,
-        blank=False,
+        blank=True
         on_delete=models.SET_NULL,
         related_name='+'
     )
@@ -26,7 +26,7 @@ class SiteSettings(BaseSetting):
     search_page = models.ForeignKey(
         'wagtailcore.Page',
         null=True,
-        blank=False,
+        blank=True,
         on_delete=models.SET_NULL,
         related_name='+',
     )
@@ -34,7 +34,7 @@ class SiteSettings(BaseSetting):
     author_page = models.ForeignKey(
         'wagtailcore.Page',
         null=True,
-        blank=False,
+        blank=True,
         on_delete=models.SET_NULL,
         related_name='+',
     )
@@ -42,7 +42,7 @@ class SiteSettings(BaseSetting):
     topic_page = models.ForeignKey(
         'wagtailcore.Page',
         null=True,
-        blank=False,
+        blank=True,
         on_delete=models.SET_NULL,
         related_name='+',
     )

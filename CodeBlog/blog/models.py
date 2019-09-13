@@ -69,7 +69,7 @@ class BlogIndexPage(WagtailCacheMixin, RoutablePageMixin, Page):
     sidebar = models.ForeignKey(
         'sidebar.Sidebar',
         null=True,
-        blank=False,
+        blank=True,
         on_delete=models.SET_NULL,
         related_name='+',
         # help_text='Should be close to 400px X 100px'
@@ -278,8 +278,8 @@ class BlogPostPage(WagtailCacheMixin, Page):
         # help_text='Should be close to 400px X 100px'
     )
     
-    keywords = models.CharField(_("SEO Keywords"), max_length=255)
-    genre = models.CharField(_("SEO Genre"), max_length=255)
+    keywords = models.CharField(_("SEO Keywords"), max_length=255, blank=True)
+    genre = models.CharField(_("SEO Genre"), max_length=255, blank=True)
     
     topics = ParentalManyToManyField('topic.Topic', blank=True)
     # categories = ParentalManyToManyField('blog.BlogCategory', blank=True)
@@ -366,8 +366,8 @@ class CustomPage(WagtailCacheMixin, Page):
         (_('Recent_Post'), BlogPostListBlock()),
     ],null=True,blank=True)
     
-    keywords = models.CharField(_("SEO Keywords"), max_length=255)
-    genre = models.CharField(_("SEO Genre"), max_length=255)
+    keywords = models.CharField(_("SEO Keywords"), max_length=255, blank=True)
+    genre = models.CharField(_("SEO Genre"), max_length=255, blank=True)
     
     sidebar = models.ForeignKey(
     'sidebar.Sidebar',
