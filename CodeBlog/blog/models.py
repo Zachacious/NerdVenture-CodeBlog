@@ -236,6 +236,8 @@ class BlogPostPage(WagtailCacheMixin, Page):
     
     template = 'blog/blog_post_page.html'
     
+    is_blog_post = True
+    
     header_image = models.ForeignKey(
             'wagtailimages.Image',
             null=True,

@@ -59,14 +59,16 @@
         <link rel="stylesheet" type="text/css" href="{% static 'css/progressive-image.min.css' %}">
         {% stylesheet 'general' %}
 
-        {% include 'schema.html' %}
+        <script type="application/ld+json">
+            {% include 'schema.html' %}
+        </script>
        
         {% javascript 'general' %}
         {% comment %} <script defer src="{% static 'js/notify.js' %}"></script> {% endcomment %}
         {% comment %} <script defer src="{% static 'js/cookies.js' %}"></script> {% endcomment %}
         <script>
             var settings = {
-                debug: true,
+                debug: false,
             };
 
         </script>
