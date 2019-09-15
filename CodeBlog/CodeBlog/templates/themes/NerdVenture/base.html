@@ -19,6 +19,8 @@
                 {% endwith %}
             {% endblock %}
         </title>
+        <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+
         {% if self.header_image %}
             {% image page.header_image width-300 as headerimg %}
         {% endif %}
