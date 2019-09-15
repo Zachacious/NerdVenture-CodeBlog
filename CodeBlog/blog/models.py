@@ -229,6 +229,13 @@ class BlogIndexPage(WagtailCacheMixin, RoutablePageMixin, Page):
             )
         
         return sitemap
+    
+    # attempt to invalidate paginated pages -- may need work
+    def get_cached_paths(self):
+        yield '/'
+        paginator = Paginator(self.get_posts(), 10)
+        for page_number in range(1, paginator.num_pages + 1):
+            yield '/?page=' + str(page_number)
 
 
 class BlogPostPage(WagtailCacheMixin, Page):
