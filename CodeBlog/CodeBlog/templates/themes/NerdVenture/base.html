@@ -19,7 +19,7 @@
                 {% endwith %}
             {% endblock %}
         </title>
-        <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+        {% comment %} <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}"/> {% endcomment %}
 
         {% if self.header_image %}
             {% image page.header_image width-300 as headerimg %}
