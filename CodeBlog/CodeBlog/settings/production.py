@@ -54,3 +54,9 @@ BASE_URL = 'https://www.nerdventure.com'
 ALLOWED_HOSTS = ['www.nerdventure.net', 'nerdventure.net'] 
 
 STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
+
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+
+# keep db connection open longer to increase performance when multiple db calls are needed
+CONN_MAX_AGE = 30 # seconds

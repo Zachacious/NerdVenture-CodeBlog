@@ -47,6 +47,12 @@ from modelcluster.fields import ParentalKey, ParentalManyToManyField
 # from taggit.models import TaggedItemBase
 # from wagtailmd.utils import MarkdownField, MarkdownPanel
 
+from django.dispatch import receiver
+from django.db.models.signals import pre_delete
+
+from wagtail.core.signals import page_published
+from wagtail.contrib.frontend_cache.utils import PurgeBatch
+
 from wagtailmodelchooser.edit_handlers import ModelChooserPanel
 
 from wagtailcodeblock.blocks import CodeBlock
@@ -410,3 +416,21 @@ class CustomPage(WagtailCacheMixin, Page):
             ObjectList(settings_panels, heading='Settings'),
         ]
     )
+    
+# Cache invalidation when post are published so that index pages will update
+def blog_page_changed(thepage):
+    batch = PurgeBatch()
+    for blog_index in BlogIndexPage.objects.live():
+        if thepage in blog_index.get_posts().object_list:
+            batch.add_page(blog_index)
+            
+        batch.purge()
+        
+@receiver(page_published, sender=BlogPostPage)
+def blog_published_handler(instance):
+    blog_page_changed(instance)
+
+
+@receiver(pre_delete, sender=BlogPostPage)
+def blog_deleted_handler(instance):
+    blog_page_changed(instance)
