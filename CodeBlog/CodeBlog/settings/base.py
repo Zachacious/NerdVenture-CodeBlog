@@ -30,7 +30,7 @@ INSTALLED_APPS = [
     'wagtail.contrib.routable_page',
     'wagtail.contrib.modeladmin',
     'wagtail.contrib.sitemaps',
-    'wagtail.contrib.frontend_cache',
+    # 'wagtail.contrib.frontend_cache',
     'wagtail.embeds',
     'wagtail.sites',
     'wagtail.users',
@@ -95,8 +95,9 @@ MIDDLEWARE = [
     'wagtail.contrib.redirects.middleware.RedirectMiddleware',
     
     # 'pipeline.middleware.MinifyHTMLMiddleware',
-    'wagtailcache.cache.FetchFromCacheMiddleware',
     'wagtailthemes.middleware.ThemeMiddleware',
+    'wagtailcache.cache.FetchFromCacheMiddleware',
+    
 ]
 
 

@@ -20,7 +20,7 @@ except ImportError:
 apps = [
     # 'manifesto',
 
-    # 'wagtail.contrib.frontend_cache',
+    'wagtail.contrib.frontend_cache',
 ]
 
 INSTALLED_APPS = apps + INSTALLED_APPS
