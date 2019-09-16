@@ -1,4 +1,4 @@
-from django.contrib.staticfiles.storage import ManifestStaticFilesStorage
+from django.contrib.staticfiles.storage import CachedStaticFilesStorage
 
 from pipeline.storage import GZIPMixin
 
