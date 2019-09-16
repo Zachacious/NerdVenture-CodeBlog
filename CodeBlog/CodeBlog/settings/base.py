@@ -30,7 +30,7 @@ INSTALLED_APPS = [
     'wagtail.contrib.routable_page',
     'wagtail.contrib.modeladmin',
     'wagtail.contrib.sitemaps',
-    # 'wagtail.contrib.frontend_cache',
+    'wagtail.contrib.frontend_cache',
     'wagtail.embeds',
     'wagtail.sites',
     'wagtail.users',
@@ -55,6 +55,15 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.sitemaps',
     
+    'corsheaders',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'wagtailmodelchooser',
+    'wagtailcodeblock',
+    'pipeline',
+    'wagtailcache',
+    'wagtailthemes',
+    
     'blog',
     'header',
     'footer',
@@ -66,15 +75,6 @@ INSTALLED_APPS = [
     'newsletter',
     'social',
     'topic',
-    
-    'corsheaders',
-    'rest_framework',
-    'rest_framework.authtoken',
-    'wagtailmodelchooser',
-    'wagtailcodeblock',
-    'pipeline',
-    'wagtailcache',
-    'wagtailthemes',
 
 ]
 
@@ -95,8 +95,9 @@ MIDDLEWARE = [
     'wagtail.contrib.redirects.middleware.RedirectMiddleware',
     
     # 'pipeline.middleware.MinifyHTMLMiddleware',
-    'wagtailthemes.middleware.ThemeMiddleware',
-    'wagtailcache.cache.FetchFromCacheMiddleware',    
+    
+    'wagtailcache.cache.FetchFromCacheMiddleware',  
+    'wagtailthemes.middleware.ThemeMiddleware',  
 ]
 
 
