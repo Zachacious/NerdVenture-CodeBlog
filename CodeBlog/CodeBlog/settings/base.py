@@ -95,8 +95,9 @@ MIDDLEWARE = [
     'wagtail.contrib.redirects.middleware.RedirectMiddleware',
     
     # 'pipeline.middleware.MinifyHTMLMiddleware',
-    'wagtailthemes.middleware.ThemeMiddleware',
+    
     'wagtailcache.cache.FetchFromCacheMiddleware',
+    'wagtailthemes.middleware.ThemeMiddleware',
     
 ]
 
