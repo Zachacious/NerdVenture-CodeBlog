@@ -55,15 +55,6 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.sitemaps',
     
-    'corsheaders',
-    'rest_framework',
-    'rest_framework.authtoken',
-    'wagtailmodelchooser',
-    'wagtailcodeblock',
-    'pipeline',
-    'wagtailcache',
-    'wagtailthemes',
-    
     'blog',
     'header',
     'footer',
@@ -75,6 +66,15 @@ INSTALLED_APPS = [
     'newsletter',
     'social',
     'topic',
+    
+    'corsheaders',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'wagtailmodelchooser',
+    'wagtailcodeblock',
+    'pipeline',
+    'wagtailcache',
+    'wagtailthemes',
 
 ]
 
@@ -194,8 +194,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATICFILES_FINDERS = [
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    # 'django.contrib.staticfiles.finders.FileSystemFinder',
+    # 'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'pipeline.finders.CachedFileFinder',
     'pipeline.finders.PipelineFinder',
     
