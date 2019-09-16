@@ -427,10 +427,10 @@ def blog_page_changed(thepage):
         batch.purge()
         
 @receiver(page_published, sender=BlogPostPage)
-def blog_published_handler(instance):
+def blog_published_handler(instance, **kwargs):
     blog_page_changed(instance)
 
 
 @receiver(pre_delete, sender=BlogPostPage)
-def blog_deleted_handler(instance):
+def blog_deleted_handler(instance, **kwargs):
     blog_page_changed(instance)
