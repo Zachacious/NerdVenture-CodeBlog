@@ -20,7 +20,7 @@ except ImportError:
 apps = [
     # 'manifesto',
 
-    # 'wagtail.contrib.frontend_cache',
+    'wagtail.contrib.frontend_cache',
 ]
 
 INSTALLED_APPS = apps + INSTALLED_APPS
@@ -53,7 +53,8 @@ BASE_URL = 'https://www.nerdventure.com'
 
 ALLOWED_HOSTS = ['www.nerdventure.net', 'nerdventure.net'] 
 
-STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
+# STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
+STATICFILES_STORAGE = 'CodeBlog.storage.GZIPStorage'
 
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
