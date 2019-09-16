@@ -4,8 +4,8 @@ from django.contrib.staticfiles.storage import CachedFilesMixin, ManifestFilesMi
 
 from pipeline.storage import PipelineMixin, GZIPMixin
 
-class CustomStorage(PipelineMixin, ManifestFilesMixin, ManifestStaticFilesStorage):
-    pass
+# class CustomStorage(PipelineMixin, ManifestFilesMixin, ManifestStaticFilesStorage):
+#     pass
 
 class GZIPStorage(GZIPMixin, ManifestStaticFilesStorage):
     pass
