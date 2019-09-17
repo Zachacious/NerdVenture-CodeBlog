@@ -61,3 +61,14 @@ SESSION_COOKIE_SECURE = True
 
 # keep db connection open longer to increase performance when multiple db calls are needed
 CONN_MAX_AGE = 30 # seconds
+
+# MYSQL
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'nerdventure$BlogMain',
+        'USER': 'nerdventure',
+        'PASSWORD': 'fgh4487##x',
+        'HOST': 'nerdventure.mysql.pythonanywhere-services.com',
+    }
+}
