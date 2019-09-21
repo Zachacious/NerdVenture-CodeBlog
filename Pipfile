@@ -18,6 +18,7 @@ slimit = "*"
 wagtail-cache = "*"
 wagtail-themes = "*"
 python-dotenv = "*"
+wagalytics = "*"
 
 [requires]
 python_version = "3.7"

@@ -21,6 +21,7 @@ apps = [
     # 'manifesto',
 
     'wagtail.contrib.frontend_cache',
+    'wagalytics',
 ]
 
 INSTALLED_APPS = apps + INSTALLED_APPS
@@ -37,6 +38,8 @@ EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
 EMAIL_PORT = os.getenv('EMAIL_PORT')
 EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS')
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+
+GA_KEY_FILEPATH = os.getenv('GA_KEY_FILEPATH')
 
 WAGTAILFRONTENDCACHE = {
     'cloudflare': {
