@@ -40,6 +40,7 @@ EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS')
 EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
 
 GA_KEY_FILEPATH = os.getenv('GA_KEY_FILEPATH')
+GA_VIEW_ID = os.getenv('GA_VIEW_ID')
 
 WAGTAILFRONTENDCACHE = {
     'cloudflare': {
