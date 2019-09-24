@@ -26,7 +26,7 @@ apps = [
 
 INSTALLED_APPS = apps + INSTALLED_APPS
 
-WAGTAIL_CACHE = True
+WAGTAIL_CACHE = False
 
 NEWSLETTER_FROM_EMAIL = 'Zach@NerdVenture.Net'
 
@@ -62,6 +62,7 @@ STATICFILES_STORAGE = 'CodeBlog.storage.GZIPStorage'
 
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
+# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # keep db connection open longer to increase performance when multiple db calls are needed
 CONN_MAX_AGE = 30 # seconds
