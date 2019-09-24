@@ -19,6 +19,8 @@ wagtail-cache = "*"
 wagtail-themes = "*"
 python-dotenv = "*"
 wagalytics = "*"
+wagtailuiplus = "*"
+wagtailemoji = "*"
 
 [requires]
 python_version = "3.7"

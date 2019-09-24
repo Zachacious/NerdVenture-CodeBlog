@@ -63,6 +63,8 @@ INSTALLED_APPS = [
     'pipeline',
     'wagtailcache',
     'wagtailthemes',
+    'wagtailuiplus',
+    'wagtailemoji',
     
     'blog',
     'header',

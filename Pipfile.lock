@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "4eeec515584da569257ea83d1f71e758875701f350c15f836bed2abac106c7ee"
+            "sha256": "83999f8aa72c0ccba9aec155e9cba4ddfe59b1a2e592b868355be4246ee404c4"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -286,10 +286,10 @@
         },
         "urllib3": {
             "hashes": [
-                "sha256:2f3eadfea5d92bc7899e75b5968410b749a054b492d5a6379c1344a1481bc2cb",
-                "sha256:9c6c593cb28f52075016307fc26b0a0f8e82bc7d1ff19aaaa959b91710a56c47"
+                "sha256:3de946ffbed6e6746608990594d08faac602528ac7015ac28d33cee6a45b7398",
+                "sha256:9a107b99a5393caf59c7aa3c1249c16e6879447533d0887f4336dde834c7be86"
             ],
-            "version": "==1.25.5"
+            "version": "==1.25.6"
         },
         "wagalytics": {
             "hashes": [
@@ -338,12 +338,28 @@
             "index": "pypi",
             "version": "==1.15.0.0"
         },
+        "wagtailemoji": {
+            "hashes": [
+                "sha256:4c33bbd6fec47392ea5b65d7c91a23caa6aebcfc0d003b4a78dd47ed1ec82c0f",
+                "sha256:77d7ba0e4f650f03f08442752e92a24b1581677b9e5f3cc33b21387613eb3037"
+            ],
+            "index": "pypi",
+            "version": "==1.0.2"
+        },
         "wagtailfontawesome": {
             "hashes": [
                 "sha256:01b2a68bbf84984ddbb154c8c5733e38f537ecf53090269637f0b510ea2708ef",
                 "sha256:8b4935d285904c7e9f1d33606d58f794a230298cfd50f363e833500ff734751e"
             ],
             "version": "==1.1.4"
+        },
+        "wagtailuiplus": {
+            "hashes": [
+                "sha256:8e54aedc1121148dd9e66120daf543055152273d20bc9aba0636c78e057a107c",
+                "sha256:9ed138e63b9f0bb140ae5229133792c12b998964b47fb1a0bfd764c6dd5d8673"
+            ],
+            "index": "pypi",
+            "version": "==1.3.0"
         },
         "webencodings": {
             "hashes": [
