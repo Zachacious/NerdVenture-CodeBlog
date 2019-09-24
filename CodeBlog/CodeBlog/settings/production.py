@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 # project_folder = os.path.expanduser('~/NerdVenture-CodeBlog')  # adjust as appropriate
 load_dotenv(os.path.join(PROJECT_DIR, '.env'))
 
-DEBUG = True
+DEBUG = False
 
 MESSAGE_LEVEL = 20
 
@@ -26,7 +26,7 @@ apps = [
 
 INSTALLED_APPS = apps + INSTALLED_APPS
 
-WAGTAIL_CACHE = False
+WAGTAIL_CACHE = True
 
 NEWSLETTER_FROM_EMAIL = 'Zach@NerdVenture.Net'
 
