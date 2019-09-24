@@ -45,9 +45,9 @@ GA_VIEW_ID = os.getenv('GA_VIEW_ID')
 WAGTAILFRONTENDCACHE = {
     'cloudflare': {
         'BACKEND': 'wagtail.contrib.frontend_cache.backends.CloudflareBackend',
-        'EMAIL': 'back4moore@gmail.com',
-        'TOKEN': 'gCpbxD4ii8u-1QLdSO36dJtHesBmbz0t8KhVA622',
-        'ZONEID': 'f3420199adb7a885e8a5cf55654e1a12',
+        'EMAIL': os.getenv('WAGTAIL_CF_EMAIL'),
+        'TOKEN': os.getenv('WAGTAIL_CF_TOKEN'),
+        'ZONEID': os.getenv('WAGTAIL_CF_ZONEID'),
     },
 }
 
@@ -71,10 +71,10 @@ CONN_MAX_AGE = 30 # seconds
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'nerdventure$BlogMain',
-        'USER': 'nerdventure',
-        'PASSWORD': 'fgh4487##x',
-        'HOST': 'nerdventure.mysql.pythonanywhere-services.com',
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'HOST': os.getenv('DB_HOST'),
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
         },
