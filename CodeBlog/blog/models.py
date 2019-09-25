@@ -421,7 +421,7 @@ class CustomPage(WagtailCacheMixin, Page):
 def blog_page_changed(thepage):
     batch = PurgeBatch()
     for blog_index in BlogIndexPage.objects.live():
-        if thepage in blog_index.get_posts().object_list:
+        if thepage in blog_index.get_posts().objects_list:
             batch.add_page(blog_index)
             
         batch.purge()
