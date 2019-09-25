@@ -1,5 +1,5 @@
 PIPELINE = {
-    # 'PIPELINE_ENABLED': True,
+    'PIPELINE_ENABLED': True,
     # 'DISABLED_WRAPPER': True,
     'JS_COMPRESSOR': 'pipeline.compressors.jsmin.JSMinCompressor',
     'CSS_COMPRESSOR': 'pipeline.compressors.cssmin.CSSMinCompressor',
