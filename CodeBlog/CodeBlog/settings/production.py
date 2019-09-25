@@ -58,6 +58,7 @@ ALLOWED_HOSTS = ['www.nerdventure.net', 'nerdventure.net']
 
 STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
 # STATICFILES_STORAGE = 'CodeBlog.storage.CustomStorage'
+PIPELINE_STORAGE = 'pipeline.storage.PipelineCachedStorage'
 
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
