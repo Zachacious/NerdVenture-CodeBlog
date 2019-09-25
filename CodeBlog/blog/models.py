@@ -237,6 +237,10 @@ class BlogIndexPage(WagtailCacheMixin, RoutablePageMixin, Page):
         return sitemap
     
     # attempt to invalidate paginated pages -- may need work
+    def get_blog_items(self):
+        # This returns a Django paginator of blog items in this section
+        return Paginator(BlogPostPage.objects.live(), 10)
+    
     def get_cached_paths(self):
         yield '/'
         paginator = Paginator(self.get_posts(), 10)
@@ -421,7 +425,7 @@ class CustomPage(WagtailCacheMixin, Page):
 def blog_page_changed(thepage):
     batch = PurgeBatch()
     for blog_index in BlogIndexPage.objects.live():
-        if thepage in blog_index.get_posts().objects_list:
+        if thepage in blog_index.get_blog_items().object_list:
             batch.add_page(blog_index)
             
         batch.purge()
