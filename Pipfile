@@ -21,6 +21,7 @@ python-dotenv = "*"
 wagalytics = "*"
 wagtailuiplus = "*"
 wagtailemoji = "*"
+wagtail-robots = "*"
 
 [requires]
 python_version = "3.7"

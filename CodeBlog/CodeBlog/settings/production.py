@@ -57,8 +57,8 @@ BASE_URL = 'https://www.nerdventure.com'
 
 ALLOWED_HOSTS = ['www.nerdventure.net', 'nerdventure.net'] 
 
-STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
-# STATICFILES_STORAGE = 'CodeBlog.storage.GZIPStorage'
+# STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
+STATICFILES_STORAGE = 'CodeBlog.storage.GZIPStorage'
 
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
@@ -77,7 +77,13 @@ DATABASES = {
         'HOST': os.getenv('DB_HOST'),
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-            'charset': 'utf8mb4'
+            'charset': 'utf8mb4' # emoji
         },
     }
 }
+
+# wagtail-robots
+ROBOTS_USE_SITEMAP = False
+ROBOTS_SITEMAP_URLS = [
+    'https://nerdventure.net/sitemap.xml',
+]

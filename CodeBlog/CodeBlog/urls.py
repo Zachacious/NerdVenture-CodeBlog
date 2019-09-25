@@ -30,6 +30,8 @@ urlpatterns = [
     # url(r'^users/', include('users.urls')),
     
     url(r'^api/v1/wt/', api_router.urls),
+    
+    url(r'^robots\.txt', include('robots.urls')),
 
 
     # For anything not caught by a more specific rule above, hand over to
