@@ -1,6 +1,6 @@
 from .base import *
 
 if os.environ['PROJECT_ENVIRONMENT'] == 'production':                          
-   from .prod import * 
+   from .production import * 
 else:
    from .dev import *  
