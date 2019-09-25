@@ -65,7 +65,7 @@ INSTALLED_APPS = [
     'wagtailthemes',
     'wagtailuiplus',
     'wagtailemoji',
-    'wagtail-robots',
+    'robots',
     
     'blog',
     'header',
