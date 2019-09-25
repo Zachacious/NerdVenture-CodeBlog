@@ -58,7 +58,7 @@ BASE_URL = 'https://www.nerdventure.com'
 ALLOWED_HOSTS = ['www.nerdventure.net', 'nerdventure.net'] 
 
 # STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
-STATICFILES_STORAGE = 'CodeBlog.storage.GZIPStorage'
+STATICFILES_STORAGE = 'CodeBlog.storage.CustomStorage'
 
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
