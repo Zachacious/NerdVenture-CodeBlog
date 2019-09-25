@@ -3,7 +3,6 @@ from .pipelineConf_Prod import *
 import os
 
 from dotenv import load_dotenv
-# project_folder = os.path.expanduser('~/NerdVenture-CodeBlog')  # adjust as appropriate
 load_dotenv(os.path.join(PROJECT_DIR, '.env'))
 
 DEBUG = False

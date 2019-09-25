@@ -96,9 +96,7 @@ MIDDLEWARE = [
 
     'wagtail.core.middleware.SiteMiddleware',
     'wagtail.contrib.redirects.middleware.RedirectMiddleware',
-    
-    # 'pipeline.middleware.MinifyHTMLMiddleware',
-    
+        
     'wagtailthemes.middleware.ThemeMiddleware', 
     'wagtailcache.cache.FetchFromCacheMiddleware',   
 ]
@@ -200,7 +198,7 @@ STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'pipeline.finders.CachedFileFinder',
-    # 'pipeline.finders.PipelineFinder',
+    'pipeline.finders.PipelineFinder',
     'CodeBlog.finders.LeftoverPipelineFinder',
 ]
 
