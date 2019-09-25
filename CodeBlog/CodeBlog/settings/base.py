@@ -197,15 +197,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATICFILES_FINDERS = [
-    'pipeline.finders.FileSystemFinder',
-    'pipeline.finders.AppDirectoriesFinder',
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'pipeline.finders.CachedFileFinder',
     'pipeline.finders.PipelineFinder',
-
-    # 'django.contrib.staticfiles.finders.FileSystemFinder',
-    # 'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    # 'pipeline.finders.CachedFileFinder',
-    # 'pipeline.finders.PipelineFinder',
 ]
 
 STATICFILES_DIRS = [
