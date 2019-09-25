@@ -1,7 +1,7 @@
 # In production run collectstatic and set PIPELINE_ENABLED = True
 PIPELINE = {
     'PIPELINE_ENABLED': True,
-    'DISABLED_WRAPPER': True,
+    'DISABLED_WRAPPER': False,
     # 'JS_COMPRESSOR': 'pipeline.compressors.slimit.SlimItCompressor',
     'JAVASCRIPT': {
         'general': {
