@@ -4,7 +4,7 @@ from django.contrib.staticfiles.storage import CachedFilesMixin, ManifestFilesMi
 
 from pipeline.storage import PipelineMixin, GZIPMixin
 
-class CustomStorage(PipelineMixin, ManifestStaticFilesStorage):
+class CustomStorage(PipelineMixin, CachedStaticFilesStorage):
     manifest_strict = False
 
 class GZIPStorage(GZIPMixin, CachedStaticFilesStorage):
