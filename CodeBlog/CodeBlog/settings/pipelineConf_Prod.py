@@ -14,7 +14,7 @@ PIPELINE = {
                 'social/js/social.js',
                 'js/progressive-image.js',
             ),
-            'output_filename': 'js/general.js',
+            'output_filename': 'js/general.min.js',
             'extra_context': {
                 # 'async': True,
                 'defer': True,
@@ -33,7 +33,7 @@ PIPELINE = {
                 'css/header.css',
                 'css/anims.css',
             ),
-            'output_filename': 'css/general.css',
+            'output_filename': 'css/general.min.css',
         },
     },
 }
