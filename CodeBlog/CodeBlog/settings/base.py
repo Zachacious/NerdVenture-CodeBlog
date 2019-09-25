@@ -186,9 +186,9 @@ USE_TZ = True
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'pipeline.finders.PipelineFinder',
+    # 'pipeline.finders.PipelineFinder',
     'pipeline.finders.CachedFileFinder',
-    'CodeBlog.finders.LeftoverPipelineFinder',
+    # 'CodeBlog.finders.LeftoverPipelineFinder',
 ]
 
 STATICFILES_DIRS = [
