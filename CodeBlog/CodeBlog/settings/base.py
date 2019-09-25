@@ -147,17 +147,6 @@ WAGTAIL_THEMES = [
 WSGI_APPLICATION = 'CodeBlog.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
-
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
@@ -199,18 +188,12 @@ STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'pipeline.finders.CachedFileFinder',
     'pipeline.finders.PipelineFinder',
-    'CodeBlog.finders.LeftoverPipelineFinder',
+    # 'CodeBlog.finders.LeftoverPipelineFinder',
 ]
 
 STATICFILES_DIRS = [
     os.path.join(PROJECT_DIR, 'static'),
 ]
-
-# ManifestStaticFilesStorage is recommended in production, to prevent outdated
-# Javascript / CSS assets being served from cache (e.g. after a Wagtail upgrade).
-# See https://docs.djangoproject.com/en/2.2/ref/contrib/staticfiles/#manifeststaticfilesstorage
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
-# STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'

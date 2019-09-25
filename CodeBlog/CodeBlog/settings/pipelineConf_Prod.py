@@ -1,7 +1,7 @@
 # In production run collectstatic and set PIPELINE_ENABLED = True
 PIPELINE = {
     'PIPELINE_ENABLED': True,
-    'DISABLED_WRAPPER': True,
+    # 'DISABLED_WRAPPER': True,
     'JS_COMPRESSOR': 'pipeline.compressors.jsmin.JSMinCompressor',
     'CSS_COMPRESSOR': 'pipeline.compressors.cssmin.CSSMinCompressor',
     'JAVASCRIPT': {
@@ -39,5 +39,5 @@ PIPELINE = {
     },
 }
 
-PIPELINE['JS_COMPRESSOR'] = 'pipeline.compressors.jsmin.JSMinCompressor'
-PIPELINE['CSS_COMPRESSOR'] = 'pipeline.compressors.cssmin.CSSMinCompressor'
+# PIPELINE['JS_COMPRESSOR'] = 'pipeline.compressors.jsmin.JSMinCompressor'
+# PIPELINE['CSS_COMPRESSOR'] = 'pipeline.compressors.cssmin.CSSMinCompressor'
