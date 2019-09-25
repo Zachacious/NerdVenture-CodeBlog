@@ -1,8 +1,8 @@
 PIPELINE = {
     'PIPELINE_ENABLED': True,
-    # 'DISABLED_WRAPPER': True,
-    'JS_COMPRESSOR': 'pipeline.compressors.jsmin.JSMinCompressor',
-    'CSS_COMPRESSOR': 'pipeline.compressors.cssmin.CSSMinCompressor',
+    'DISABLED_WRAPPER': True,
+    # 'JS_COMPRESSOR': 'pipeline.compressors.jsmin.JSMinCompressor',
+    # 'CSS_COMPRESSOR': 'pipeline.compressors.cssmin.CSSMinCompressor',
     'JAVASCRIPT': {
         'general': {
             'source_filenames': (
@@ -16,7 +16,6 @@ PIPELINE = {
             ),
             'output_filename': 'js/general.min.js',
             'extra_context': {
-                # 'async': True,
                 'defer': True,
             },
         },
@@ -38,5 +37,5 @@ PIPELINE = {
     },
 }
 
-# PIPELINE['JS_COMPRESSOR'] = 'pipeline.compressors.jsmin.JSMinCompressor'
-# PIPELINE['CSS_COMPRESSOR'] = 'pipeline.compressors.cssmin.CSSMinCompressor'
+PIPELINE['JS_COMPRESSOR'] = 'pipeline.compressors.jsmin.JSMinCompressor'
+PIPELINE['CSS_COMPRESSOR'] = 'pipeline.compressors.cssmin.CSSMinCompressor'
