@@ -1,6 +1,7 @@
-{% load static wagtailcore_tags wagtailimages_tags %}
+{% load static wagtailcore_tags wagtailimages_tags compress %}
 
 {% if value.background %}
+{% compress css inline %}
 <style>
     
     #page-header{
@@ -66,6 +67,7 @@
 
 
 </style>
+{% endcompress %}
 {% endif %}
 
 <div id="page-header" class="overflow-hidden px-0 container-fluid bg-main-blue-dark text-light skewed-border">
