@@ -19,7 +19,7 @@ PIPELINE = {
             'extra_context': {
                 'defer': True,
             },
-            'manifest': True,
+            # 'manifest': True,
         },
     },
     'STYLESHEETS': {
@@ -35,7 +35,7 @@ PIPELINE = {
                 'css/anims.css',
             ),
             'output_filename': 'css/general.min.css',
-            'manifest': True,
+            # 'manifest': True,
         },
     },
 }
