@@ -65,7 +65,8 @@ INSTALLED_APPS = [
     'wagtailuiplus',
     'wagtailemoji',
     'robots',
-    'pipeline',
+    # 'pipeline',
+    'compressor',
     
     'blog',
     'header',
@@ -186,9 +187,11 @@ USE_TZ = True
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'pipeline.finders.CachedFileFinder',
-    'pipeline.finders.PipelineFinder',
-    'CodeBlog.finders.LeftoverPipelineFinder',
+    # other finders..
+    'compressor.finders.CompressorFinder',
+    # 'pipeline.finders.CachedFileFinder',
+    # 'pipeline.finders.PipelineFinder',
+    # 'CodeBlog.finders.LeftoverPipelineFinder',
 ]
 
 STATICFILES_DIRS = [
@@ -197,6 +200,8 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
+
+COMPRESS_ROOT = STATIC_ROOT
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'

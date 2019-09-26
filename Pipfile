@@ -22,6 +22,10 @@ wagalytics = "*"
 wagtailuiplus = "*"
 wagtailemoji = "*"
 wagtail-robots = "*"
+django-compressor = "*"
+html5lib = "*"
+csscompressor = "*"
+brotli = "*"
 
 [requires]
 python_version = "3.7"

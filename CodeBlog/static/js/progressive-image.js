@@ -1,12 +1,14 @@
 
 // progressive-image.js
 // by Craig Buckler, @craigbuckler
-if (window.addEventListener && window.requestAnimationFrame && document.getElementsByClassName) window.addEventListener('load', function() {
+if (window.addEventListener && window.requestAnimationFrame && document.getElementsByClassName) {window.addEventListener('load', function() {
 
     'use strict';
   
     // start
-    var pItem = document.getElementsByClassName('progressive replace'), pCount, timer;
+    var pItem = document.getElementsByClassName('progressive replace')
+    var pCount;
+    var timer;
   
     // scroll and resize events
     window.addEventListener('scroll', scroller, false);
@@ -120,4 +122,4 @@ if (window.addEventListener && window.requestAnimationFrame && document.getEleme
   
     }
   
-  }, false);
+  }, false);}

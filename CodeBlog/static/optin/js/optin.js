@@ -7,7 +7,7 @@ if(typeof optinJsLoaded === 'undefined'){
         function removeOptins(){
             var optins = document.getElementsByName('optin');
             var optinIndex;
-            for (optinIndex = 0; optinIndex < optins.length; optinIndex++){
+            for (optinIndex = 0; optinIndex < optins.length; optinIndex+=1){
                 var optin = optins[optinIndex];
 
                 optin.classList.add('fade-out');
@@ -24,7 +24,7 @@ if(typeof optinJsLoaded === 'undefined'){
         var optins = document.getElementsByName('optinform');
         var optinIndex;
         var counter = 0;
-        for (optinIndex = 0; optinIndex < optins.length; optinIndex++){
+        for (optinIndex = 0; optinIndex < optins.length; optinIndex+=1){
             var optin = optins[optinIndex];
             
             // give unique ids
@@ -87,7 +87,7 @@ if(typeof optinJsLoaded === 'undefined'){
                 var data = {
                     email : String(formEmail),
                     optin_used : String(optinUsed),
-                    subscribed: true,
+                    subscribed: true
                 };
         
         

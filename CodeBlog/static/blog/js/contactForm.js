@@ -17,7 +17,7 @@ if(typeof contactFormJS == 'undefined'){
 
         var cformIndex;
         var counter = 0;
-        for (cformIndex = 0; cformIndex < cforms.length; cformIndex++){
+        for (cformIndex = 0; cformIndex < cforms.length; cformIndex+=1){
             var cform = cforms[cformIndex];
             counter++;
             // cform.setAttribute('id', 'contactform' + counter);
@@ -53,7 +53,7 @@ if(typeof contactFormJS == 'undefined'){
                 formContent.style.zIndex = 100;
                 formThanks.style.zIndex = 5;
                 formThanks.style.display = 'none';
-            }
+            };
 
             var clsbtn = document.getElementById('contact-close-btn');
             var outerModal = document.querySelector('.light-modal');
@@ -103,7 +103,7 @@ if(typeof contactFormJS == 'undefined'){
                     //reset
                     form.reset();
 
-                })
+                });
               
                 //get api endpoint from hidden input in the form
                 var url = form['apiURL'].value;
@@ -111,7 +111,7 @@ if(typeof contactFormJS == 'undefined'){
                 // get form data
                 var email = form['emailInput'].value;
                 var message = form['message'].value;
-                var subscribe = form['subcribe-checkbox'].checked;
+                var subscribe_check = form['subcribe-checkbox'].checked;
               
                 // must send csrf token to the backend
                 var csrftoken = Cookies.get('csrftoken');
@@ -120,7 +120,7 @@ if(typeof contactFormJS == 'undefined'){
                 var data = {
                     email : String(email),
                     message: String(message),
-                    subscribe: subscribe,
+                    subscribe: subscribe_check
                 };
               
                 // AJAX

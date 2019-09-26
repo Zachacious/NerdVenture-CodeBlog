@@ -1,6 +1,6 @@
 function addPinItBtnToImg(img){
 
-    if(!img) return;
+    if(!img) {return};
 
     var parent = img.parentNode;
     var wrapper = document.createElement('div');

@@ -1,5 +1,5 @@
 from .base import *
-from .pipelineConf_Prod import *
+# from .pipelineConf_Prod import *
 import os
 
 from dotenv import load_dotenv
@@ -57,7 +57,7 @@ BASE_URL = 'https://www.nerdventure.com'
 ALLOWED_HOSTS = ['www.nerdventure.net', 'nerdventure.net'] 
 
 STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
-# STATICFILES_STORAGE = 'CodeBlog.storage.CustomStorage'
+# STATICFILES_STORAGE = 'CodeBlog.storage.GZIPStorage'
 
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
