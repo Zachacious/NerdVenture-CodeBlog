@@ -60,12 +60,12 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'wagtailmodelchooser',
     'wagtailcodeblock',
-    'pipeline',
     'wagtailcache',
     'wagtailthemes',
     'wagtailuiplus',
     'wagtailemoji',
     'robots',
+    'pipeline',
     
     'blog',
     'header',
@@ -186,8 +186,8 @@ USE_TZ = True
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'pipeline.finders.PipelineFinder',
     'pipeline.finders.CachedFileFinder',
+    'pipeline.finders.PipelineFinder',
     # 'CodeBlog.finders.LeftoverPipelineFinder',
 ]
 

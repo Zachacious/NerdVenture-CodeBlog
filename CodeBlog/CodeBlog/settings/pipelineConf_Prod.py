@@ -1,7 +1,6 @@
 PIPELINE = {
     'PIPELINE_ENABLED': True,
-    'PIPELINE_COLLECTOR_ENABLED': True,
-    'SHOW_ERRORS_INLINE': True,
+    # 'PIPELINE_COLLECTOR_ENABLED': True,
     'JS_COMPRESSOR': 'pipeline.compressors.jsmin.JSMinCompressor',
     'CSS_COMPRESSOR': 'pipeline.compressors.cssmin.CSSMinCompressor',
     'JAVASCRIPT': {
