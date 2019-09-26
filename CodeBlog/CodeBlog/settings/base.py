@@ -277,3 +277,6 @@ REST_FRAMEWORK = {
 
 # Make low-quality but small images
 WAGTAILIMAGES_JPEG_QUALITY = 40
+ 
+COMPRESS_ENABLED = True
+COMPRESS_OFFLINE  = False

@@ -4,6 +4,7 @@
 {% get_settings %}
 {% load wagtailimages_tags %}
 {% comment %} {% load pipeline %} {% endcomment %}
+{% load compress %}
 
 <!DOCTYPE html>
 <html class="no-js" lang="en">
@@ -68,7 +69,7 @@
 
         {# Global stylesheets #}
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        {%load compress %}
+        
         {% compress css %}
         <link rel="stylesheet" type="text/css" href="{% static 'css/light-modal.min.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/progressive-image.min.css' %}">

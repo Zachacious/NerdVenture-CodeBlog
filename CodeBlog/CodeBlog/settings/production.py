@@ -5,7 +5,7 @@ import os
 from dotenv import load_dotenv
 load_dotenv(os.path.join(PROJECT_DIR, '.env'))
 
-DEBUG = False
+DEBUG = True
 
 MESSAGE_LEVEL = 20
 
@@ -87,6 +87,3 @@ ROBOTS_USE_SITEMAP = False
 ROBOTS_SITEMAP_URLS = [
     'https://nerdventure.net/sitemap.xml',
 ]
-
-COMPRESS_ENABLED = True
-COMPRESS_OFFLINE  = True
