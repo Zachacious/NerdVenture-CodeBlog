@@ -5,7 +5,7 @@ import os
 from dotenv import load_dotenv
 load_dotenv(os.path.join(PROJECT_DIR, '.env'))
 
-DEBUG = True
+DEBUG = False
 
 MESSAGE_LEVEL = 20
 
