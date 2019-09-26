@@ -16,7 +16,7 @@
 </svg>
 
 {% if page.header_image %}
-{% compress css inline %}
+{% comment %} {% compress css inline %} {% endcomment %}
 <style>
     
 
@@ -76,7 +76,7 @@
     }
 
 </style>
-{% endcompress %}
+{% comment %} {% endcompress %} {% endcomment %}
 {% endif %}
 
 <div id="page-header" class="overflow-hidden px-0 container-fluid bg-main-blue-dark text-light shadow skewed-border">
