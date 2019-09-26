@@ -18,6 +18,7 @@ PIPELINE = {
             'extra_context': {
                 'defer': True,
             },
+            'manifest': True,
         },
     },
     'STYLESHEETS': {
@@ -33,9 +34,13 @@ PIPELINE = {
                 'css/anims.css',
             ),
             'output_filename': 'css/general.min.css',
+            'manifest': True,
         },
     },
 }
 
-# PIPELINE['JS_COMPRESSOR'] = 'pipeline.compressors.jsmin.JSMinCompressor'
-# PIPELINE['CSS_COMPRESSOR'] = 'pipeline.compressors.cssmin.CSSMinCompressor'
+PIPELINE['JS_COMPRESSOR'] = 'pipeline.compressors.jsmin.JSMinCompressor'
+PIPELINE['CSS_COMPRESSOR'] = 'pipeline.compressors.cssmin.CSSMinCompressor'
+
+PIPELINE_COLLECTOR_ENABLED = True
+SHOW_ERRORS_INLINE = True
