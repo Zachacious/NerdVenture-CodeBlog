@@ -87,3 +87,6 @@ ROBOTS_USE_SITEMAP = False
 ROBOTS_SITEMAP_URLS = [
     'https://nerdventure.net/sitemap.xml',
 ]
+
+COMPRESS_ENABLED = True
+# COMPRESS_OFFLINE  = True
