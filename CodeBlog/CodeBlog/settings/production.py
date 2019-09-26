@@ -23,7 +23,7 @@ apps = [
     'wagalytics',
 ]
 
-INSTALLED_APPS = apps + INSTALLED_APPS
+INSTALLED_APPS = INSTALLED_APPS + apps
 
 WAGTAIL_CACHE = True
 
