@@ -1,4 +1,5 @@
-{% load static pipeline %}
+{% comment %} {% load static pipeline %} {% endcomment %}
+{% load static compress %}
 <div class="modal fade trans-ease" id="contact-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     
     <div id="contactform" name="contactform" class="contactform mx-auto my-auto p-5 bg-light sketch-border">
@@ -58,5 +59,5 @@
     </div>
 </div>
 
-{% javascript 'contact_form' %}
+{% comment %} {% javascript 'contact_form' %} {% endcomment %}
 {% comment %} <script defer src="{% static 'blog/js/contactForm.js' %}"></script> {% endcomment %}

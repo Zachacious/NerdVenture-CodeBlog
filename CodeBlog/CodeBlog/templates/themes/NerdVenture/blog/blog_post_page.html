@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static wagtailcore_tags wagtailimages_tags %}
 {% load wagtailroutablepage_tags %}
+{% load compress %}
 
 {% block content_top %}
 {% include 'social/social_share_vertical.html' %}
@@ -15,6 +16,7 @@
 </svg>
 
 {% if page.header_image %}
+{% compress css inline %}
 <style>
     
 
@@ -74,6 +76,7 @@
     }
 
 </style>
+{% endcompress %}
 {% endif %}
 
 <div id="page-header" class="overflow-hidden px-0 container-fluid bg-main-blue-dark text-light shadow skewed-border">
