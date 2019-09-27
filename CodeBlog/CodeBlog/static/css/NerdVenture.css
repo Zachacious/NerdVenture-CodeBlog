@@ -334,3 +334,11 @@ z-index: 100;
   /*
     --------------------------------------- end contact form
   */
+
+  @media (min-width: 991){
+    #article-contents{
+      max-width: 60%;
+    }
+  }
+
+ 
