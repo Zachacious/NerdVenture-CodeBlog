@@ -55,7 +55,6 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.sitemaps',
     
-    'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',
     'wagtailmodelchooser',
@@ -67,6 +66,7 @@ INSTALLED_APPS = [
     'robots',
     # 'pipeline',
     'compressor',
+    'corsheaders',
     
     'blog',
     'header',

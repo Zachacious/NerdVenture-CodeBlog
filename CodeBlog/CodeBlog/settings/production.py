@@ -92,6 +92,7 @@ ROBOTS_SITEMAP_URLS = [
 COMPRESS_ENABLED = True
 # COMPRESS_OFFLINE  = False
 
+CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = (
     'connect.facebook.net',
     'facebook.net',
