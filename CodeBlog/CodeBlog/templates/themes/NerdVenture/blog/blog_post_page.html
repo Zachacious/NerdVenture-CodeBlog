@@ -4,6 +4,9 @@
 {% load compress %}
 
 {% block content_top %}
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v4.0&appId=2339495356288498&autoLogAppEvents=1"></script>
+
 {% include 'social/social_share_vertical.html' %}
 
 <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -18,8 +21,6 @@
 {% if page.header_image %}
 {% comment %} {% compress css inline %} {% endcomment %}
 <style>
-    
-
     #page-header{
         background-color: rgba(0,0,0,0.5)
         background-position: center;
@@ -33,21 +34,21 @@
     @media (max-width: 768px) {
         {% image page.header_image fill-800x600 as headerimg %}
         #page-header{
-            background: url({{ headerimg.url }}) no-repeat fixed;
+            background: url({{ headerimg.url }}) repeat fixed;
         }
     } 
 
     @media (min-width: 768.1px) and (max-width: 992px) {
         {% image page.header_image fill-1000x600 as headerimg %}
         #page-header{
-            background: url({{ headerimg.url }}) no-repeat fixed;
+            background: url({{ headerimg.url }}) repeat fixed;
         }
     }
 
     @media (min-width: 992.1px) {
         {% image page.header_image fill-1500x800 as headerimg %}
         #page-header{
-            background: url({{ headerimg.url }}) no-repeat fixed;
+            background: url({{ headerimg.url }}) repeat fixed;
         }
     }
 
@@ -134,6 +135,10 @@
         </div>
 
         {% include 'social/social_share.html'%}
+
+        <div id="post-comments">
+            <div class="fb-comments" data-href="{{ request.build_absolute_uri  }}" data-width="80%" data-numposts="20"></div>
+        </div>
 
         {% comment %} {% if page.author_profile %}
             <hr>

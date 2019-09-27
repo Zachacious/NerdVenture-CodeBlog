@@ -13,8 +13,8 @@ class ImageChooserBlock(ImageChooserBlock):
         template = 'blog/blocks/image_chooser_block.html'
         
 class ParallaxHeaderBlock(blocks.StructBlock):
-    background = ImageChooserBlock()
-    title = blocks.CharBlock()
+    background = ImageChooserBlock(blank=True)
+    title = blocks.CharBlock(blank=True)
     body = blocks.StreamBlock([
         (_('Rich_Text'), blocks.RichTextBlock()),
         (_('Text'), blocks.TextBlock()),
@@ -24,7 +24,7 @@ class ParallaxHeaderBlock(blocks.StructBlock):
         (_('Quote'), blocks.BlockQuoteBlock()),
         (_('Optin'), OptinChooserBlock('optin.Optin')),
         (_('Code'), CodeBlock(label='Code Editor')),
-    ])
+    ], blank=True)
     
     class Meta:
         icon = 'form'

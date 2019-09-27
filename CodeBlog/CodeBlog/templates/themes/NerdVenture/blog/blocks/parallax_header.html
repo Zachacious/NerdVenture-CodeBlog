@@ -18,21 +18,21 @@
     @media (max-width: 768px) {
         {% image value.background fill-800x600 as headerimg %}
         #page-header{
-            background: url({{ headerimg.url }}) no-repeat fixed;
+            background: url({{ headerimg.url }}) repeat fixed;
         }
     } 
 
     @media (min-width: 768.1px) and (max-width: 992px) {
         {% image value.background fill-1000x600 as headerimg %}
         #page-header{
-            background: url({{ headerimg.url }}) no-repeat fixed;
+            background: url({{ headerimg.url }}) repeat fixed;
         }
     }
 
     @media (min-width: 992.1px) {
         {% image value.background fill-1500x800 as headerimg %}
         #page-header{
-            background: url({{ headerimg.url }}) no-repeat fixed;
+            background: url({{ headerimg.url }}) repeat fixed;
         }
     }
 
