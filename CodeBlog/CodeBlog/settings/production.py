@@ -94,4 +94,6 @@ COMPRESS_ENABLED = True
 
 CORS_ORIGIN_WHITELIST = (
     'connect.facebook.net',
+    'facebook.net',
+    'facebook.com',
 )
