@@ -32,7 +32,7 @@ from wagtail.core.models import Page  # Orderable
 from wagtail.embeds.blocks import EmbedBlock
 # from wagtail.images.blocks import ImageChooserBlock
 
-from blog.blocks import ImageChooserBlock, ParallaxHeaderBlock, BlogPostListBlock
+from blog.blocks import ImageChooserBlock, ParallaxHeaderBlock, BlogPostListBlock, BlockQuote
 
 from wagtail.images.edit_handlers import ImageChooserPanel
 # from wagtail.snippets.models import register_snippet
@@ -276,6 +276,7 @@ class BlogPostPage(WagtailCacheMixin, Page):
         # (_('Email'), blocks.EmailBlock()),
         (_('Optin'), OptinChooserBlock('optin.Optin')),
         (_('Code'), CodeBlock(label='Code Editor')),
+        (_('BlockQuote'), BlockQuote()),
         
     ],null=True,blank=True)
     

@@ -44,3 +44,12 @@ class BlogPostListBlock(blocks.StructBlock):
         label = 'Blog Post List'
         template = 'blog/blocks/blog_post_list.html'
         
+class BlockQuote(blocks.StructBlock):
+    quote = blocks.TextBlock()
+    author = blocks.CharBlock()
+    
+    class Meta:
+        icon = 'openquote'
+        label = 'Quotation'
+        template = 'blog/blocks/block_quote.html'
+        
