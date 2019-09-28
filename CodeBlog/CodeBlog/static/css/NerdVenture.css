@@ -353,7 +353,6 @@ z-index: 100;
     quotes: "\201C""\201D""\2018""\2019";
     padding: 10px 20px;
     line-height: 1.4;
-    max-width: 60%;
   }
   
   .quotation:before {
