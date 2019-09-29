@@ -303,7 +303,6 @@ class BlogPostPage(WagtailCacheMixin, Page):
         (_('Optin'), OptinChooserBlock('optin.Optin')),
         (_('Code'), CodeBlock(label='Code Editor')),
         (_('BlockQuote'), BlockQuote()),
-        
     ],null=True,blank=True)
     
     sidebar = models.ForeignKey(
