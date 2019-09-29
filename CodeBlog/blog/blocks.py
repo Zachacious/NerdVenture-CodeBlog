@@ -33,7 +33,7 @@ class ParallaxHeaderBlock(blocks.StructBlock):
         
 
 class BlogPostListBlock(blocks.StructBlock):
-    title = blocks.CharBlock()
+    title = blocks.CharBlock(blank=True)
     root_page = blocks.PageChooserBlock()
     numPost = blocks.IntegerBlock()
     numCols = blocks.IntegerBlock()

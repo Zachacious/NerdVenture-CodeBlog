@@ -5,41 +5,55 @@
 <div class="row">
 <div class="col">
 <div class="">
-    {% if route_title %}
-        {% if route_title == 'Search' %}
-            <h2>Showing results for "{{ page.search_term }}"</h2>
-        {% elif route_title == 'Author'%}
-            <h2>Posts by '{{ page.get_author_profile.full_name }}'</h2>
-        {% else %}
-            <h2>{{ route_title }}</h2>
+    {% if use_child_custom_pages %}
+        <h2>{{ blog_page.title }}</h2>
+
+        <ul>
+            {% for child in child_custom_pages%}
+                <li>
+                <a href="{{ child.url }}">{{ child.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+
+        {% if route_title %}
+            {% if route_title == 'Search' %}
+                <h2>Showing results for "{{ page.search_term }}"</h2>
+            {% elif route_title == 'Author'%}
+                <h2>Posts by '{{ page.get_author_profile.full_name }}'</h2>
+            {% else %}
+                <h2>{{ route_title }}</h2>
+            {% endif %}
         {% endif %}
-    {% endif %}
 
-    <div class='post-wrapper'>
-    {% for post in posts %}
-    {% if forloop.counter0|divisibleby:2 %} <div class="row"> {%  endif %}
-        <div class="col-sm p-2 post-card">
-            <div id="post-summary-card" class="card sketch-border p-2">
-                <div id="post-summary-contents" class="my-auto">
-                    {% if post.specific.header_image %}
-                        {% image post.specific.header_image fill-400x200 as card_pic %}
-                        <img src="{{ card_pic.url }}" class="card-img sketch-border"/>
-                    {% endif %}
+        <div class='post-wrapper'>
+        {% for post in posts %}
+        {% if forloop.counter0|divisibleby:2 %} <div class="row"> {%  endif %}
+            <div class="col-sm p-2 post-card">
+                <div id="post-summary-card" class="card sketch-border p-2">
+                    <div id="post-summary-contents" class="my-auto">
+                        {% if post.specific.header_image %}
+                            {% image post.specific.header_image fill-400x200 as card_pic %}
+                            <img src="{{ card_pic.url }}" class="card-img sketch-border"/>
+                        {% endif %}
 
-                    <div class="card-body text-center">
-                        <h3>{{ post.title }}</h3>
-                        <p>{{ post.summary }}</p>
+                        <div class="card-body text-center">
+                            <h3>{{ post.title }}</h3>
+                            <p>{{ post.summary }}</p>
+                        </div>
+
+                        <a href="{% pageurl post %}" class="stretched-link">
+                        </a>
                     </div>
-
-                    <a href="{% pageurl post %}" class="stretched-link">
-                    </a>
                 </div>
             </div>
-        </div>
-    {% if forloop.counter|divisibleby:2 or forloop.last %}</div>{% endif %}
-    {% endfor %}
+        {% if forloop.counter|divisibleby:2 or forloop.last %}</div>{% endif %}
+        {% endfor %}
 
-    </div>
+        </div>
+
+    {% endif %}
 
 </div>
 </div>

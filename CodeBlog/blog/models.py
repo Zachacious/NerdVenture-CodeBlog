@@ -72,6 +72,9 @@ class BlogIndexPage(WagtailCacheMixin, RoutablePageMixin, Page):
     ''' A page to list all the blog post. 
     Also used for category and search results.'''
     
+    use_children_post = models.BooleanField(_("Use Child Posts"), default=False, blank=True)
+    use_children_custom_pages = models.BooleanField(_("Use Child Custom Pages"), default=False, blank=True)
+    
     sidebar = models.ForeignKey(
         'sidebar.Sidebar',
         null=True,
@@ -83,6 +86,16 @@ class BlogIndexPage(WagtailCacheMixin, RoutablePageMixin, Page):
     
     settings_panels = Page.settings_panels + [
         SnippetChooserPanel('sidebar'),
+    ]
+    
+    content_panels = Page.content_panels + [
+        MultiFieldPanel(
+            [
+                FieldPanel('use_children_post'),
+                FieldPanel('use_children_custom_pages'),
+            ],
+            heading='Options - Only pick one or none'
+        ),
     ]
     
     template = 'blog/blog_index_page.html'
@@ -104,12 +117,21 @@ class BlogIndexPage(WagtailCacheMixin, RoutablePageMixin, Page):
         
         context['posts'] = posts
         context['route_title'] = 'All Post'
+        context['use_child_post'] = self.use_children_post
+        context['use_child_custom_pages'] = self.use_children_custom_pages
+        context['child_custom_pages'] = self.get_children_custom_pages()
         
         return context
 
     def get_posts(self):
+        if self.use_children_post:
+            return self.get_children().type(BlogPostPage).live().order_by('-date')
+        
         return BlogPostPage.objects.live().order_by('-date')
         # return BlogPostPage.objects.descendant_of(self).live().order_by('-date')
+        
+    def get_children_custom_pages(self):
+        return self.get_children().type(CustomPage).live().order_by('-date')
 
     def get_paginated_posts(self, request, posts_per_page):
         paginator = Paginator(self.get_posts(), posts_per_page)
