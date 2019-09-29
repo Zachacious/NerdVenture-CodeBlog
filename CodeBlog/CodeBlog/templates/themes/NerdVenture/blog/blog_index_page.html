@@ -8,7 +8,10 @@
 <div class="col my-5 py-5">
 
     <div id="page-title-wrap" class="text-center">
-        <h2 id="post-title" class="">
+        <div id="post-title" class="">
+        {% if page.use_children_custom_pages or page.use_children_post %}
+            <h2>{{ blog_page.title }}</h2>
+        {% else %}
             {% if route_title %}
                 {% if route_title == 'Search' %}
                     <h2>Showing results for "{{ page.search_term }}"</h2>
@@ -20,7 +23,8 @@
                     <h2>{{ route_title }}</h2>
                 {% endif %}
             {% endif %}
-        </h2>
+        {% endif %}
+        </div>
     </div>
     
 </div>
@@ -49,9 +53,20 @@
 </defs>
 </svg>
 
+
 <div class="row">
 <div class="col">
 <div class="">
+
+    {% if page.use_children_custom_pages %}
+        <ul>
+            {% for child in page.get_children_custom_pages %}
+                <li>
+                <a href="{{ child.url }}">{{ child.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
 
     <div class='post-wrapper'>
     {% for post in posts %}
@@ -122,6 +137,8 @@
     {% endfor %}
 
     </div>
+
+    {% endif %}
 
 </div>
 </div>

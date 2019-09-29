@@ -117,21 +117,25 @@ class BlogIndexPage(WagtailCacheMixin, RoutablePageMixin, Page):
         
         context['posts'] = posts
         context['route_title'] = 'All Post'
-        context['use_child_post'] = self.use_children_post
-        context['use_child_custom_pages'] = self.use_children_custom_pages
+        # context['use_child_post'] = self.use_children_post
+        # context['use_child_custom_pages'] = self.use_children_custom_pages
         context['child_custom_pages'] = self.get_children_custom_pages()
+        context['child_post'] = self.get_child_posts()
         
         return context
 
     def get_posts(self):
         if self.use_children_post:
-            return self.get_children().type(BlogPostPage).live().order_by('-date')
+            return self.get_child_posts()
         
         return BlogPostPage.objects.live().order_by('-date')
         # return BlogPostPage.objects.descendant_of(self).live().order_by('-date')
         
+    def get_child_posts(self):
+        return self.get_children().type(BlogPostPage).live()
+        
     def get_children_custom_pages(self):
-        return self.get_children().type(CustomPage).live().order_by('-date')
+        return self.get_children().type(CustomPage).live()
 
     def get_paginated_posts(self, request, posts_per_page):
         paginator = Paginator(self.get_posts(), posts_per_page)

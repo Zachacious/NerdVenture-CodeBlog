@@ -5,7 +5,7 @@
 <div class="row">
 <div class="col">
 <div class="">
-    {% if use_child_custom_pages %}
+    {% if page.use_children_custom_pages or page.use_children_post %}
         <h2>{{ blog_page.title }}</h2>
 
         <ul>
@@ -26,9 +26,13 @@
                 <h2>{{ route_title }}</h2>
             {% endif %}
         {% endif %}
-
+    {% endif %}
         <div class='post-wrapper'>
+        {% if page.use_children_post %}
+        {% for post in page.get_child_posts %}
+        {% else %}
         {% for post in posts %}
+        {% endif %}
         {% if forloop.counter0|divisibleby:2 %} <div class="row"> {%  endif %}
             <div class="col-sm p-2 post-card">
                 <div id="post-summary-card" class="card sketch-border p-2">
@@ -53,7 +57,6 @@
 
         </div>
 
-    {% endif %}
 
 </div>
 </div>
