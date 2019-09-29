@@ -24,7 +24,7 @@ class ParallaxHeaderBlock(blocks.StructBlock):
         (_('Quote'), blocks.BlockQuoteBlock()),
         (_('Optin'), OptinChooserBlock('optin.Optin')),
         (_('Code'), CodeBlock(label='Code Editor')),
-    ], blank=True)
+    ], blank=True, required=False)
     
     class Meta:
         icon = 'form'
@@ -33,7 +33,7 @@ class ParallaxHeaderBlock(blocks.StructBlock):
         
 
 class BlogPostListBlock(blocks.StructBlock):
-    title = blocks.CharBlock(blank=True)
+    title = blocks.CharBlock(blank=True, required=False)
     root_page = blocks.PageChooserBlock()
     numPost = blocks.IntegerBlock()
     numCols = blocks.IntegerBlock()
