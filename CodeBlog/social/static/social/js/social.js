@@ -25,7 +25,7 @@ function addPinItBtnToImg(img){
         //if image is in richtext then alter the position of the pinit button
     // if(img.classList.contains('richtext-image')){
     //     pinBtn.classList.add('pinit-alt-trans');
-    }
+    // }
 
     // insert pin button into wrapper 
     wrapper.appendChild(pinBtn);
