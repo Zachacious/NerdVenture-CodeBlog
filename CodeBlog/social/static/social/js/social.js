@@ -22,6 +22,11 @@ function addPinItBtnToImg(img){
     pinBtn.classList.add('m-1');
     //pintBtn.style.fontSize = '1.5em';
 
+        //if image is in richtext then alter the position of the pinit button
+    // if(img.classList.contains('richtext-image')){
+    //     pinBtn.classList.add('pinit-alt-trans');
+    }
+
     // insert pin button into wrapper 
     wrapper.appendChild(pinBtn);
 }

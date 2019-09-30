@@ -25,6 +25,10 @@
     text-decoration: none;
   }
 
+  /* .pinit-alt-trans{
+    transform: translate(-20%, 125%) rotate(-35deg) !important;
+  } */
+
   .fb-like-btn{
     position: absolute;
     left: 50%;

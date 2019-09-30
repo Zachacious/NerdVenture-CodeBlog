@@ -11,13 +11,13 @@ body{
 }
 
 @media (min-width: 992px) {
-  .container-wide{
+  /* .container-wide{
     width: 65%;
-  }
+  } */
 }
 
 .full-width{
-  width: 100%;
+  width: 75%;
   /* display: inline-block; */
   height: auto;
 }
@@ -33,6 +33,14 @@ body{
 .richtext-image{
   width: 50%;
   height: auto;
+  padding: 20px;
+}
+
+article > h2{
+  font-size: 2.5em;
+}
+
+article{
   padding: 20px;
 }
 
@@ -58,6 +66,12 @@ body{
 
 .faded-text{
     opacity: 0.5;
+}
+
+@media (min-width: 992px){
+  #page-content{
+    max-width: 75%;
+  }
 }
 
 #page-wrapper{
