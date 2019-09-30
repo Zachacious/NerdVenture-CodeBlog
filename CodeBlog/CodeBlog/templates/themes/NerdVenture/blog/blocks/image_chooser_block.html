@@ -2,7 +2,7 @@
 
 {% image value original as img %}
 {% image value width-55 as imgTiny %}
-<div class="overflow-hidden w-100 d-inline-block "> 
+<div class="overflow-hidden w-100 d-inline-block mx-auto "> 
     <a href="{{ img.url }}" class="progressive replace img-fluid overflow-hidden p-2">
         <img {{ imgTiny.attrs }} class="preview img-fluid overflow-hidden p-2" /> 
     </a>

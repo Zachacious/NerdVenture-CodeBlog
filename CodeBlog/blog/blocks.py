@@ -24,7 +24,7 @@ class ParallaxHeaderBlock(blocks.StructBlock):
         (_('Quote'), blocks.BlockQuoteBlock()),
         (_('Optin'), OptinChooserBlock('optin.Optin')),
         (_('Code'), CodeBlock(label='Code Editor')),
-    ], blank=True, required=False)
+    ], blank=True, null=True, required=False)
     
     class Meta:
         icon = 'form'
