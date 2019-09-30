@@ -1,6 +1,6 @@
 body{
     background-color: #ededef;
-    font-size: 1.2em;
+    font-size: 1.15em;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -10,22 +10,30 @@ body{
     }
 }
 
+@media (min-width: 992px) {
+  .container-wide{
+    width: 65%;
+  }
+}
+
 .full-width{
   width: 100%;
-  display: inline-block;
+  /* display: inline-block; */
   height: auto;
 }
 
-.left-aligned{
-  width: 50%;
-  height: auto;
-  margin-right: auto;
+.left{
+  float: left;
 }
 
-.right-aligned{
-  width: 50%;
-  height: auto;
+.right{
   float: right;
+}
+
+.richtext-image{
+  width: 50%;
+  height: auto;
+  padding: 20px;
 }
 
 .bg-darker{

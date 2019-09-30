@@ -2,11 +2,11 @@
 
 {% include 'social/icons.html' %}
 
-<div class="p-3 my-4 sketch-border bg-light social-share-bar fade-in">
+<div class="p-3 my-4 social-share-bar fade-in">
     {% with settings.social.SocialSettings as social_settings %}
-    <span class="d-block text-center"><h4>Did you find this article helpful?</h4> 
+    {% comment %} <span class="d-block text-center"><h4>Did you find this article helpful?</h4> 
     Sharing is one of the best ways to help this site grow. Your support is greatly appreciated.
-    </span>
+    </span> {% endcomment %}
         <div class='text-center py-2'>
         {% if social_settings.fb_share %} 
                 <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri  }}">

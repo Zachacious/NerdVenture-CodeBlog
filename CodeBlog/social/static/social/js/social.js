@@ -8,6 +8,7 @@ function addPinItBtnToImg(img){
     wrapper.appendChild(img);
     //wrapper.style.overflow = 'hidden'; 
     wrapper.style.position = 'relative';
+    wrapper.classList.add('text-center');
 
     // create pintrest 
     var pinBtn = document.createElement('a');
