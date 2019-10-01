@@ -18,8 +18,21 @@ body{
 
 .full-width{
   width: 75%;
-  /* display: inline-block; */
   height: auto;
+}
+
+@media (max-width: 768px){
+  .left{
+    float: none;
+    width: 75%;
+  height: auto;
+  }
+  
+  .right{
+    float: none;
+    width: 75%;
+  height: auto;
+  }
 }
 
 .left{
@@ -38,6 +51,7 @@ body{
 
 article > h2{
   font-size: 2.5em;
+  font-weight: bold;
 }
 
 article{

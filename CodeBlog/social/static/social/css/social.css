@@ -14,6 +14,7 @@
   
   .pin-text:hover{
     color: #c8232c;
+    text-decoration: none;
   }
   
   .pin-btn-overlay{
@@ -23,6 +24,9 @@
     transform: translate(-50%, 100%);
     font-size: 1.05em;
     text-decoration: none;
+
+    border: solid red;
+    border-radius: 50%;
   }
 
   /* .pinit-alt-trans{

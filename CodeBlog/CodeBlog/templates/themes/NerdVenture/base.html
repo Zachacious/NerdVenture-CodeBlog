@@ -104,7 +104,6 @@
             var settings = {
                 debug: false,
             };
-
         </script>
 
         {% block extra_css %}
@@ -113,7 +112,8 @@
 
 
         <!-- Facebook Pixel Code -->
-        <script>
+        {% compress js inline %}
+        <script defer>
             !function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
             n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -125,6 +125,7 @@
             fbq('init', '2404968449824391');
             fbq('track', 'PageView');
         </script>
+        {% endcompress %}
         <noscript><img height="1" width="1" style="display:none"
         src="https://www.facebook.com/tr?id=2404968449824391&ev=PageView&noscript=1"
         /></noscript>
