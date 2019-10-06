@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load wagtail_core %}
+{% load wagtailcore_tags %}
 
 {% comment %} {% block extra_css %}
 <style>
@@ -83,7 +83,7 @@ a {
 
 
 
-{% block body_class %}template-404{% endblock %}
+{% comment %} {% block body_class %}template-404{% endblock %} {% endcomment %}
 
 {% block content %}
 404
@@ -97,8 +97,8 @@ a {
 
 
 
-{% block extra_js %}
-{% comment %} <script>
+{% comment %} {% block extra_js %}
+<script>
 function type(n, t) {
     var str = document.getElementsByTagName("code")[n].innerHTML.toString();
     var i = 0;
@@ -121,5 +121,5 @@ type(0, 0);
 type(1, 600);
 type(2, 1300);
 
-<script> {% endcomment %}
-{% endblock %}
+<script>
+{% endblock %} {% endcomment %}
