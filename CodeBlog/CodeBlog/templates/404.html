@@ -1,125 +1,90 @@
 {% extends "base.html" %}
 
-{% load wagtailcore_tags %}
+{% load wagtailcore_tags compress%}
 
-{% comment %} {% block extra_css %}
+{% block extra_css %}
+{% compress css inline %}
 <style>
-@import url("https://fonts.googleapis.com/css?family=Bevan");
-
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+body{
+    background-color: #094ecf !important;
 }
- 
-body {
-    background: rgb(40,40,40);
-    overflow: hidden;
+.center-block{
+    width: 100%;
+    height: 70vh;
+    position: relative;
 }
-
-p {
-    font-family: "Bevan", cursive;
-    font-size: 130px;
-    margin: 10vh 0 0;
-    text-align: center;
-    letter-spacing: 5px;
-    background-color: black;
-    color: transparent;
-    text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.1);
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    background-clip: text;
-
-    span {
-        font-size: 1.2em;
-    }
-}
-
-code {
-    color: #bdbdbd;
-    text-align: center;
-    display: block;
-    font-size: 16px;
-    margin: 0 30px 25px;
-
-    span {
-        color: #f0c674;
-    }
-
-    i {
-        color: #b5bd68;
-    }
-
-    em {
-        color: #b294bb;
-        font-style: unset;
-    }
-
-    b {
-        color: #81a2be;
-        font-weight: 500;
-    }
-}
-
-
-a {
-    color: #8abeb7;
+.content-404{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     font-family: monospace;
-    font-size: 20px;
-    text-decoration: underline;
-    margin-top:10px;
-    display:inline-block
 }
 
-@media screen and (max-width: 880px) {
-    p {
-        font-size: 14vw;
-    }
+span {
+  color: white;
+  font-family: monospace;
+  font-size: 1.5vw;
 }
 
+.blinker {
+  opacity: 1;
+  margin-bottom: -2px;
+  height: 15px;
+  margin-left: -5px;
+  border-left: 7px solid white;
+  animation: blinker 0.9s steps(2, start) infinite;
+}
+
+@keyframes blinker {
+  to { 
+    visibility: hidden; 
+  }
+}
 </style>
-{% endblock%} {% endcomment %}
+{% endcompress %}
+{% endblock%} 
 
 
-
-
-{% comment %} {% block body_class %}template-404{% endblock %} {% endcomment %}
+{% block body_class %}template-404{% endblock %}
 
 {% block content %}
-404
-    {% comment %} <p>HTTP: <span>404</span></p>
-<code><span>this_page</span>.<em>not_found</em> = true;</code>
-<code><span>if</span> (<b>you_spelt_it_wrong</b>) {<span>try_again()</span>;}</code>
-<code><span>else if (<b>we_screwed_up</b>)</span> {<em>alert</em>(<i>"We're really sorry about that."</i>); <span>window</span>.<em>location</em> = home;}</code>
-<center><a href="{% pageurl '/' %}">HOME</a></center> {% endcomment %}
+ <div class="center-block mx-auto my-auto align-middle">
+    <div class="content-404">
+        
+        <span id="consoleTyper" class="typeing"></span><span class='blinker'>&#32;</span>
+    </div>
+ </div>
 {% endblock %}
 
-
-
-
-{% comment %} {% block extra_js %}
+{% block extra_js %}
 <script>
-function type(n, t) {
-    var str = document.getElementsByTagName("code")[n].innerHTML.toString();
-    var i = 0;
-    document.getElementsByTagName("code")[n].innerHTML = "";
+var data = [ 
+  {
+    consoleTyper: "<h1 class=\"text-light align-middle\">404</h1><span>The page could not be found<br/><br/>Please use the links or search bar above<br>Or report the error to<br><br>Support@NerdVenture.net  "
+  }
+];
 
-    setTimeout(function() {
-        var se = setInterval(function() {
-            i++;
-            document.getElementsByTagName("code")[n].innerHTML =
-                str.slice(0, i) + "|";
-            if (i == str.length) {
-                clearInterval(se);
-                document.getElementsByTagName("code")[n].innerHTML = str;
-            }
-        }, 10);
-    }, t);
+var allElements = document.getElementsByClassName("typeing");
+for (var j = 0; j < allElements.length; j++) {
+  var currentElementId = allElements[j].id;
+  var currentElementIdContent = data[0][currentElementId];
+  var element = document.getElementById(currentElementId);
+  var devTypeText = currentElementIdContent;
+
+  // type code
+  var i = 0, isTag, text;
+  (function type() {
+    text = devTypeText.slice(0, ++i);
+    if (text === devTypeText) return;
+    element.innerHTML = text + `<span class='blinker'>&#32;</span>`;
+    var char = text.slice(-1);
+    if (char === "<") isTag = true;
+    if (char === ">") isTag = false;
+    if (isTag) return type();
+    setTimeout(type, 60);
+  })();
 }
 
-type(0, 0);
-type(1, 600);
-type(2, 1300);
-
-<script>
-{% endblock %} {% endcomment %}
+</script>
+{% endblock %}

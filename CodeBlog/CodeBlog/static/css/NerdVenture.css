@@ -85,6 +85,7 @@ article{
 @media (min-width: 992px){
   #page-content{
     max-width: 75%;
+    margin: auto;
   }
 }
 

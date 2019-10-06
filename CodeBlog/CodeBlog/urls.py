@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.conf.urls import include, url
 from django.contrib import admin
+import django
 
 from wagtail.admin import urls as wagtailadmin_urls
 from wagtail.core import urls as wagtail_urls
@@ -15,8 +16,16 @@ from wagtailcache.cache import nocache_page
 
 from .api import api_router
 
+def custom_page_not_found(request):
+    return django.views.defaults.page_not_found(request, None)
+
+def custom_server_error(request):
+    return django.views.defaults.server_error(request, None)
+
+
 urlpatterns = [
-    
+    url(r'^404/$', custom_page_not_found),
+    url(r'^500/$', django.views.defaults.server_error),
 
     url(r'^sitemap\.xml$', nocache_page(sitemap)),
     url(r'^newsletter/api/v1/', include(newsletter_urls)),
