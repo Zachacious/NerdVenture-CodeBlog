@@ -1,6 +1,7 @@
 function addPinItBtnToImg(img){
 
     if(!img) {return};
+    if(img.classList.contains('preview')) {return};
 
     var parent = img.parentNode;
     var wrapper = document.createElement('div');
