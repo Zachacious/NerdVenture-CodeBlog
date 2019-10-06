@@ -1,6 +1,6 @@
 body{
     background-color: #ededef;
-    font-size: 1.15em;
+    font-size: 1.25em;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -49,7 +49,7 @@ body{
   padding: 20px;
 }
 
-article > h2{
+article h2{
   font-size: 2.5em;
   font-weight: bold;
 }
@@ -71,7 +71,8 @@ article{
 }
 
 .bg-main-blue-dark{
-  background-color: #19479b;
+  /* background-color: #19479b; */
+  background-color: #094ecf;
 }
 
 .bg-transparent{
@@ -129,6 +130,7 @@ article{
   border-width: 0px;
   outline-width: 0px;
   box-shadow: 0 1rem 2rem -1rem rgba(51,51,51,.1);
+  /* max-width: 400px; */
 }
 
 
