@@ -1,7 +1,7 @@
 body{
     background-color: #ededef;
     font-size: 1.25em;
-    -webkit-font-smoothing: antialiased;
+    /* -webkit-font-smoothing: antialiased; */
 }
 
 @media (min-width: 575.98px)  { 
@@ -50,12 +50,14 @@ body{
 }
 
 article h2{
-  font-size: 2.5em;
+  font-size: 2em;
   font-weight: bold;
+  margin-bottom: 1em;
 }
 
 article{
   padding: 20px;
+  font-family: sans-serif;
 }
 
 .bg-darker{
@@ -113,7 +115,7 @@ article{
 }
 
 .post-title-author-link{
-  color: #babaff;
+  color: #ffc107;
 }
 
 .post-title-author-link:hover{
@@ -145,21 +147,13 @@ article{
 
 .skewed-border{
   position: relative;
-  clip-path: polygon(
-    0 0,
-    100% 0,
-    100% 100%,
-    0 calc(100% - 2.5vw)
-  );
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 75%);
 }
 
 .skewed-border-alt{
   position: relative;
   clip-path: polygon(
-    0 0,
-    100% 0,
-    100% calc(100% - 2.5vw),
-    0 100%
+    0 0, 100% 0, 100% 75%, 0% 100%
   );
 }
 
@@ -337,6 +331,10 @@ z-index: 100;
     /* z-index: 10; */
     z-index: 1000000;
     /* transform: scale(1.25); */
+  }
+
+  .continue-btn{
+    border-width: 1.5px;
   }
   
   .modal-close-btn:hover{

@@ -1,5 +1,5 @@
 #post-summary-card{
-    max-width: 35rem;
+    max-width: 30rem;
     height: 100%;
 }
 
@@ -49,9 +49,11 @@
     transform:scale(1);
     filter:blur(0px);
     opacity:1;
+    animation: float 1s ease-in-out infinite;
   }
 
 .post-card:hover [name="continue"]{
-    background-color: #094ecf;
-    color: #fff;
+    animation: float 1s ease-in-out infinite;
+    /* background-color: #094ecf;
+    color: #fff; */
 }

@@ -23,6 +23,30 @@ Animations
             animation: shake-bl 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
   }
 
+/*
+  Floating animation
+*/
+
+.floating {
+	transform: translatey(0px);
+	animation: float 1s ease-in-out infinite;
+}
+
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-10px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+}
+
   /**
  * ----------------------------------------
  * animation shake-bl
@@ -231,7 +255,7 @@ Animations
   
   
     .fade-in {
-      animation: fade-in 0.8s ease-in-out both;
+      animation: fade-in 0.5s ease-in-out both;
   }
   
   /**
@@ -251,7 +275,7 @@ Animations
     }
     
     .fade-out {
-      animation: fade-out 0.8s ease-in-out both;
+      animation: fade-out 0.5s ease-in-out both;
     }
     
     /**

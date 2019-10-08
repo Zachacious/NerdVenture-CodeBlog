@@ -26,7 +26,7 @@
         background-position: center;
         background-size: cover auto;
         position: relative;
-        min-height: 50vh;
+        min-height: 35vh;
         max-height: 100vh;
         display: flex;
     }
@@ -126,11 +126,11 @@
 {% comment %} <hr> {% endcomment %}
 <div id="page-content" class="row mx-auto">
 
-    <article id="article" class="col ml-xl-0 ml-md-3 ml-sm-0">
+    <article id="article" class="col ml-xl-0 ml-md-3 ml-sm-0 pt-0">
 
         <div id="article-contents" class="mx-auto">
         {% for block in self.body %}
-            <div class="trans-ease block-{{ block.block_type }} mb-5" style="margin: 5em auto !important;">
+            <div class="trans-ease block-{{ block.block_type }} mb-5">
                 {% include_block block %}
             </div>
         {% endfor %}
