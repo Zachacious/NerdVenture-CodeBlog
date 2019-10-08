@@ -3,7 +3,9 @@
 {% if value.background %}
 {% comment %} {% compress css inline %} {% endcomment %}
 <style>
-    
+{% if value.background %}
+    {% image value.background fill-800x400 as headerimg %}
+{% endif %}
     #page-header{
         background-color: rgba(0,0,0,0.5)
         background-position: center;
@@ -12,27 +14,40 @@
         min-height: 35vh;
         max-height: 100vh;
         display: flex;
+        
+        background: repeating-linear-gradient(
+  -55deg,
+  rgba(0, 0, 0, 0.4),
+  rgba(0, 0, 0, 0.4) 1vw,
+  rgba(0, 0, 0, 0.6) 1vw,
+  rgba(0, 0, 0, 0.6) 2vw
+){% if value.background %}, url({{headerimg.url}}){% endif %} repeat fixed; 
+
+        }
+        
     }
 
-
     @media (max-width: 768px) {
-        {% image value.background fill-800x600 as headerimg %}
+        {% comment %} {% image value.background fill-800x600 as headerimg %} {% endcomment %}
         #page-header{
-            background: url({{ headerimg.url }}) repeat fixed;
+            {% comment %} background: url({{ headerimg.url }}) repeat fixed; {% endcomment %}
+            
         }
     } 
 
     @media (min-width: 768.1px) and (max-width: 992px) {
-        {% image value.background fill-1000x600 as headerimg %}
+        {% comment %} {% image value.background fill-1000x600 as headerimg %} {% endcomment %}
         #page-header{
-            background: url({{ headerimg.url }}) repeat fixed;
+            {% comment %} background: url({{ headerimg.url }}) repeat fixed; {% endcomment %}
         }
+
     }
 
     @media (min-width: 992.1px) {
-        {% image value.background fill-1500x800 as headerimg %}
+        {% comment %} {% image value.background fill-1500x800 as headerimg %} {% endcomment %}
         #page-header{
-            background: url({{ headerimg.url }}) repeat fixed;
+            {% comment %} background: url({{ headerimg.url }}) repeat fixed; {% endcomment %}
+           
         }
     }
 
@@ -55,6 +70,7 @@
         height: 100vh;
         background-color: #094ecf;
         opacity: 0.8;
+        
     }
 
     #page-header-content{
@@ -74,7 +90,7 @@
 <div id="page-header" class="overflow-hidden px-0 container-fluid bg-main-blue-dark text-light skewed-border">
     <div id="page-header-wrap" class="w-100 text-light skewed-border"></div>
         <div id="page-header-content">
-        <div class="row py-3">
+        <div class="row py-3" style="margin-right: 0 !important;">
             <div class="col my-5 py-5">
 
                 <div id="page-title-wrap" class="text-center ">

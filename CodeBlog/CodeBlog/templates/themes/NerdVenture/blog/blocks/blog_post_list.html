@@ -20,9 +20,12 @@
 </svg>
 
 <div id="blog-post-list" class="mx-auto">
+
+{% if value.title %}
     <h2 class="text-center font-weight-bold">
         {{ value.title }}
     </h2>
+{% endif %}
 
     <div class='post-wrapper'>
     {% with post_count=value.numPost|stringformat:'s' %}

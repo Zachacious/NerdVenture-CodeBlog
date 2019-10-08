@@ -4,6 +4,10 @@ body{
     /* -webkit-font-smoothing: antialiased; */
 }
 
+.block-Parallax_Header{
+  margin-bottom: 0 !important;
+}
+
 @media (min-width: 575.98px)  { 
     .container-wide{
         width: 90%;
@@ -87,7 +91,7 @@ article{
 
 @media (min-width: 992px){
   #page-content{
-    max-width: 75%;
+    max-width: 85%;
     margin: auto;
   }
 }
@@ -425,3 +429,49 @@ z-index: 100;
     font-size: 1.5em;
     font-style: italic;
   }
+
+  /* Parallax header */
+  #page-header{
+    background-color: rgba(0,0,0,0.5);
+    background-position: center;
+    background-size: cover auto;
+    position: relative;
+    min-height: 35vh;
+    max-height: 100vh;
+    display: flex;
+
+    background: repeating-linear-gradient(
+    -55deg,
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.4) 1vw,
+    rgba(0, 0, 0, 0.6) 1vw,
+    rgba(0, 0, 0, 0.6) 2vw
+    ) repeat fixed; 
+
+}
+
+@media (min-width: 1500.1px) {
+  #page-header{
+      background-size: cover;
+      background-position: center bottom;
+  }
+}
+
+.content {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+}
+
+#page-header-wrap{
+  position: absolute;
+  height: 100vh;
+  /*background-color: rgba(50,50,150,0.8);*/
+  background-color: #094ecf;
+  opacity: 0.8;
+}
+
+#page-header-content{
+  margin: auto;
+}

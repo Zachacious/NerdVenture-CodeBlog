@@ -18,77 +18,13 @@
 </defs>
 </svg>
 
-{% if page.header_image %}
-{% comment %} {% compress css inline %} {% endcomment %}
-<style>
-    #page-header{
-        background-color: rgba(0,0,0,0.5)
-        background-position: center;
-        background-size: cover auto;
-        position: relative;
-        min-height: 35vh;
-        max-height: 100vh;
-        display: flex;
-    }
-
-    @media (max-width: 768px) {
-        {% image page.header_image fill-800x600 as headerimg %}
-        #page-header{
-            background: url({{ headerimg.url }}) repeat fixed;
-        }
-    } 
-
-    @media (min-width: 768.1px) and (max-width: 992px) {
-        {% image page.header_image fill-1000x600 as headerimg %}
-        #page-header{
-            background: url({{ headerimg.url }}) repeat fixed;
-        }
-    }
-
-    @media (min-width: 992.1px) {
-        {% image page.header_image fill-1500x800 as headerimg %}
-        #page-header{
-            background: url({{ headerimg.url }}) repeat fixed;
-        }
-    }
-
-    @media (min-width: 1500.1px) {
-        #page-header{
-            background-size: cover;
-            background-position: center bottom;
-        }
-    }
-
-    .content {
-        box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        position: relative;
-        z-index: 2;
-    }
-
-    #page-header-wrap{
-        position: absolute;
-        height: 100vh;
-        /*background-color: rgba(50,50,150,0.8);*/
-        background-color: #094ecf;
-        opacity: 0.8;
-    }
-
-    #page-header-content{
-        margin: auto;
-    }
-
-</style>
-{% comment %} {% endcompress %} {% endcomment %}
-{% endif %}
-
 <div id="page-header" class="overflow-hidden px-0 container-fluid bg-main-blue-dark text-light shadow skewed-border">
 <div id="page-header-wrap" class="w-100 text-light skewed-border"></div>
     <div id="page-header-content">
     <div class="row py-3">
         <div class="col my-5 pt-5 pb-2">
 
-            <div id="page-title-wrap" class="text-center">
+            <div id="page-title-wrap" class="text-center pb-1">
                 <h1 id="post-title" class="px-5">{{ page.title }}</h1>
                 <small class="faded-text">
                     <i>Posted {{ page.date.date }}
