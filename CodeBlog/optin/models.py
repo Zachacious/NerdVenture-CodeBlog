@@ -35,7 +35,7 @@ class Optin(models.Model):
     panels = [
         FieldPanel('name'),
         FieldPanel('blue_background'),
-        FieldPanel('dont_hide_from_subcribers'),
+        FieldPanel('dont_hide_from_subscribers'),
         StreamFieldPanel('body'),
     ]
     
