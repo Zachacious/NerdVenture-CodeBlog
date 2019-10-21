@@ -16,7 +16,7 @@ from .blocks import EmailOptinFormBlock, EmailOptinCTABlock
 class Optin(models.Model):
     name = models.CharField(_("Name"), max_length=50)
     blue_background = models.BooleanField(_("Blue_background"), blank=True, default=False)
-    dont_hide_from_subcribers = models.BooleanField(_("Dont_Hide_From_Subscribers"), blank=True, default=False)
+    dont_hide_from_subscribers = models.BooleanField(_("Dont_Hide_From_Subscribers"), blank=True, default=False)
     
     body = StreamField([
         (_('Bootstrap_Row'), BootstrapRow()),
