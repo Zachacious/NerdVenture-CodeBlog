@@ -20,7 +20,7 @@ apps = [
     # 'manifesto',
 
     'wagtail.contrib.frontend_cache',
-    'wagalytics',
+    # 'wagalytics',
 ]
 
 INSTALLED_APPS = INSTALLED_APPS + apps

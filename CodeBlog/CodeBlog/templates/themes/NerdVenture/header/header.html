@@ -77,7 +77,7 @@
                         <a href="#" id="search-toggle" class=" trans-ease grow" onclick="searchToggle()">
                             <svg class="icon icon-search text-light"><use xlink:href="#icon-search"></use></svg>
                         </a>
-                        <form id="search-form" class="hide-el trans-ease my-auto" action="{% routablepageurl settings.siteSettings.SiteSettings.search_page.specific "search_post" %}" method="get">
+                        <form id="search-form" class="hide-el trans-ease my-auto" style="display: none;" action="{% routablepageurl settings.siteSettings.SiteSettings.search_page.specific "search_post" %}" method="get">
                             <div class="nd-input input-group mb-2 mr-sm-2 my-auto">
                                 <input class="nd-input form-control search-query " type="text" name="query"  placeholder="Search" aria-label="Search">
 
