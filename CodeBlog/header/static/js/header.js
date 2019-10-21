@@ -8,9 +8,9 @@ function searchToggle(){
 
     if(searchForm.classList.contains('hide-el')){
         searchForm.classList.remove('hide-el');
-        searchForm.style = 'display: inline-block';
+        // searchForm.style = 'display: inline-block';
         toggler.classList.add('hide-el');
-        toggler.style = 'display: none';
+        // toggler.style = 'display: none';
         searchForm.classList.add('fade-in');
         toggler.classList.add('fade-out');
     } else {
@@ -18,7 +18,7 @@ function searchToggle(){
         searchForm.classList.add('fade-out');
         searchForm.classList.add('hide-el');
         toggler.classList.remove('hide-el');
-        toggler.style = 'display: inline-block';
+        // toggler.style = 'display: inline-block';
     }
 }
 

@@ -25,10 +25,14 @@
 
         {% include 'open_graph.html' %}
 
-        {# Global stylesheets #}
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"  crossorigin="anonymous">
+
+        {% comment %} {% compress css %}
+            <link rel="stylesheet" type="text/css" href="{% static 'css/header.css' %}">
+            <link rel="stylesheet" type="text/css" href="{% static 'css/menu.css' %}">
+        {% endcompress %} {% endcomment %}
         
-        {% compress css %}
+        {% comment %} {% compress css %}
         <link rel="stylesheet" type="text/css" href="{% static 'css/light-modal.min.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/progressive-image.min.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/NerdVenture.css' %}">
@@ -39,7 +43,8 @@
         <link rel="stylesheet" type="text/css" href="{% static 'css/header.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/anims.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'optin/css/optin.css' %}">
-        {% endcompress %}
+        {% endcompress %} {% endcomment %}
+
 
         {% block extra_css %}
             {# Override this in templates to add extra stylesheets #}
@@ -105,6 +110,21 @@
     {% endblock %}
 
     </div>
+    
+    {% compress css %}
+            <link rel="stylesheet" type="text/css" href="{% static 'css/header.css' %}">
+            <link rel="stylesheet" type="text/css" href="{% static 'css/menu.css' %}">
+        {% endcompress %}
+    {% compress css %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/light-modal.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/progressive-image.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/NerdVenture.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'blog/css/blog.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'social/css/social.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/anims.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'optin/css/optin.css' %}">
+    {% endcompress %} 
 
     </body>
 
