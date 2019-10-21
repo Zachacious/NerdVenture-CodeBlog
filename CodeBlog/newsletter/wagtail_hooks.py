@@ -30,7 +30,6 @@ class SubscriberAdmin(ModelAdmin):
     
     readonly_fields = ('date','optin_used',)
     
-modeladmin_register(SubscriberAdmin)
 
 class NewsletterAdmin(ModelAdmin):
     model = Newsletter
@@ -71,3 +70,4 @@ class NewsletterAdmin(ModelAdmin):
                     'last_sent_date',)
     
 modeladmin_register(NewsletterAdmin)
+modeladmin_register(SubscriberAdmin)
