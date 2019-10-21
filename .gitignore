@@ -133,8 +133,9 @@ dmypy.json
 2.5.1
 Dockerfile
 
-.media/
-.static/
+media/
+static/
+CodeBlog/static/
 .cache/
 .resources/
 
