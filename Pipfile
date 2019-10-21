@@ -11,7 +11,6 @@ django-rest-auth = "*"
 django-cors-headers = "*"
 wagtail-modelchooser = "*"
 wagtailcodeblock = "*"
-wagtail = "==2.5.1"
 django-pipeline = "*"
 manifesto = "*"
 slimit = "*"
@@ -27,6 +26,7 @@ html5lib = "*"
 csscompressor = "*"
 brotli = "*"
 django-cors-middleware = "*"
+
 
 [requires]
 python_version = "3.7"
