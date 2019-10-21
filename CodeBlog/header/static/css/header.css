@@ -1,6 +1,6 @@
 .hide-el{
     /* width: 0px; */
-    display: none;
+    display: none !important;
     min-width: 0px;
     overflow: hidden;
   }
