@@ -136,7 +136,7 @@ Dockerfile
 media/
 static/
 CodeBlog/static/
-.cache/
-.resources/
+cache/
+resources/
 
 nerdventure-analytics-262879143d07.json
