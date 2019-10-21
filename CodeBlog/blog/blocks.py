@@ -70,7 +70,7 @@ class BootstrapCol(blocks.StructBlock):
     class Meta:
         icon = 'grip'
         label = 'Bootstrap Col'
-        template = 'blog/blocks/bootstrap_Col.html'
+        template = 'blog/blocks/bootstrap_col.html'
         
 class BootstrapRow(blocks.StructBlock):
     mobile_width = blocks.IntegerBlock(max_value=100, min_value=0, default=100)
@@ -81,7 +81,7 @@ class BootstrapRow(blocks.StructBlock):
     class Meta:
         icon = 'placeholder'
         label = 'Bootstrap Row'
-        template = 'blog/blocks/bootstrap_Row.html'
+        template = 'blog/blocks/bootstrap_row.html'
         
 class ParallaxHeaderBlock(blocks.StructBlock):
     background = ImageChooserBlock(blank=True)
