@@ -139,4 +139,10 @@ CodeBlog/static/
 cache/
 resources/
 
+.media/
+.static/
+.CodeBlog/static/
+.cache/
+.resources/
+
 nerdventure-analytics-262879143d07.json
