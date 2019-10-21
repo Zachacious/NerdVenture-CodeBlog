@@ -11,9 +11,12 @@
     {% endif %}
 
         {% for block in page.sidebar.body %}
-            <div class="block-{{ block.block_type }} mb-2 text-center">
+            {% with blockcss='mb-2 text-center' %}
+                {% include 'blog/block_renderer.html' %}
+            {% endwith %}
+            {% comment %} <div class="block-{{ block.block_type }} mb-2 text-center">
                 {% include_block block %}
-            </div>
+            </div> {% endcomment %}
         {% endfor %}
     </div>
 

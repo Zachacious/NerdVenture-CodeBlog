@@ -1,0 +1,41 @@
+.social-share-icon{
+    font-size: 3em;
+    /* color: #fff; */
+  }
+  
+  .social-share-bar{
+    position: relative;
+  }
+  
+  
+  .pin-text{
+    color: #c8232c;
+  }
+  
+  .pin-text:hover{
+    color: #c8232c;
+    text-decoration: none;
+  }
+  
+  .pin-btn-overlay{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    font-size: 1.05em;
+    text-decoration: none;
+
+    border: solid red;
+    border-radius: 50%;
+  }
+
+  /* .pinit-alt-trans{
+    transform: translate(-20%, 125%) rotate(-35deg) !important;
+  } */
+
+  .fb-like-btn{
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -35%);
+  }

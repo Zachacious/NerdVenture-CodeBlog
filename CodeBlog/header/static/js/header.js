@@ -2,6 +2,23 @@ var ticking = false;
 var navOnTop = true;
 var menu_opened = false;
 
+function searchToggle(){
+    var searchForm = document.getElementById('search-form');
+    var toggler = document.getElementById('search-toggle');
+
+    if(searchForm.classList.contains('hide-el')){
+        searchForm.classList.remove('hide-el');
+        toggler.classList.add('hide-el');
+        searchForm.classList.add('fade-in');
+        toggler.classList.add('fade-out');
+    } else {
+        searchForm.classList.remove('fade-in');
+        searchForm.classList.add('fade-out');
+        searchForm.classList.add('hide-el');
+        toggler.classList.remove('hide-el');
+    }
+}
+
 (function(){
     window.addEventListener('scroll', function(e){
         var ypos = window.scrollY;

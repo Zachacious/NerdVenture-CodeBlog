@@ -1,0 +1,105 @@
+{% extends "modeladmin/edit.html" %}
+{% load i18n modeladmin_tags wagtailcore_tags compress %}
+
+{% block header %}
+    {{ block.super }}
+
+    {% comment %} {{ instance.template.url }}
+{{ form.template.pk }} {% endcomment %}
+
+    <form name="sendmassmail-form" method="post">
+        <button type="button" class="button action-save button-longrunning" style="margin: 1em;" onClick="sendmassmail(event);"
+            data-clicked-text="{% trans 'Sending...' %}" {% if page.locked %}disabled {% endif %}>
+            <span class="icon icon-spinner"></span><em>{% trans 'Send Mass Mail' %}</em>
+        </button> 
+        <input id="SMM-APIEndPoint" type="hidden" value="{{ request.scheme }}://{{ request.get_host }}{% url 'newsletter-send-mass-mail-view' %}"/>
+        <input id="SMM-Template" type="hidden" value="{{ form.template.value }}" />
+        <input id="SMM-TargetSubs" type="hidden" value="{{ form.target_subs.value }}" />
+        <input id="SMM-TargetNonSubs" type="hidden" value="{{ form.target_non_subs.value }}" />
+        <input id="SMM-FromEmail" type="hidden" value="{{ form.fromEmail.value }}" />
+        <input id="SMM-Subject" type="hidden" value="{{ form.subject.value }}" />
+        <input id="SMM-PK" type="hidden" value="{{ instance.pk }}" />
+    </form>
+
+    {% compress js inline %}
+        <script>
+        // This is duplicate code from Cookies.js - only need this function for the wagtail admin
+        // If more is added to the backend, this file will need to be refactored
+        function getCookie(name, keepDuplicates){
+            // initialise the list of values
+            var values = [];
+        
+            // loop over the cookies
+            var cookies = document.cookie.split(/; */);
+            for (var i = 0; i < cookies.length; i ++){
+        
+                // if the cookie has the requested name, add its value to the list
+                var details = cookies[i].split('=');
+                if (details[0] == encodeURIComponent(name)){
+                values.push(decodeURIComponent(details[1].replace(/\+/g, '%20')));
+                }
+        
+            }
+        
+            // return the first value or all values as appropriate
+            return (keepDuplicates ? values : values[0]);
+        }
+
+        function sendmassmail(event){
+            event.preventDefault();
+
+            var xhttp = new XMLHttpRequest();
+
+            //FIXME - The following causes an error saying sendmassmail is not defined???
+
+            // after ajax is finished
+            /*xhttp.addEventListener('load', function(e){
+                if(e.target.status == 200){ //good
+                    console.log('Newsletter sent successfully');
+                } else { //error
+                    console.log('Error sending newsletter');
+                    alert('Error sending Newsletter: Check error logs');
+                }
+                
+            }*/
+
+            //endpoint 
+            var url = document.getElementById('SMM-APIEndPoint').value;
+            var htmlTemplate = document.getElementById('SMM-Template').value;
+            var targetSubs = document.getElementById('SMM-TargetSubs').value;
+            var targetNonSubs = document.getElementById('SMM-TargetNonSubs').value;
+            var fromEmail = document.getElementById('SMM-FromEmail').value;
+            var subject = document.getElementById('SMM-Subject').value;
+            var newsletterPK = document.getElementById('SMM-PK').value;
+            var csrftoken = getCookie('csrftoken');
+    
+            // data to send
+            var data = {
+                template : String(htmlTemplate),
+                targetSubs : Boolean(targetSubs),
+                targetNonSubs : Boolean(targetNonSubs),
+                fromEmail: String(fromEmail),
+                subject: String(subject),
+                pk: parseInt(newsletterPK),
+            };
+    
+    
+            //open async post request at endpoint
+            try{
+                xhttp.open("POST", url, true);
+                xhttp.setRequestHeader('Content-Type', 'application/json');
+                xhttp.setRequestHeader('Accepts', 'application/json');
+                xhttp.setRequestHeader("X-CSRFToken", csrftoken);
+                xhttp.send(JSON.stringify(data));
+
+            }catch(e){
+                console.log(e);
+            }
+
+            
+        }
+
+        </script>
+    {% endcompress %} 
+
+{% endblock %}

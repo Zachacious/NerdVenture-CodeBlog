@@ -1,105 +1,74 @@
 {% load static wagtailcore_tags wagtailimages_tags compress %}
 
-{% if value.background %}
-{% comment %} {% compress css inline %} {% endcomment %}
 <style>
-{% if value.background %}
-    {% image value.background fill-800x400 as headerimg %}
-{% endif %}
-    #page-header{
-        background-color: rgba(0,0,0,0.5)
-        background-position: center;
-        background-size: cover auto;
-        position: relative;
-        min-height: 35vh;
-        max-height: 100vh;
-        display: flex;
         
-        background: repeating-linear-gradient(
-  -55deg,
+    @media (max-width: 768px) {
+        {% image value.background fill-400x400 jpegquality-20 as headerimg %}
+        #page-header{
+            background: repeating-radial-gradient(
+  circle,
   rgba(0, 0, 0, 0.4),
   rgba(0, 0, 0, 0.4) 1vw,
   rgba(0, 0, 0, 0.6) 1vw,
   rgba(0, 0, 0, 0.6) 2vw
-){% if value.background %}, url({{headerimg.url}}){% endif %} repeat fixed; 
-
+){% if value.background %}, url({{headerimg.url}}){% endif %} fixed;  
+ background-size: cover;
+            background-position: center bottom;           
         }
-        
-    }
-
-    @media (max-width: 768px) {
-        {% comment %} {% image value.background fill-800x600 as headerimg %} {% endcomment %}
-        #page-header{
-            {% comment %} background: url({{ headerimg.url }}) repeat fixed; {% endcomment %}
-            
-        }
-    } 
+    }  
 
     @media (min-width: 768.1px) and (max-width: 992px) {
-        {% comment %} {% image value.background fill-1000x600 as headerimg %} {% endcomment %}
+        {% image value.background fill-600x300 jpegquality-20 as headerimg %}
         #page-header{
-            {% comment %} background: url({{ headerimg.url }}) repeat fixed; {% endcomment %}
+            background: repeating-radial-gradient(
+  circle,
+  rgba(0, 0, 0, 0.4),
+  rgba(0, 0, 0, 0.4) 1vw,
+  rgba(0, 0, 0, 0.6) 1vw,
+  rgba(0, 0, 0, 0.6) 2vw
+){% if value.background %}, url({{headerimg.url}}){% endif %} fixed; 
+ background-size: cover;
+            background-position: center bottom;
         }
 
     }
 
     @media (min-width: 992.1px) {
-        {% comment %} {% image value.background fill-1500x800 as headerimg %} {% endcomment %}
+        {% image value.background fill-800x600 jpegquality-20 as headerimg %}
         #page-header{
-            {% comment %} background: url({{ headerimg.url }}) repeat fixed; {% endcomment %}
-           
+            background: repeating-radial-gradient(
+  circle,
+  rgba(0, 0, 0, 0.4),
+  rgba(0, 0, 0, 0.4) 1vw,
+  rgba(0, 0, 0, 0.6) 1vw,
+  rgba(0, 0, 0, 0.6) 2vw
+){% if value.background %}, url({{headerimg.url}}){% endif %} fixed; 
+             background-size: cover;
+            background-position: center bottom;
         }
-    }
+    } 
 
-    @media (min-width: 1500.1px) {
+    @media (min-width: 1201px) {
         #page-header{
             background-size: cover;
             background-position: center bottom;
         }
     }
 
-    .content {
-        box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        position: relative;
-        z-index: 2;
-    }
-
-    #page-header-wrap{
-        position: absolute;
-        height: 100vh;
-        background-color: #094ecf;
-        opacity: 0.8;
-        
-    }
-
-    #page-header-content{
-        margin: auto;
-       /* position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 100%;
-        transform: translate(-50%, -50%);*/
-    }
-
 
 </style>
-{% comment %} {% endcompress %} {% endcomment %}
-{% endif %}
 
 <div id="page-header" class="overflow-hidden px-0 container-fluid bg-main-blue-dark text-light skewed-border">
     <div id="page-header-wrap" class="w-100 text-light skewed-border"></div>
         <div id="page-header-content">
         <div class="row py-3" style="margin-right: 0 !important;">
-            <div class="col my-5 py-5">
+            <div class="col mt-5 pt-5">
 
                 <div id="page-title-wrap" class="text-center ">
                     <h1 id="post-title" class="px-4">{{ value.title }}</h1>
                     
                     {% for block in value.body %}
-                        <div class="px-4 trans-ease block-{{ block.block_type }} mb-2">
-                            {% include_block block %}
-                        </div>
+                        {% include 'blog/block_renderer.html' %}
                     {% endfor %}
                     
                 </div>

@@ -1,0 +1,8 @@
+.optin-cta-btn{
+    font-weight: bold;
+}
+
+.optin-cta-btn:hover{
+    background-color: rgba(250, 250, 0, 1) !important;
+    opacity: 1 !important;
+}

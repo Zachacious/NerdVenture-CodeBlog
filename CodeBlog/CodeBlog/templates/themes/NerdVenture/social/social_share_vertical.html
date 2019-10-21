@@ -1,6 +1,8 @@
 {% load wagtailcore_tags %}
 
-{% include 'social/icons.html' %}
+{% block load_last %}
+        {% include 'social/icons.html' %}
+{% endblock %}
 
 {% with settings.social.SocialSettings as social_settings %}
 <div id="social-stack-wrap" class="fade-in">
@@ -52,15 +54,3 @@
     </div>
 </div>
 {% endwith %}
-
-{% comment %} <script>
-
-// Setup an infinte animation every X seconds
-(function (){
-
-    
-    
-
-})();
-
-</script> {% endcomment %}

@@ -8,7 +8,7 @@ TODO:
 The contact form needs to be encapsulated in its own app.
 */
 
-// only execut IIFE if it hasn't already been run
+// only execut if it hasn't already been run
 if(typeof contactFormJS == 'undefined'){
  
     (function (){

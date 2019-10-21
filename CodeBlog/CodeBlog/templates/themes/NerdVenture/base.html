@@ -1,24 +1,14 @@
 {% load static wagtailuserbar %}
-{% comment %} {% load menu_tags %} {% endcomment %}
 {% load wagtailsettings_tags %}
 {% get_settings %}
 {% load wagtailimages_tags %}
-{% comment %} {% load pipeline %} {% endcomment %}
 {% load compress %}
 
 <!DOCTYPE html>
 <html class="no-js" lang="en">
     <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#">
 
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async type="text/javascript" data-cfasync="false" src="https://www.googletagmanager.com/gtag/js?id=UA-123323273-2"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'UA-123323273-2');
-        </script>
+        {% include 'google_analytics.html' %}
 
         <meta charset="utf-8" />
         <title>
@@ -33,39 +23,7 @@
         </title>
         <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.ico' %}"/>
 
-        {% if self.header_image %}
-            {% image page.header_image width-300 as headerimg %}
-        {% endif %}
-        {% if settings.siteSettings.SiteSettings.header.logo_image %}
-            {% image settings.siteSettings.SiteSettings.header.logo_image width-200 as logoimg %}
-        {% endif %}
-        {% if page.author_profile.photo %}
-            {% image page.author_profile.photo width-300 as authorpic %}
-        {% endif %}
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="description" content="{% if self.summary %}{{ self.summary }}{% endif %}" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-        <meta property='og:site_name' content='{{ request.site.site_name }}' />
-        <meta property="og:locale" content="en_US">
-        <meta property="og:type" content="article" />
-        <meta property="og:title" content="{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}" />
-        <meta property="og:description" content="{{ self.summary }}" />
-        <meta property="og:url" content="{{ request.build_absolute_uri  }}" />
-        <meta property="og:image" content="{{ page.get_site.root_url }}{{ headerimg.url }}" />
-        <meta property="og:image:secure_url" content="{{ page.get_site.root_url }}{{ headerimg.url }}" />
-        <meta property="og:image:width" content="{{ headerimg.width }}" />
-        <meta property="og:image:height" content="{{ headerimg.height }}" />
-        <meta property="article:published_time" content="{{ self.date }}">
-        {% comment %} <meta property='article:author' content='https://www.facebook.com/YOUR-NAME' /> {% endcomment %}
-        <meta property='article:publisher' content='https://www.facebook.com/NerdVentureBlog' />
-        <meta property="fb:app_id" content="2339495356288498">
-
-        <meta property="twitter:card" content="summary">
-        <meta property="twitter:title" content="{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}">
-        <meta property="twitter:description" content="{{ self.summary }}">
-        <meta property="twitter:image" content="{{ page.get_site.root_url }}{{ headerimg.url }}">
-        <meta property="twitter:url" content="{{ request.build_absolute_uri  }}">
+        {% include 'open_graph.html' %}
 
         {# Global stylesheets #}
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -73,7 +31,6 @@
         {% compress css %}
         <link rel="stylesheet" type="text/css" href="{% static 'css/light-modal.min.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/progressive-image.min.css' %}">
-        {% comment %} {% stylesheet 'general' %} {% endcomment %}
         <link rel="stylesheet" type="text/css" href="{% static 'css/NerdVenture.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/menu.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}">
@@ -81,15 +38,17 @@
         <link rel="stylesheet" type="text/css" href="{% static 'social/css/social.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/header.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/anims.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'optin/css/optin.css' %}">
         {% endcompress %}
+
+        {% block extra_css %}
+            {# Override this in templates to add extra stylesheets #}
+        {% endblock %}
 
         <script type="application/ld+json">
             {% include 'schema.html' %}
         </script>
-       
-        {% comment %} {% javascript 'general' %} {% endcomment %}
-        {% comment %} <script defer src="{% static 'js/notify.js' %}"></script> {% endcomment %}
-        {% comment %} <script defer src="{% static 'js/Cookies.js' %}"></script> {% endcomment %}
+
         {% compress js %}
         <script defer type="text/javascript" charset="utf-8" src="{% static 'js/notify.js' %}"></script>
         <script defer type="text/javascript" charset="utf-8" src="{% static 'js/Cookies.js' %}"></script>
@@ -100,40 +59,18 @@
         <script defer type="text/javascript" charset="utf-8" src="{% static 'js/progressive-image.js' %}"></script>
         {% endcompress %}
 
+        {% comment %} if set to false, cookies expire in 1 hour vs 2 min {% endcomment %}
         <script>
             var settings = {
-                debug: false,
+                debug: true,
+                cookie_domain: 'NerdVenture.net'
             };
         </script>
 
-        {% block extra_css %}
-            {# Override this in templates to add extra stylesheets #}
-        {% endblock %}
 
-
-        <!-- Facebook Pixel Code -->
-        {% compress js inline %}
-        <script defer>
-            !function(f,b,e,v,n,t,s)
-            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '2404968449824391');
-            fbq('track', 'PageView');
-        </script>
-        {% endcompress %}
-        <noscript><img height="1" width="1" style="display:none"
-        src="https://www.facebook.com/tr?id=2404968449824391&ev=PageView&noscript=1"
-        /></noscript>
-        <!-- End Facebook Pixel Code -->
+        {% include 'facebook_pixel.html' %}
 
     </head>
-
-
 
     <body class="{% block body_class %}{% endblock %}">
 
@@ -158,16 +95,16 @@
 
     {% include 'blog/contact_modal.html' %}
     {% include "footer/footer.html" %}
+
     {% block extra_js %}
         {# Override this in templates to add extra javascript #}
     {% endblock %}
 
-    {% comment %} <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap.native@2.0.15/dist/bootstrap-native-v4.min.js"></script> {% endcomment %}
+    {% block load_last %}
+        {# Overide #}
+    {% endblock %}
 
     </div>
-    
-    {% comment %} {% javascript 'social' %}
-    <script src="{% static 'js/progressive-image.min.js' %}"></script> {% endcomment %}
 
     </body>
 

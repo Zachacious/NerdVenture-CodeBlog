@@ -7,15 +7,14 @@ def get_subscribed(context):
 
     request = context.get("request")
     
-    subscribed = False;
+    subscribed = False
     
-    if 'subscribed' in request.COOKIES:
-        subscribed = request.COOKIES['subscribed']
+    if 'NV-Subscribed' in request.COOKIES:
+        subscribed = request.COOKIES['NV-Subscribed']
     
     # return {
     #     "is_subscribed": subscribed,
     # }
-    
     context['subscribed'] = subscribed
     
     # return subscribed

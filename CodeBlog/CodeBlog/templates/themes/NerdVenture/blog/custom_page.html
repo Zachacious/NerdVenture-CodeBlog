@@ -5,11 +5,22 @@
 {% if self.header %}
 {% block content_top %}
 
+    {% if self.blue_background %}
+    <style>
+    body{
+        background-color: #094ecf !important;
+    }
+    </style>
+    {% endif %}
+
     <div id="header-contents">
     {% for block in self.header %}
-        <div class="trans-ease block-{{ block.block_type }} mb-5">
+        {% with blockcss='mb-5' %}
+            {% include 'blog/block_renderer.html' %}
+        {% endwith %}
+        {% comment %} <div class="trans-ease block-{{ block.block_type }} mb-5">
             {% include_block block %}
-        </div>
+        </div> {% endcomment %}
     {% endfor %}
     </div>
 
@@ -24,9 +35,12 @@
 
         <div id="custom-page-contents">
         {% for block in self.body %}
-            <div class="trans-ease block-{{ block.block_type }} mb-5">
+            {% with blockcss='mb-5' %}
+                {% include 'blog/block_renderer.html' %}
+            {% endwith %}
+            {% comment %} <div class="trans-ease block-{{ block.block_type }} mb-5">
                 {% include_block block %}
-            </div>
+            </div> {% endcomment %}
         {% endfor %}
         </div>
     

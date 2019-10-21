@@ -1,3 +1,27 @@
+#social-stack-wrap{
+  position: fixed;
+  top: 60%;
+  left: 5%;
+  transform: translate(-50%, -50%);
+  /* z-index: 2; */
+}
+
+.social-share-icon:hover{
+  transform: scale(1.25);
+}
+
+@media (min-width: 0) and (max-width: 768px) { 
+  #social-stack-wrap{
+    display: none;
+  }
+}
+
+@media (min-width: 1600px) { 
+  #social-stack-wrap{
+    left: 10%;
+  }
+}
+
 .social-share-icon{
     font-size: 3em;
     /* color: #fff; */
@@ -8,7 +32,7 @@
   }
   
   
-  .pin-text{
+  /* .pin-text{
     color: #c8232c;
   }
   
@@ -20,8 +44,8 @@
   .pin-btn-overlay{
     position: absolute;
     bottom: 5px;
-    left: 50%;
-    transform: translate(-50%, 100%);
+    left: 0;
+    transform: translate(0%, 100%);
     font-size: 1.05em;
     text-decoration: none;
 
@@ -31,15 +55,13 @@
 
   .pin-btn-overlay:hover{
     text-decoration: none;
-  }
-
-  /* .pinit-alt-trans{
-    transform: translate(-20%, 125%) rotate(-35deg) !important;
   } */
 
-  .fb-like-btn{
+
+  /* .fb-like-btn{
     position: absolute;
     left: 50%;
     top: 0;
     transform: translate(-50%, -35%);
-  }
+  } */
+

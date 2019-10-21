@@ -37,28 +37,15 @@
         <div class="col-md post-card p-0 m-3">
             <div id="post-summary-card" class="card ">
                 <div id="post-summary-contents" class="">
+                
                     {% if post.specific.header_image %}
                         {% image post.specific.header_image fill-400x200 as card_pic %}
                         <img src="{{ card_pic.url }}" class="card-img-top"/>
-                        {% comment %} <div class="card-img-overlay p-0 post-date-overlay">
-                        <small class="p-1 text-light bg-darker">{{ post.date.date }}</small>
-                        </div> {% endcomment %}
                     {% endif %}
 
                     <div class="card-body text-center pt-0" style="margin-top: 1.5em !important;">
                         <h3 class="font-weight-bold">{{ post.title }}</h3>
 
-                        {% comment %} <small class="mx-auto mb-5">
-                        {% if post.author_profile %} {% endcomment %}
-                            {% comment %} {% image post.author_profile.photo fill-40x40 as author_photo %} 
-                            <img src="{{ author_photo.url }}" class="mr-1 rounded-circle"> {% endcomment %}
-                            {% comment %} By {{ post.author_profile.full_name }}
-                        {% else %}
-                           By Anonymous
-                        {% endif %}
-                        </small> {% endcomment %}
-
-                        {% comment %} <hr> {% endcomment %}
                         {% if post.summary %}
                             <div class="mt-1"><p style="margin-top: 1em !important;">{{ post.summary }}...</p></div>
                         {% endif %}

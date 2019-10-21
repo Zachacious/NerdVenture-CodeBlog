@@ -28,9 +28,9 @@ if(typeof notifyJSLoaded ==='undefined'){
     function createNotification(alertcls, anim_startcls, anim_endcls, header, msg, timed=false){
         var uuid = Date.now() + Math.random();
         var div = document.createElement('div');
-        div.className = 'row';
+        // div.className = 'row';
         div.innerHTML =  '\
-        <div id="notify-' + uuid + '" class="alert sketch-border ' + 
+        <div id="notify-' + uuid + '" class="alert sketch-border mx-auto ' + 
             alertcls + ' ' + anim_startcls +'" role="alert">\
         <strong>' + header + '</strong>' + msg + '\
         <button type="button" class="close" aria-label="Close">\
@@ -51,7 +51,7 @@ if(typeof notifyJSLoaded ==='undefined'){
         if(timed){
             setTimeout(function(){
                 deleteNotification(uuid, anim_endcls);
-            }, 2000);
+            }, 3000);
         }
     };
 

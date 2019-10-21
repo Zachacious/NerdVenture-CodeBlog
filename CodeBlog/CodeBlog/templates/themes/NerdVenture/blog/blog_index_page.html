@@ -5,9 +5,9 @@
 <div id="page-header" class="overflow-hidden px-0 container-fluid bg-main-blue-dark text-light skewed-border">
 <div id="page-header-wrap" class="w-100 text-light skewed-border"></div>
 <div class="row py-3 mx-auto">
-<div class="col my-5 py-5">
+<div class="col my-5 pt-5">
 
-    <div id="page-title-wrap" class="text-center">
+    <div id="page-title-wrap" class="text-center pt-3">
         <div id="post-title" class="">
         {% if page.use_children_custom_pages or page.use_children_post %}
             <h2>{{ blog_page.title }}</h2>
@@ -34,6 +34,7 @@
 
 {% block content %}
 
+{% block load_last %}
 <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <defs>
 <symbol id="icon-circle-right" viewBox="0 0 32 32">
@@ -52,6 +53,7 @@
 </symbol>
 </defs>
 </svg>
+{% endblock %}
 
 
 <div class="row">

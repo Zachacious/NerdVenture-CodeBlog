@@ -5,6 +5,10 @@
     overflow: hidden;
   }
   
+  #search-form{
+    max-width: 300px;
+}
+
   #search-toggle{
     color: #777;
   }
@@ -28,3 +32,48 @@
     }
   
   }
+
+  #header{
+    z-index: 100;
+  }
+  
+  #navbar-toggle-cbox:checked ~ #menu-overlay {
+    display: block;
+  }
+  
+  #navbar-toggle-cbox {
+  display:none;
+  z-index: 100;
+  }
+  
+  @media (max-width: 992px){
+    #menu-overlay{
+      position: relative;
+      width: 100vw;
+      height: 100vh; 
+      /* margin: 0; */
+      margin: auto;
+      z-index: 1010;
+    }
+  }
+  
+  #nav-menu-icon{
+    color: #fff !important;
+    cursor: pointer;
+    font-size: 1.5em;
+  }
+  
+  #nav-menu-close{
+    cursor: pointer;
+    /* font-size: 1.5em; */
+  }
+  
+  /* .active-link{
+    border-width: 2px !important;
+    border-color: #fff !important;
+  } */
+  
+  #navigation .active{
+    font-weight: 700 !important;
+  }
+  

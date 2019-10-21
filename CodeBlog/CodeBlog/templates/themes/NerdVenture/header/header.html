@@ -2,6 +2,7 @@
 {% load menu_tags %}
 {% load compress %}
 
+{% block load_last %}
 <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <defs>
 <symbol id="icon-search" viewBox="0 0 32 32">
@@ -29,6 +30,8 @@
 </defs>
 </svg>
 
+{% endblock %}
+
 <div id="header" class="fixed-top bounce-in-top">
 {% with settings.siteSettings.SiteSettings.header as header %}
     <nav id='navigation' class="trans-ease navbar navbar-expand-lg bg-transparent  skewed-border-alt
@@ -47,27 +50,7 @@
                     <svg id="nav-menu-icon" class="trans-ease navbar-toggler-icon icon icon-menu"><use xlink:href="#icon-menu"></use></svg>
                     <svg id="nav-menu-close" class="trans-ease d-none text-light icon icon-cancel"><use xlink:href="#icon-cancel"></use></svg>
                 </label>
-
-                {% comment %} <div id='CustomNavBar' class='navbar-collapse collapse trans-ease'>
-                    <ul class="navbar-nav mr-auto my-auto">
-                        {% if header.menu %}
-                            {% for item in header.menu.menu_items.all %}
-                                <ol class="nav-item px-2">
-                                    <a class="nav-link px-0 {% get_menu_item_active_class item page.url %}
-                                    {% if item.mobile_only %} menu-item-mobile {% endif %}
-                                    {% if item.desktop_only %} menu-item-desktop {% endif %}" href="{{ item.link }}" 
-                                    {% if item.open_in_new_tab %} 
-                                    target="_blank"{% endif %}
-                                    {{ item.extra_attributes }} >
-                                    {{ item.title }}
-                                    <span class="sr-only">(current)</span>
-                                    </a>
-                                </ol>
-                            {% endfor %}
-                        {% endif %}
-                    </ul> {% endcomment %}
                 
-
                 <div class="collapse navbar-collapse trans-ease" id="menu-overlay">
                     {% comment %} <div class=""> {% endcomment %}
                     <ul class="navbar-nav mr-auto" style="font-size: 0.8em;">
@@ -88,26 +71,6 @@
 
                         {% endif %}
                     </ul>  
-
-                {% comment %} <div class="collapse navbar-collapse trans-ease" id="CustomNavbar">
-                    <ul class="navbar-nav mr-auto my-auto">
-                        {% if header.menu %}
-                            {% for item in header.menu.menu_items.all %}
-                                <ol class="nav-item px-2">
-                                    <a class="nav-link px-0 {% get_menu_item_active_class item page.url %}
-                                    {% if item.mobile_only %} menu-item-mobile {% endif %}
-                                    {% if item.desktop_only %} menu-item-desktop {% endif %}" href="{{ item.link }}" 
-                                    {% if item.open_in_new_tab %} 
-                                    target="_blank"{% endif %}
-                                    {{ item.extra_attributes }} >
-                                    {{ item.title }}
-                                    <span class="sr-only">(current)</span>
-                                    </a>
-                                </ol>
-                            {% endfor %}
-
-                        {% endif %}
-                    </ul>  {% endcomment %}
 
                     {% comment %} search bar {% endcomment %}
                     {% if settings.siteSettings.SiteSettings.header.search %}
@@ -132,7 +95,6 @@
                     
                     
                 </div>
-                {% comment %} </div> {% endcomment %}
 
         </div>
         
@@ -143,8 +105,8 @@
 
 </div>
 
-{% compress js inline %}
-<script>
+{% comment %} {% compress js inline %} {% endcomment %}
+{% comment %} <script>
 
 function searchToggle(){
     var searchForm = document.getElementById('search-form');
@@ -163,6 +125,6 @@ function searchToggle(){
     }
 }
 
-</script>
-{% endcompress %}
+</script> {% endcomment %}
+{% comment %} {% endcompress %} {% endcomment %}
 

@@ -79,6 +79,7 @@ INSTALLED_APPS = [
     'newsletter',
     'social',
     'topic',
+    'downloader',
 
 ]
 

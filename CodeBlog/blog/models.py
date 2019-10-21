@@ -32,7 +32,7 @@ from wagtail.core.models import Page  # Orderable
 from wagtail.embeds.blocks import EmbedBlock
 # from wagtail.images.blocks import ImageChooserBlock
 
-from blog.blocks import ImageChooserBlock, ParallaxHeaderBlock, BlogPostListBlock, BlockQuote
+from blog.blocks import ImageChooserBlock, AlignedImageBlock, ParallaxHeaderBlock, BlogPostListBlock, BlockQuote
 
 from wagtail.images.edit_handlers import ImageChooserPanel
 # from wagtail.snippets.models import register_snippet
@@ -66,6 +66,8 @@ from author.models import AuthorProfile
 from wagtailcache.cache import WagtailCacheMixin
 
 from topic.models import Topic
+
+from downloader.blocks import DownloadDisplayBlock
 
 
 class BlogIndexPage(WagtailCacheMixin, RoutablePageMixin, Page):
@@ -296,6 +298,7 @@ class BlogPostPage(WagtailCacheMixin, Page):
         (_('Rich_Text'), blocks.RichTextBlock()),
         (_('Text'), blocks.TextBlock()),
         (_('Image'), ImageChooserBlock(icon="image")),
+        # (_('Image(aligned)'), AlignedImageBlock()),
         (_('Embedded_Video'), EmbedBlock(icon="media")),
         (_('HTML'), blocks.RawHTMLBlock()),
         # (_('Quote'), blocks.BlockQuoteBlock()),
@@ -303,6 +306,7 @@ class BlogPostPage(WagtailCacheMixin, Page):
         (_('Optin'), OptinChooserBlock('optin.Optin')),
         (_('Code'), CodeBlock(label='Code Editor')),
         (_('BlockQuote'), BlockQuote()),
+        (_('Aligned_Image'), AlignedImageBlock()),
     ],null=True,blank=True)
     
     sidebar = models.ForeignKey(
@@ -388,13 +392,18 @@ class CustomPage(WagtailCacheMixin, Page):
         (_('Rich_Text'), blocks.RichTextBlock()),
         (_('Text'), blocks.TextBlock()),
         (_('Image'), ImageChooserBlock(icon="image")),
+        # (_('Image(aligned)'), AlignedImageBlock()),
         (_('Embedded_Video'), EmbedBlock(icon="media")),
         (_('HTML'), blocks.RawHTMLBlock()),
         (_('Quote'), blocks.BlockQuoteBlock()),
         (_('Optin'), OptinChooserBlock('optin.Optin')),
         (_('Code'), CodeBlock(label='Code Editor')),
         (_('Parallax_Header'), ParallaxHeaderBlock()),
+        (_('Aligned_Image'), AlignedImageBlock()),
+        (_('Download_Display'), DownloadDisplayBlock()),
     ],null=True,blank=True)
+    
+    blue_background = models.BooleanField(_("blue_background"), default=False, blank=True)
     
     summary = models.TextField(_("Summary Text"), blank=True, max_length=200)
     date = models.DateTimeField(verbose_name="Post date", default=datetime.datetime.today)
@@ -403,12 +412,15 @@ class CustomPage(WagtailCacheMixin, Page):
         (_('Rich_Text'), blocks.RichTextBlock()),
         (_('Text'), blocks.TextBlock()),
         (_('Image'), ImageChooserBlock(icon="image")),
+        # (_('Image(aligned)'), AlignedImageBlock()),
         (_('Embedded_Video'), EmbedBlock(icon="media")),
         (_('HTML'), blocks.RawHTMLBlock()),
         (_('Quote'), blocks.BlockQuoteBlock()),
         (_('Optin'), OptinChooserBlock('optin.Optin')),
         (_('Code'), CodeBlock(label='Code Editor')),
         (_('Recent_Post'), BlogPostListBlock()),
+        (_('Aligned_Image'), AlignedImageBlock()),
+        (_('Download_Display'), DownloadDisplayBlock()),
     ],null=True,blank=True)
     
     keywords = models.CharField(_("SEO Keywords"), max_length=255, blank=True)
@@ -425,6 +437,7 @@ class CustomPage(WagtailCacheMixin, Page):
     
     content_panels = Page.content_panels + [
         StreamFieldPanel('header'),
+        FieldPanel('blue_background'),
         FieldPanel('summary'),
         StreamFieldPanel('body'),
     ]

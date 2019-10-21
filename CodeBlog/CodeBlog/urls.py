@@ -16,6 +16,8 @@ from wagtailcache.cache import nocache_page
 
 from .api import api_router
 
+# from downloader import urls as download_urls
+
 def custom_page_not_found(request):
     return django.views.defaults.page_not_found(request, None)
 
@@ -34,6 +36,7 @@ urlpatterns = [
     url(r'^jackalope/', admin.site.urls),
 
     url(r'^cms/jackalope/', include(wagtailadmin_urls)),
+    # url(r'^documents/', include(download_urls)),
     url(r'^documents/', include(wagtaildocs_urls)),
     
     # url(r'^users/', include('users.urls')),

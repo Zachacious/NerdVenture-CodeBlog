@@ -1,0 +1,27 @@
+{% load wagtailcore_tags wagtailimages_tags subscribe_tags %}
+
+{% get_subscribed %}
+
+<div class='downloadable-item mx-auto trans-ease grow' style="max-width: 250px;">
+
+        {% if not subscribed %}
+            <a onclick="alertNotSubscribed()" href="#" class="mx-auto mt-3 text-center d-block dark-links">
+            <div class='mx-auto text-center d-block'>
+                {% image value.image height-200 as img %}
+                <img {{ img.attrs }} class="floating-no-shadow"/>
+            </div>
+            
+                {{ value.title }}
+            </a>
+        {% else %}
+            <a href="{{ value.document.url }}" class="mx-auto mt-3 text-center d-block dark-links">
+            <div class='mx-auto text-center d-block'>
+                {% image value.image height-200 as img %}
+                <img {{ img.attrs }} class="floating-no-shadow"/>
+            </div>
+            
+                {{ value.title }}
+            </a>
+        {% endif %}
+        
+</div>

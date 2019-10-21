@@ -1,0 +1,36 @@
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% if self.header_image %}
+    {% image page.header_image width-300 as headerimg %}
+{% endif %}
+{% if settings.siteSettings.SiteSettings.header.logo_image %}
+    {% image settings.siteSettings.SiteSettings.header.logo_image width-200 as logoimg %}
+{% endif %}
+{% if page.author_profile.photo %}
+    {% image page.author_profile.photo width-300 as authorpic %}
+{% endif %}
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="{% if self.summary %}{{ self.summary }}{% endif %}" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta property='og:site_name' content='{{ request.site.site_name }}' />
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article" />
+<meta property="og:title" content="{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}" />
+<meta property="og:description" content="{{ self.summary }}" />
+<meta property="og:url" content="{{ request.build_absolute_uri  }}" />
+<meta property="og:image" content="{{ page.get_site.root_url }}{{ headerimg.url }}" />
+<meta property="og:image:secure_url" content="{{ page.get_site.root_url }}{{ headerimg.url }}" />
+<meta property="og:image:width" content="{{ headerimg.width }}" />
+<meta property="og:image:height" content="{{ headerimg.height }}" />
+<meta property="article:published_time" content="{{ self.date }}">
+{% comment %} <meta property='article:author' content='https://www.facebook.com/YOUR-NAME' /> {% endcomment %}
+<meta property='article:publisher' content='https://www.facebook.com/NerdVentureBlog' />
+<meta property="fb:app_id" content="2339495356288498">
+
+<meta property="twitter:card" content="summary">
+<meta property="twitter:title" content="{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}">
+<meta property="twitter:description" content="{{ self.summary }}">
+<meta property="twitter:image" content="{{ page.get_site.root_url }}{{ headerimg.url }}">
+<meta property="twitter:url" content="{{ request.build_absolute_uri  }}">

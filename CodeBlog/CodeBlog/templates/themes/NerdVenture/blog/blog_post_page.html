@@ -4,11 +4,13 @@
 {% load compress %}
 
 {% block content_top %}
+{# FB comments / api #}
 <div id="fb-root"></div>
 <script async data-cfasync="false" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v4.0&appId=2339495356288498&autoLogAppEvents=1"></script>
 
 {% include 'social/social_share_vertical.html' %}
 
+{% block load_last %}
 <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 <defs>
 <symbol id="icon-folder-open-o" viewBox="0 0 30 28">
@@ -17,12 +19,13 @@
 </symbol>
 </defs>
 </svg>
+{% endblock %}
 
 <div id="page-header" class="overflow-hidden px-0 container-fluid bg-main-blue-dark text-light shadow skewed-border">
 <div id="page-header-wrap" class="w-100 text-light skewed-border"></div>
     <div id="page-header-content">
     <div class="row py-3">
-        <div class="col my-5 pt-5 pb-2">
+        <div class="col mt-3 pt-5 pb-2">
 
             <div id="page-title-wrap" class="text-center pb-1">
                 <h1 id="post-title" class="px-5">{{ page.title }}</h1>
@@ -37,7 +40,7 @@
                     </i>
                 </small>
 
-                <div id="topics" class="mt-4">
+                <div id="topics" class="mt-2">
                     {% for topic in page.topics.all %}
                         <a href='{% routablepageurl settings.siteSettings.SiteSettings.topic_page.specific "topic" topic.slug %}'
                         class="m-2 p-0 px-2 text-light">
@@ -59,16 +62,18 @@
 
 {% block content %}
 
-{% comment %} <hr> {% endcomment %}
 <div id="page-content" class="row mx-auto">
 
     <article id="article" class="col ml-xl-0 ml-md-3 ml-sm-0 pt-0">
 
         <div id="article-contents" class="mx-auto">
         {% for block in self.body %}
-            <div class="trans-ease block-{{ block.block_type }} mb-5">
+            {% with blockcss='mb-5' %}
+                {% include 'blog/block_renderer.html' %}
+            {% endwith %}
+            {% comment %} <div class="trans-ease block-{{ block.block_type }} mb-5">
                 {% include_block block %}
-            </div>
+            </div> {% endcomment %}
         {% endfor %}
         </div>
 
@@ -77,7 +82,7 @@
         <hr>
 
         <div id="post-comments">
-            <div class="fb-comments" data-href="{{ request.build_absolute_uri  }}" data-width="80%" data-numposts="20"></div>
+            <div class="fb-comments" data-href="{{ request.build_absolute_uri  }}" data-width="100%" data-numposts="20"></div>
         </div>
 
         {% comment %} {% if page.author_profile %}

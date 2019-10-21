@@ -1,5 +1,5 @@
 #post-summary-card{
-    max-width: 30rem;
+    /* max-width: 30rem; */
     height: 100%;
 }
 
@@ -16,7 +16,7 @@
     max-height: 400px;
     min-height: 400px;
 }
-
+ 
 #post-title{
   font-size: 2.5em;
   font-weight: 500;
@@ -28,13 +28,9 @@
         font-size: 8vw;
     }
 }
-
-.sidebar-offset{
-    top: 6em;
-}
-  
   
 .post-card{
+  max-width: 30rem;
     transition:.2s all; 
 }
 
@@ -49,7 +45,7 @@
     transform:scale(1);
     filter:blur(0px);
     opacity:1;
-    animation: float 1s ease-in-out infinite;
+    /* animation: float 1s ease-in-out infinite; */
   }
 
 .post-card:hover [name="continue"]{
@@ -57,3 +53,217 @@
     /* background-color: #094ecf;
     color: #fff; */
 }
+
+.sidebar-offset{
+    top: 6em;
+}
+
+  @media (min-width: 992px){
+    #article-contents{
+        max-width: 75%;
+      }
+
+    #page-content{
+      /* max-width: 85%; */
+      margin: auto;
+    }
+  }
+  
+  #page-wrapper{
+      position: relative;
+      min-height: 100vh;
+    }
+    
+#content-wrap{
+    padding-bottom: 5rem;
+}
+article h2{
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 1em;
+    }
+    
+article{
+padding: 20px;
+font-family: sans-serif;
+}
+
+.post-title-author-link{
+    color: #e7d6a3;
+  }
+  
+  .post-title-author-link:hover{
+    color: #dcdcff;
+  }
+  
+  .post-date-overlay{
+    position: relative;
+    bottom: 0;
+    transform: translateY(-105%)
+  }
+  
+  .post-card{
+    border-width: 0px;
+    outline-width: 0px;
+    box-shadow: 0 1rem 2rem -1rem rgba(51,51,51,.3);
+    /* max-width: 400px; */
+  }
+  
+  
+  /* .card-body:hover [name='continue']{
+    display: block !important;
+  }*/
+  
+  .card-body > [name='continue']{
+    margin-top: 1em !important;
+    margin-bottom: auto !important;
+  } 
+
+  .continue-btn{
+    border-width: 1.5px;
+  }
+
+  /*
+    CONTACT FORM -----------
+*/
+.contactform-modal{
+    width: auto;
+    height: auto;
+    max-height: 90%;
+    overflow: hidden;
+    z-index: 1000000;
+  }
+  
+  .contactform-modal input[type=text]{
+    background-color: rgba(0,0,0,0.15);
+    color: #fff;
+    outline: none;
+    border-width: 0;
+    /* border-bottom-width: 2px; */
+    border-radius: 0;
+    z-index: 1000000;
+  }
+  
+  .contactform{
+      display: inline-block;
+      max-width: 80%;
+      position: relative;
+      padding: 1em;
+      min-width: 200px;
+      min-height: 200px;
+      top: 50%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      z-index: 1000000;
+    }
+
+.modal-close-btn{
+    /* width: 2em; */
+    /* height: 2em; */
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(50%, -50%);
+    opacity: 1;
+    /* z-index: 10; */
+    z-index: 1000000;
+    /* transform: scale(1.25); */
+  }
+  
+  .modal-close-btn:hover{
+    padding: 5em;
+  }
+    
+  .contactbtn{
+    padding: 0.7em;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    z-index: 2;
+  }
+  
+  #form-thanks{
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    display: none;
+    z-index: 1000000;
+  }
+  
+  .form-thanks-content{
+  position: absolute;
+  left:50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000000;
+  }
+
+  #subscribe-check-box{
+    opacity: 0.7;
+  }
+  /*
+    --------------------------------------- end contact form*/
+
+/* Parallax header */
+.block-Parallax_Header{
+    margin-bottom: 0 !important;
+  }
+
+#page-header{
+    background-color: rgba(0,0,0,0.5);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    min-height: 35vh;
+    /* max-height: 100vh; */
+    display: flex;
+
+    background: repeating-radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.4) 1vw,
+    rgba(0, 0, 0, 0.6) 1vw,
+    rgba(0, 0, 0, 0.6) 2vw
+    ) fixed; 
+
+}
+
+@media (min-width: 1500.1px) {
+  #page-header{
+      background-size: cover;
+      background-position: center bottom;
+  }
+}
+
+.content {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+}
+
+#page-header-wrap{
+  position: absolute;
+  height: 100%;
+  /*background-color: rgba(50,50,150,0.8);*/
+  background-color: #094ecf;
+  opacity: 0.8;
+}
+
+#page-header-content{
+  margin: auto;
+  margin-top: 1em;
+}
+
+/*Fixes a bug in Bootstrap*/
+/* @media (min-width: 992.1px){ 
+  .navbar-expand-lg {
+      -ms-flex-flow: row nowrap;
+      flex-flow: row nowrap;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+  } */

@@ -112,7 +112,7 @@ if (window.addEventListener && window.requestAnimationFrame && document.getEleme
   
             img.classList.remove('reveal');
 
-            addPinItBtnToImg(img);
+            // addPinItBtnToImg(img);
   
           });
   

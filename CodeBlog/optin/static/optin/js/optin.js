@@ -4,8 +4,12 @@ if(typeof optinJsLoaded === 'undefined'){
     (function (){
         // Cookies.clear('subscribed');
 
+        var subscribeEvent = new Event('subscribed');
+        var verifiedEvent = new Event('verified');
+        var subscribedOrVerifiedEvent = new Event('subcribedOrVerified');
+
         function removeOptins(){
-            var optins = document.getElementsByName('optin');
+            var optins = document.getElementsByName('optinform');
             var optinIndex;
             for (optinIndex = 0; optinIndex < optins.length; optinIndex+=1){
                 var optin = optins[optinIndex];
@@ -30,6 +34,10 @@ if(typeof optinJsLoaded === 'undefined'){
             // give unique ids
             counter++;
             optin.setAttribute('id', 'optinform' + counter.toString());
+
+            // var submitBtn = optin.querySelector('button[value="Subscribe"]');
+            var actionDl = document.getElementById('optin-action-download');
+            var actionPl = document.getElementById('optin-action-pageload');
     
             optin.addEventListener("submit", function(event){
                 event.preventDefault();
@@ -50,26 +58,37 @@ if(typeof optinJsLoaded === 'undefined'){
                         'swing-out-top-bck', 'Subscribed!', ' Check your email', true);
                         if(settings.debug){
                             // expires in 60 seconds
-                            Cookies.set('subscribed', 'true', {expiry : 60});
+                            Cookies.set('NV-Subscribed', 'true', {expiry : 60, path: '/'});
                         } else {
                             var d = new Date();
-                            Cookies.set('subscribed', 'true', 
-                                {expiry : new Date(d.getFullYear() + 1, d.getMonth(), d.getDate())});
+                            Cookies.set('NV-Subscribed', 'true', 
+                            {expiry : new Date(d.getFullYear() + 1, d.getMonth(), d.getDate()), path: '/'});
                         }
+                        window.dispatchEvent(subscribeEvent);
+                        window.dispatchEvent(subscribedOrVerifiedEvent);
                     } else {
                         // Usually means email already exist as subscriber
                         createNotification(alertcls, 'swing-in-top-fwd', 
                         'swing-out-top-bck', 'Subscriber Verified ', '', true);
                         if(settings.debug){
                             // expires in 60 seconds
-                            Cookies.set('subscribed', 'true', {expiry : 60});
+                            Cookies.set('NV-Subscribed', 'true', {expiry : 60, path: '/'});
                         } else {
                             var d = new Date();
-                            Cookies.set('subscribed', 'true', 
-                                {expiry : new Date(d.getFullYear() + 1, d.getMonth(), d.getDate())});
+                            Cookies.set('NV-Subscribed', 'true', 
+                                {expiry : new Date(d.getFullYear() + 1, d.getMonth(), d.getDate()), path: '/'});
                         }
+                        window.dispatchEvent(verifiedEvent);
+                        window.dispatchEvent(subscribedOrVerifiedEvent);
                     }
-                    
+                     
+                    if(actionDl){ // download
+                        window.open(actionDl.value);
+                    } 
+
+                    if(actionPl){ // load page
+                        window.location = actionPl.value
+                    }
                     // console.log(event);
                 });
         

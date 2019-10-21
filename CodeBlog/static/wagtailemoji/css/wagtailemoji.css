@@ -1,0 +1,2488 @@
+@font-face {
+  font-family: "NotoEmoji";
+  src: url("../fonts/NotoEmoji-Regular.ttf"); }
+
+.icon-emoji-smile::before {
+  content: "\1f604"; }
+
+.icon-emoji-laughing::before {
+  content: "\1f606"; }
+
+.icon-emoji-blush::before {
+  content: "\1f60a"; }
+
+.icon-emoji-smiley::before {
+  content: "\1f603"; }
+
+.icon-emoji-relaxed::before {
+  content: "\263a"; }
+
+.icon-emoji-smirk::before {
+  content: "\1f60f"; }
+
+.icon-emoji-heart-eyes::before {
+  content: "\1f60d"; }
+
+.icon-emoji-kissing-heart::before {
+  content: "\1f618"; }
+
+.icon-emoji-kissing-closed-eyes::before {
+  content: "\1f61a"; }
+
+.icon-emoji-flushed::before {
+  content: "\1f633"; }
+
+.icon-emoji-relieved::before {
+  content: "\1f625"; }
+
+.icon-emoji-satisfied::before {
+  content: "\1f60c"; }
+
+.icon-emoji-grin::before {
+  content: "\1f601"; }
+
+.icon-emoji-wink::before {
+  content: "\1f609"; }
+
+.icon-emoji-stuck-out-tongue-winking-eye::before {
+  content: "\1f61c"; }
+
+.icon-emoji-stuck-out-tongue-closed-eyes::before {
+  content: "\1f61d"; }
+
+.icon-emoji-grinning::before {
+  content: "\1f600"; }
+
+.icon-emoji-kissing::before {
+  content: "\1f617"; }
+
+.icon-emoji-kissing-smiling-eyes::before {
+  content: "\1f619"; }
+
+.icon-emoji-stuck-out-tongue::before {
+  content: "\1f61b"; }
+
+.icon-emoji-sleeping::before {
+  content: "\1f634"; }
+
+.icon-emoji-worried::before {
+  content: "\1f61f"; }
+
+.icon-emoji-frowning::before {
+  content: "\1f626"; }
+
+.icon-emoji-anguished::before {
+  content: "\1f627"; }
+
+.icon-emoji-open-mouth::before {
+  content: "\1f62e"; }
+
+.icon-emoji-grimacing::before {
+  content: "\1f62c"; }
+
+.icon-emoji-confused::before {
+  content: "\1f615"; }
+
+.icon-emoji-hushed::before {
+  content: "\1f62f"; }
+
+.icon-emoji-expressionless::before {
+  content: "\1f611"; }
+
+.icon-emoji-unamused::before {
+  content: "\1f612"; }
+
+.icon-emoji-sweat-smile::before {
+  content: "\1f605"; }
+
+.icon-emoji-sweat::before {
+  content: "\1f613"; }
+
+.icon-emoji-weary::before {
+  content: "\1f629"; }
+
+.icon-emoji-pensive::before {
+  content: "\1f614"; }
+
+.icon-emoji-disappointed::before {
+  content: "\1f61e"; }
+
+.icon-emoji-confounded::before {
+  content: "\1f616"; }
+
+.icon-emoji-fearful::before {
+  content: "\1f628"; }
+
+.icon-emoji-cold-sweat::before {
+  content: "\1f630"; }
+
+.icon-emoji-persevere::before {
+  content: "\1f623"; }
+
+.icon-emoji-cry::before {
+  content: "\1f622"; }
+
+.icon-emoji-sob::before {
+  content: "\1f62d"; }
+
+.icon-emoji-joy::before {
+  content: "\1f602"; }
+
+.icon-emoji-astonished::before {
+  content: "\1f632"; }
+
+.icon-emoji-scream::before {
+  content: "\1f631"; }
+
+.icon-emoji-tired-face::before {
+  content: "\1f62b"; }
+
+.icon-emoji-angry::before {
+  content: "\1f620"; }
+
+.icon-emoji-rage::before {
+  content: "\1f621"; }
+
+.icon-emoji-triumph::before {
+  content: "\1f624"; }
+
+.icon-emoji-sleepy::before {
+  content: "\1f62a"; }
+
+.icon-emoji-yum::before {
+  content: "\1f60b"; }
+
+.icon-emoji-mask::before {
+  content: "\1f637"; }
+
+.icon-emoji-sunglasses::before {
+  content: "\1f60e"; }
+
+.icon-emoji-dizzy-face::before {
+  content: "\1f635"; }
+
+.icon-emoji-imp::before {
+  content: "\1f47f"; }
+
+.icon-emoji-smiling-imp::before {
+  content: "\1f608"; }
+
+.icon-emoji-neutral-face::before {
+  content: "\1f610"; }
+
+.icon-emoji-no-mouth::before {
+  content: "\1f636"; }
+
+.icon-emoji-innocent::before {
+  content: "\1f607"; }
+
+.icon-emoji-alien::before {
+  content: "\1f47d"; }
+
+.icon-emoji-yellow-heart::before {
+  content: "\1f49b"; }
+
+.icon-emoji-blue-heart::before {
+  content: "\1f499"; }
+
+.icon-emoji-purple-heart::before {
+  content: "\1f49c"; }
+
+.icon-emoji-heart::before {
+  content: "\2764"; }
+
+.icon-emoji-green-heart::before {
+  content: "\1f49a"; }
+
+.icon-emoji-broken-heart::before {
+  content: "\1f494"; }
+
+.icon-emoji-heartbeat::before {
+  content: "\1f493"; }
+
+.icon-emoji-heartpulse::before {
+  content: "\1f497"; }
+
+.icon-emoji-two-hearts::before {
+  content: "\1f495"; }
+
+.icon-emoji-revolving-hearts::before {
+  content: "\1f49e"; }
+
+.icon-emoji-cupid::before {
+  content: "\1f498"; }
+
+.icon-emoji-sparkling-heart::before {
+  content: "\1f496"; }
+
+.icon-emoji-sparkles::before {
+  content: "\2728"; }
+
+.icon-emoji-star::before {
+  content: "\2b50"; }
+
+.icon-emoji-star2::before {
+  content: "\1f31f"; }
+
+.icon-emoji-dizzy::before {
+  content: "\1f4ab"; }
+
+.icon-emoji-boom::before {
+  content: "\1f4a5"; }
+
+.icon-emoji-anger::before {
+  content: "\1f4a2"; }
+
+.icon-emoji-exclamation::before {
+  content: "\2757"; }
+
+.icon-emoji-question::before {
+  content: "\2753"; }
+
+.icon-emoji-grey-exclamation::before {
+  content: "\2755"; }
+
+.icon-emoji-grey-question::before {
+  content: "\2754"; }
+
+.icon-emoji-zzz::before {
+  content: "\1f4a4"; }
+
+.icon-emoji-dash::before {
+  content: "\1f4a8"; }
+
+.icon-emoji-sweat-drops::before {
+  content: "\1f4a6"; }
+
+.icon-emoji-notes::before {
+  content: "\1f3b6"; }
+
+.icon-emoji-musical-note::before {
+  content: "\1f3b5"; }
+
+.icon-emoji-fire::before {
+  content: "\1f525"; }
+
+.icon-emoji-poop::before {
+  content: "\1f4a9"; }
+
+.icon-emoji-thumbsup::before {
+  content: "\1f44d"; }
+
+.icon-emoji-thumbsdown::before {
+  content: "\1f44e"; }
+
+.icon-emoji-ok-hand::before {
+  content: "\1f44c"; }
+
+.icon-emoji-punch::before {
+  content: "\1f44a"; }
+
+.icon-emoji-fist::before {
+  content: "\270a"; }
+
+.icon-emoji-v::before {
+  content: "\270c"; }
+
+.icon-emoji-wave::before {
+  content: "\1f44b"; }
+
+.icon-emoji-hand::before {
+  content: "\270b"; }
+
+.icon-emoji-open-hands::before {
+  content: "\1f450"; }
+
+.icon-emoji-point-up::before {
+  content: "\261d"; }
+
+.icon-emoji-point-down::before {
+  content: "\1f447"; }
+
+.icon-emoji-point-left::before {
+  content: "\1f448"; }
+
+.icon-emoji-point-right::before {
+  content: "\1f449"; }
+
+.icon-emoji-raised-hands::before {
+  content: "\1f64c"; }
+
+.icon-emoji-pray::before {
+  content: "\1f64f"; }
+
+.icon-emoji-point-up-2::before {
+  content: "\1f446"; }
+
+.icon-emoji-clap::before {
+  content: "\1f44f"; }
+
+.icon-emoji-muscle::before {
+  content: "\1f4aa"; }
+
+.icon-emoji-walking::before {
+  content: "\1f6b6"; }
+
+.icon-emoji-runner::before {
+  content: "\1f3c3"; }
+
+.icon-emoji-couple::before {
+  content: "\1f46b"; }
+
+.icon-emoji-family::before {
+  content: "\1f46a"; }
+
+.icon-emoji-two-men-holding-hands::before {
+  content: "\1f46c"; }
+
+.icon-emoji-two-women-holding-hands::before {
+  content: "\1f46d"; }
+
+.icon-emoji-dancer::before {
+  content: "\1f483"; }
+
+.icon-emoji-dancers::before {
+  content: "\1f46f"; }
+
+.icon-emoji-ok-woman::before {
+  content: "\1f646"; }
+
+.icon-emoji-no-good::before {
+  content: "\1f645"; }
+
+.icon-emoji-information-desk-person::before {
+  content: "\1f481"; }
+
+.icon-emoji-raised-hand::before {
+  content: "\1f64b"; }
+
+.icon-emoji-bride-with-veil::before {
+  content: "\1f470"; }
+
+.icon-emoji-person-with-pouting-face::before {
+  content: "\1f64e"; }
+
+.icon-emoji-person-frowning::before {
+  content: "\1f64d"; }
+
+.icon-emoji-bow::before {
+  content: "\1f647"; }
+
+.icon-emoji-couplekiss::before {
+  content: "\1f48f"; }
+
+.icon-emoji-couple-with-heart::before {
+  content: "\1f491"; }
+
+.icon-emoji-massage::before {
+  content: "\1f486"; }
+
+.icon-emoji-haircut::before {
+  content: "\1f487"; }
+
+.icon-emoji-nail-care::before {
+  content: "\1f485"; }
+
+.icon-emoji-boy::before {
+  content: "\1f466"; }
+
+.icon-emoji-girl::before {
+  content: "\1f467"; }
+
+.icon-emoji-woman::before {
+  content: "\1f469"; }
+
+.icon-emoji-man::before {
+  content: "\1f468"; }
+
+.icon-emoji-baby::before {
+  content: "\1f476"; }
+
+.icon-emoji-older-woman::before {
+  content: "\1f475"; }
+
+.icon-emoji-older-man::before {
+  content: "\1f474"; }
+
+.icon-emoji-person-with-blond-hair::before {
+  content: "\1f471"; }
+
+.icon-emoji-man-with-gua-pi-mao::before {
+  content: "\1f472"; }
+
+.icon-emoji-man-with-turban::before {
+  content: "\1f473"; }
+
+.icon-emoji-construction-worker::before {
+  content: "\1f477"; }
+
+.icon-emoji-cop::before {
+  content: "\1f46e"; }
+
+.icon-emoji-angel::before {
+  content: "\1f47c"; }
+
+.icon-emoji-princess::before {
+  content: "\1f478"; }
+
+.icon-emoji-smiley-cat::before {
+  content: "\1f63a"; }
+
+.icon-emoji-smile-cat::before {
+  content: "\1f638"; }
+
+.icon-emoji-heart-eyes-cat::before {
+  content: "\1f63b"; }
+
+.icon-emoji-kissing-cat::before {
+  content: "\1f63d"; }
+
+.icon-emoji-smirk-cat::before {
+  content: "\1f63c"; }
+
+.icon-emoji-scream-cat::before {
+  content: "\1f640"; }
+
+.icon-emoji-crying-cat-face::before {
+  content: "\1f63f"; }
+
+.icon-emoji-joy-cat::before {
+  content: "\1f639"; }
+
+.icon-emoji-pouting-cat::before {
+  content: "\1f63e"; }
+
+.icon-emoji-japanese-ogre::before {
+  content: "\1f479"; }
+
+.icon-emoji-japanese-goblin::before {
+  content: "\1f47a"; }
+
+.icon-emoji-see-no-evil::before {
+  content: "\1f648"; }
+
+.icon-emoji-hear-no-evil::before {
+  content: "\1f649"; }
+
+.icon-emoji-speak-no-evil::before {
+  content: "\1f64a"; }
+
+.icon-emoji-guardsman::before {
+  content: "\1f482"; }
+
+.icon-emoji-skull::before {
+  content: "\1f480"; }
+
+.icon-emoji-feet::before {
+  content: "\1f463"; }
+
+.icon-emoji-lips::before {
+  content: "\1f444"; }
+
+.icon-emoji-kiss::before {
+  content: "\1f48b"; }
+
+.icon-emoji-droplet::before {
+  content: "\1f4a7"; }
+
+.icon-emoji-ear::before {
+  content: "\1f442"; }
+
+.icon-emoji-eyes::before {
+  content: "\1f440"; }
+
+.icon-emoji-nose::before {
+  content: "\1f443"; }
+
+.icon-emoji-tongue::before {
+  content: "\1f445"; }
+
+.icon-emoji-love-letter::before {
+  content: "\1f48c"; }
+
+.icon-emoji-bust-in-silhouette::before {
+  content: "\1f464"; }
+
+.icon-emoji-busts-in-silhouette::before {
+  content: "\1f465"; }
+
+.icon-emoji-speech-balloon::before {
+  content: "\1f4ac"; }
+
+.icon-emoji-thought-balloon::before {
+  content: "\1f4ad"; }
+
+.icon-emoji-sunny::before {
+  content: "\2600"; }
+
+.icon-emoji-umbrella::before {
+  content: "\2614"; }
+
+.icon-emoji-cloud::before {
+  content: "\2601"; }
+
+.icon-emoji-snowflake::before {
+  content: "\2744"; }
+
+.icon-emoji-snowman::before {
+  content: "\26c4"; }
+
+.icon-emoji-zap::before {
+  content: "\26a1"; }
+
+.icon-emoji-cyclone::before {
+  content: "\1f300"; }
+
+.icon-emoji-foggy::before {
+  content: "\1f301"; }
+
+.icon-emoji-ocean::before {
+  content: "\1f30a"; }
+
+.icon-emoji-cat::before {
+  content: "\1f431"; }
+
+.icon-emoji-dog::before {
+  content: "\1f436"; }
+
+.icon-emoji-mouse::before {
+  content: "\1f42d"; }
+
+.icon-emoji-hamster::before {
+  content: "\1f439"; }
+
+.icon-emoji-rabbit::before {
+  content: "\1f430"; }
+
+.icon-emoji-wolf::before {
+  content: "\1f43a"; }
+
+.icon-emoji-frog::before {
+  content: "\1f438"; }
+
+.icon-emoji-tiger::before {
+  content: "\1f42f"; }
+
+.icon-emoji-koala::before {
+  content: "\1f428"; }
+
+.icon-emoji-bear::before {
+  content: "\1f43b"; }
+
+.icon-emoji-pig::before {
+  content: "\1f437"; }
+
+.icon-emoji-pig-nose::before {
+  content: "\1f43d"; }
+
+.icon-emoji-cow::before {
+  content: "\1f42e"; }
+
+.icon-emoji-boar::before {
+  content: "\1f417"; }
+
+.icon-emoji-monkey-face::before {
+  content: "\1f435"; }
+
+.icon-emoji-monkey::before {
+  content: "\1f412"; }
+
+.icon-emoji-horse::before {
+  content: "\1f434"; }
+
+.icon-emoji-racehorse::before {
+  content: "\1f40e"; }
+
+.icon-emoji-camel::before {
+  content: "\1f42b"; }
+
+.icon-emoji-sheep::before {
+  content: "\1f411"; }
+
+.icon-emoji-elephant::before {
+  content: "\1f418"; }
+
+.icon-emoji-panda-face::before {
+  content: "\1f43c"; }
+
+.icon-emoji-snake::before {
+  content: "\1f40d"; }
+
+.icon-emoji-bird::before {
+  content: "\1f426"; }
+
+.icon-emoji-baby-chick::before {
+  content: "\1f424"; }
+
+.icon-emoji-hatched-chick::before {
+  content: "\1f425"; }
+
+.icon-emoji-hatching-chick::before {
+  content: "\1f423"; }
+
+.icon-emoji-chicken::before {
+  content: "\1f414"; }
+
+.icon-emoji-penguin::before {
+  content: "\1f427"; }
+
+.icon-emoji-turtle::before {
+  content: "\1f422"; }
+
+.icon-emoji-bug::before {
+  content: "\1f41b"; }
+
+.icon-emoji-honeybee::before {
+  content: "\1f41d"; }
+
+.icon-emoji-ant::before {
+  content: "\1f41c"; }
+
+.icon-emoji-beetle::before {
+  content: "\1f41e"; }
+
+.icon-emoji-snail::before {
+  content: "\1f40c"; }
+
+.icon-emoji-octopus::before {
+  content: "\1f419"; }
+
+.icon-emoji-tropical-fish::before {
+  content: "\1f420"; }
+
+.icon-emoji-fish::before {
+  content: "\1f41f"; }
+
+.icon-emoji-whale::before {
+  content: "\1f433"; }
+
+.icon-emoji-whale2::before {
+  content: "\1f40b"; }
+
+.icon-emoji-dolphin::before {
+  content: "\1f42c"; }
+
+.icon-emoji-cow2::before {
+  content: "\1f404"; }
+
+.icon-emoji-ram::before {
+  content: "\1f40f"; }
+
+.icon-emoji-rat::before {
+  content: "\1f400"; }
+
+.icon-emoji-water-buffalo::before {
+  content: "\1f403"; }
+
+.icon-emoji-tiger2::before {
+  content: "\1f405"; }
+
+.icon-emoji-rabbit2::before {
+  content: "\1f407"; }
+
+.icon-emoji-dragon::before {
+  content: "\1f409"; }
+
+.icon-emoji-goat::before {
+  content: "\1f410"; }
+
+.icon-emoji-rooster::before {
+  content: "\1f413"; }
+
+.icon-emoji-dog2::before {
+  content: "\1f415"; }
+
+.icon-emoji-pig2::before {
+  content: "\1f416"; }
+
+.icon-emoji-mouse2::before {
+  content: "\1f401"; }
+
+.icon-emoji-ox::before {
+  content: "\1f402"; }
+
+.icon-emoji-dragon-face::before {
+  content: "\1f432"; }
+
+.icon-emoji-blowfish::before {
+  content: "\1f421"; }
+
+.icon-emoji-crocodile::before {
+  content: "\1f40a"; }
+
+.icon-emoji-dromedary-camel::before {
+  content: "\1f42a"; }
+
+.icon-emoji-leopard::before {
+  content: "\1f406"; }
+
+.icon-emoji-cat2::before {
+  content: "\1f408"; }
+
+.icon-emoji-poodle::before {
+  content: "\1f429"; }
+
+.icon-emoji-paw-prints::before {
+  content: "\1f43e"; }
+
+.icon-emoji-bouquet::before {
+  content: "\1f490"; }
+
+.icon-emoji-cherry-blossom::before {
+  content: "\1f338"; }
+
+.icon-emoji-tulip::before {
+  content: "\1f337"; }
+
+.icon-emoji-four-leaf-clover::before {
+  content: "\1f340"; }
+
+.icon-emoji-rose::before {
+  content: "\1f339"; }
+
+.icon-emoji-sunflower::before {
+  content: "\1f33b"; }
+
+.icon-emoji-hibiscus::before {
+  content: "\1f33a"; }
+
+.icon-emoji-maple-leaf::before {
+  content: "\1f341"; }
+
+.icon-emoji-leaves::before {
+  content: "\1f343"; }
+
+.icon-emoji-fallen-leaf::before {
+  content: "\1f342"; }
+
+.icon-emoji-herb::before {
+  content: "\1f33f"; }
+
+.icon-emoji-mushroom::before {
+  content: "\1f344"; }
+
+.icon-emoji-cactus::before {
+  content: "\1f335"; }
+
+.icon-emoji-palm-tree::before {
+  content: "\1f334"; }
+
+.icon-emoji-evergreen-tree::before {
+  content: "\1f332"; }
+
+.icon-emoji-deciduous-tree::before {
+  content: "\1f333"; }
+
+.icon-emoji-chestnut::before {
+  content: "\1f330"; }
+
+.icon-emoji-seedling::before {
+  content: "\1f331"; }
+
+.icon-emoji-blossom::before {
+  content: "\1f33c"; }
+
+.icon-emoji-ear-of-rice::before {
+  content: "\1f33e"; }
+
+.icon-emoji-shell::before {
+  content: "\1f41a"; }
+
+.icon-emoji-globe-with-meridians::before {
+  content: "\1f310"; }
+
+.icon-emoji-sun-with-face::before {
+  content: "\1f31e"; }
+
+.icon-emoji-full-moon-with-face::before {
+  content: "\1f31d"; }
+
+.icon-emoji-new-moon-with-face::before {
+  content: "\1f31a"; }
+
+.icon-emoji-new-moon::before {
+  content: "\1f311"; }
+
+.icon-emoji-waxing-crescent-moon::before {
+  content: "\1f312"; }
+
+.icon-emoji-first-quarter-moon::before {
+  content: "\1f313"; }
+
+.icon-emoji-waxing-gibbous-moon::before {
+  content: "\1f314"; }
+
+.icon-emoji-full-moon::before {
+  content: "\1f315"; }
+
+.icon-emoji-waning-gibbous-moon::before {
+  content: "\1f316"; }
+
+.icon-emoji-last-quarter-moon::before {
+  content: "\1f317"; }
+
+.icon-emoji-waning-crescent-moon::before {
+  content: "\1f318"; }
+
+.icon-emoji-last-quarter-moon-with-face::before {
+  content: "\1f31c"; }
+
+.icon-emoji-first-quarter-moon-with-face::before {
+  content: "\1f31b"; }
+
+.icon-emoji-moon::before {
+  content: "\1f319"; }
+
+.icon-emoji-earth-africa::before {
+  content: "\1f30d"; }
+
+.icon-emoji-earth-americas::before {
+  content: "\1f30e"; }
+
+.icon-emoji-earth-asia::before {
+  content: "\1f30f"; }
+
+.icon-emoji-volcano::before {
+  content: "\1f30b"; }
+
+.icon-emoji-milky-way::before {
+  content: "\1f30c"; }
+
+.icon-emoji-partly-sunny::before {
+  content: "\26c5"; }
+
+.icon-emoji-bamboo::before {
+  content: "\1f38d"; }
+
+.icon-emoji-gift-heart::before {
+  content: "\1f49d"; }
+
+.icon-emoji-dolls::before {
+  content: "\1f38e"; }
+
+.icon-emoji-school-satchel::before {
+  content: "\1f392"; }
+
+.icon-emoji-mortar-board::before {
+  content: "\1f393"; }
+
+.icon-emoji-flags::before {
+  content: "\1f38f"; }
+
+.icon-emoji-fireworks::before {
+  content: "\1f386"; }
+
+.icon-emoji-sparkler::before {
+  content: "\1f387"; }
+
+.icon-emoji-wind-chime::before {
+  content: "\1f390"; }
+
+.icon-emoji-rice-scene::before {
+  content: "\1f391"; }
+
+.icon-emoji-jack-o-lantern::before {
+  content: "\1f383"; }
+
+.icon-emoji-ghost::before {
+  content: "\1f47b"; }
+
+.icon-emoji-santa::before {
+  content: "\1f385"; }
+
+.icon-emoji-8ball::before {
+  content: "\1f3b1"; }
+
+.icon-emoji-alarm-clock::before {
+  content: "\23f0"; }
+
+.icon-emoji-apple::before {
+  content: "\1f34e"; }
+
+.icon-emoji-art::before {
+  content: "\1f3a8"; }
+
+.icon-emoji-baby-bottle::before {
+  content: "\1f37c"; }
+
+.icon-emoji-balloon::before {
+  content: "\1f388"; }
+
+.icon-emoji-banana::before {
+  content: "\1f34c"; }
+
+.icon-emoji-bar-chart::before {
+  content: "\1f4ca"; }
+
+.icon-emoji-baseball::before {
+  content: "\26be"; }
+
+.icon-emoji-basketball::before {
+  content: "\1f3c0"; }
+
+.icon-emoji-bath::before {
+  content: "\1f6c0"; }
+
+.icon-emoji-bathtub::before {
+  content: "\1f6c1"; }
+
+.icon-emoji-battery::before {
+  content: "\1f50b"; }
+
+.icon-emoji-beer::before {
+  content: "\1f37a"; }
+
+.icon-emoji-beers::before {
+  content: "\1f37b"; }
+
+.icon-emoji-bell::before {
+  content: "\1f514"; }
+
+.icon-emoji-bento::before {
+  content: "\1f371"; }
+
+.icon-emoji-bicyclist::before {
+  content: "\1f6b4"; }
+
+.icon-emoji-bikini::before {
+  content: "\1f459"; }
+
+.icon-emoji-birthday::before {
+  content: "\1f382"; }
+
+.icon-emoji-black-joker::before {
+  content: "\1f0cf"; }
+
+.icon-emoji-black-nib::before {
+  content: "\2712"; }
+
+.icon-emoji-blue-book::before {
+  content: "\1f4d8"; }
+
+.icon-emoji-bomb::before {
+  content: "\1f4a3"; }
+
+.icon-emoji-bookmark::before {
+  content: "\1f516"; }
+
+.icon-emoji-bookmark-tabs::before {
+  content: "\1f4d1"; }
+
+.icon-emoji-books::before {
+  content: "\1f4da"; }
+
+.icon-emoji-boot::before {
+  content: "\1f462"; }
+
+.icon-emoji-bowling::before {
+  content: "\1f3b3"; }
+
+.icon-emoji-bread::before {
+  content: "\1f35e"; }
+
+.icon-emoji-briefcase::before {
+  content: "\1f4bc"; }
+
+.icon-emoji-bulb::before {
+  content: "\1f4a1"; }
+
+.icon-emoji-cake::before {
+  content: "\1f370"; }
+
+.icon-emoji-calendar::before {
+  content: "\1f4c6"; }
+
+.icon-emoji-calling::before {
+  content: "\1f4f2"; }
+
+.icon-emoji-camera::before {
+  content: "\1f4f7"; }
+
+.icon-emoji-candy::before {
+  content: "\1f36c"; }
+
+.icon-emoji-card-index::before {
+  content: "\1f4c7"; }
+
+.icon-emoji-cd::before {
+  content: "\1f4bf"; }
+
+.icon-emoji-chart-with-downwards-trend::before {
+  content: "\1f4c9"; }
+
+.icon-emoji-chart-with-upwards-trend::before {
+  content: "\1f4c8"; }
+
+.icon-emoji-cherries::before {
+  content: "\1f352"; }
+
+.icon-emoji-chocolate-bar::before {
+  content: "\1f36b"; }
+
+.icon-emoji-christmas-tree::before {
+  content: "\1f384"; }
+
+.icon-emoji-clapper::before {
+  content: "\1f3ac"; }
+
+.icon-emoji-clipboard::before {
+  content: "\1f4cb"; }
+
+.icon-emoji-closed-book::before {
+  content: "\1f4d5"; }
+
+.icon-emoji-closed-lock-with-key::before {
+  content: "\1f510"; }
+
+.icon-emoji-closed-umbrella::before {
+  content: "\1f302"; }
+
+.icon-emoji-clubs::before {
+  content: "\2663"; }
+
+.icon-emoji-cocktail::before {
+  content: "\1f378"; }
+
+.icon-emoji-coffee::before {
+  content: "\2615"; }
+
+.icon-emoji-computer::before {
+  content: "\1f4bb"; }
+
+.icon-emoji-confetti-ball::before {
+  content: "\1f38a"; }
+
+.icon-emoji-cookie::before {
+  content: "\1f36a"; }
+
+.icon-emoji-corn::before {
+  content: "\1f33d"; }
+
+.icon-emoji-credit-card::before {
+  content: "\1f4b3"; }
+
+.icon-emoji-crown::before {
+  content: "\1f451"; }
+
+.icon-emoji-crystal-ball::before {
+  content: "\1f52e"; }
+
+.icon-emoji-curry::before {
+  content: "\1f35b"; }
+
+.icon-emoji-custard::before {
+  content: "\1f36e"; }
+
+.icon-emoji-dango::before {
+  content: "\1f361"; }
+
+.icon-emoji-dart::before {
+  content: "\1f3af"; }
+
+.icon-emoji-date::before {
+  content: "\1f4c5"; }
+
+.icon-emoji-diamonds::before {
+  content: "\2666"; }
+
+.icon-emoji-dollar::before {
+  content: "\1f4b5"; }
+
+.icon-emoji-door::before {
+  content: "\1f6aa"; }
+
+.icon-emoji-doughnut::before {
+  content: "\1f369"; }
+
+.icon-emoji-dress::before {
+  content: "\1f457"; }
+
+.icon-emoji-dvd::before {
+  content: "\1f4c0"; }
+
+.icon-emoji-e-mail::before {
+  content: "\1f4e7"; }
+
+.icon-emoji-egg::before {
+  content: "\1f373"; }
+
+.icon-emoji-eggplant::before {
+  content: "\1f346"; }
+
+.icon-emoji-electric-plug::before {
+  content: "\1f50c"; }
+
+.icon-emoji-email::before {
+  content: "\2709"; }
+
+.icon-emoji-euro::before {
+  content: "\1f4b6"; }
+
+.icon-emoji-eyeglasses::before {
+  content: "\1f453"; }
+
+.icon-emoji-fax::before {
+  content: "\1f4e0"; }
+
+.icon-emoji-file-folder::before {
+  content: "\1f4c1"; }
+
+.icon-emoji-fish-cake::before {
+  content: "\1f365"; }
+
+.icon-emoji-fishing-pole-and-fish::before {
+  content: "\1f3a3"; }
+
+.icon-emoji-flashlight::before {
+  content: "\1f526"; }
+
+.icon-emoji-floppy-disk::before {
+  content: "\1f4be"; }
+
+.icon-emoji-flower-playing-cards::before {
+  content: "\1f3b4"; }
+
+.icon-emoji-football::before {
+  content: "\1f3c8"; }
+
+.icon-emoji-fork-and-knife::before {
+  content: "\1f374"; }
+
+.icon-emoji-fried-shrimp::before {
+  content: "\1f364"; }
+
+.icon-emoji-fries::before {
+  content: "\1f35f"; }
+
+.icon-emoji-game-die::before {
+  content: "\1f3b2"; }
+
+.icon-emoji-gem::before {
+  content: "\1f48e"; }
+
+.icon-emoji-gift::before {
+  content: "\1f381"; }
+
+.icon-emoji-golf::before {
+  content: "\26f3"; }
+
+.icon-emoji-grapes::before {
+  content: "\1f347"; }
+
+.icon-emoji-green-apple::before {
+  content: "\1f34f"; }
+
+.icon-emoji-green-book::before {
+  content: "\1f4d7"; }
+
+.icon-emoji-guitar::before {
+  content: "\1f3b8"; }
+
+.icon-emoji-gun::before {
+  content: "\1f52b"; }
+
+.icon-emoji-hamburger::before {
+  content: "\1f354"; }
+
+.icon-emoji-hammer::before {
+  content: "\1f528"; }
+
+.icon-emoji-handbag::before {
+  content: "\1f45c"; }
+
+.icon-emoji-headphones::before {
+  content: "\1f3a7"; }
+
+.icon-emoji-hearts::before {
+  content: "\2665"; }
+
+.icon-emoji-high-brightness::before {
+  content: "\1f506"; }
+
+.icon-emoji-high-heel::before {
+  content: "\1f460"; }
+
+.icon-emoji-hocho::before {
+  content: "\1f52a"; }
+
+.icon-emoji-honey-pot::before {
+  content: "\1f36f"; }
+
+.icon-emoji-horse-racing::before {
+  content: "\1f3c7"; }
+
+.icon-emoji-hourglass::before {
+  content: "\231b"; }
+
+.icon-emoji-hourglass-flowing-sand::before {
+  content: "\23f3"; }
+
+.icon-emoji-ice-cream::before {
+  content: "\1f368"; }
+
+.icon-emoji-icecream::before {
+  content: "\1f366"; }
+
+.icon-emoji-inbox-tray::before {
+  content: "\1f4e5"; }
+
+.icon-emoji-incoming-envelope::before {
+  content: "\1f4e8"; }
+
+.icon-emoji-iphone::before {
+  content: "\1f4f1"; }
+
+.icon-emoji-jeans::before {
+  content: "\1f456"; }
+
+.icon-emoji-key::before {
+  content: "\1f511"; }
+
+.icon-emoji-kimono::before {
+  content: "\1f458"; }
+
+.icon-emoji-ledger::before {
+  content: "\1f4d2"; }
+
+.icon-emoji-lemon::before {
+  content: "\1f34b"; }
+
+.icon-emoji-lipstick::before {
+  content: "\1f484"; }
+
+.icon-emoji-lock::before {
+  content: "\1f512"; }
+
+.icon-emoji-lock-with-ink-pen::before {
+  content: "\1f50f"; }
+
+.icon-emoji-lollipop::before {
+  content: "\1f36d"; }
+
+.icon-emoji-loop::before {
+  content: "\27bf"; }
+
+.icon-emoji-loudspeaker::before {
+  content: "\1f4e2"; }
+
+.icon-emoji-low-brightness::before {
+  content: "\1f505"; }
+
+.icon-emoji-mag::before {
+  content: "\1f50d"; }
+
+.icon-emoji-mag-right::before {
+  content: "\1f50e"; }
+
+.icon-emoji-mahjong::before {
+  content: "\1f004"; }
+
+.icon-emoji-mailbox::before {
+  content: "\1f4eb"; }
+
+.icon-emoji-mailbox-closed::before {
+  content: "\1f4ea"; }
+
+.icon-emoji-mailbox-with-mail::before {
+  content: "\1f4ec"; }
+
+.icon-emoji-mailbox-with-no-mail::before {
+  content: "\1f4ed"; }
+
+.icon-emoji-mans-shoe::before {
+  content: "\1f45e"; }
+
+.icon-emoji-meat-on-bone::before {
+  content: "\1f356"; }
+
+.icon-emoji-mega::before {
+  content: "\1f4e3"; }
+
+.icon-emoji-melon::before {
+  content: "\1f348"; }
+
+.icon-emoji-memo::before {
+  content: "\1f4dd"; }
+
+.icon-emoji-microphone::before {
+  content: "\1f3a4"; }
+
+.icon-emoji-microscope::before {
+  content: "\1f52c"; }
+
+.icon-emoji-minidisc::before {
+  content: "\1f4bd"; }
+
+.icon-emoji-money-with-wings::before {
+  content: "\1f4b8"; }
+
+.icon-emoji-moneybag::before {
+  content: "\1f4b0"; }
+
+.icon-emoji-mountain-bicyclist::before {
+  content: "\1f6b5"; }
+
+.icon-emoji-movie-camera::before {
+  content: "\1f3a5"; }
+
+.icon-emoji-musical-keyboard::before {
+  content: "\1f3b9"; }
+
+.icon-emoji-musical-score::before {
+  content: "\1f3bc"; }
+
+.icon-emoji-mute::before {
+  content: "\1f507"; }
+
+.icon-emoji-name-badge::before {
+  content: "\1f4db"; }
+
+.icon-emoji-necktie::before {
+  content: "\1f454"; }
+
+.icon-emoji-newspaper::before {
+  content: "\1f4f0"; }
+
+.icon-emoji-no-bell::before {
+  content: "\1f515"; }
+
+.icon-emoji-notebook::before {
+  content: "\1f4d3"; }
+
+.icon-emoji-notebook-with-decorative-cover::before {
+  content: "\1f4d4"; }
+
+.icon-emoji-nut-and-bolt::before {
+  content: "\1f529"; }
+
+.icon-emoji-oden::before {
+  content: "\1f362"; }
+
+.icon-emoji-open-file-folder::before {
+  content: "\1f4c2"; }
+
+.icon-emoji-orange-book::before {
+  content: "\1f4d9"; }
+
+.icon-emoji-outbox-tray::before {
+  content: "\1f4e4"; }
+
+.icon-emoji-page-facing-up::before {
+  content: "\1f4c4"; }
+
+.icon-emoji-page-with-curl::before {
+  content: "\1f4c3"; }
+
+.icon-emoji-pager::before {
+  content: "\1f4df"; }
+
+.icon-emoji-paperclip::before {
+  content: "\1f4ce"; }
+
+.icon-emoji-peach::before {
+  content: "\1f351"; }
+
+.icon-emoji-pear::before {
+  content: "\1f350"; }
+
+.icon-emoji-pencil2::before {
+  content: "\270f"; }
+
+.icon-emoji-phone::before {
+  content: "\260e"; }
+
+.icon-emoji-pill::before {
+  content: "\1f48a"; }
+
+.icon-emoji-pineapple::before {
+  content: "\1f34d"; }
+
+.icon-emoji-pizza::before {
+  content: "\1f355"; }
+
+.icon-emoji-postal-horn::before {
+  content: "\1f4ef"; }
+
+.icon-emoji-postbox::before {
+  content: "\1f4ee"; }
+
+.icon-emoji-pouch::before {
+  content: "\1f45d"; }
+
+.icon-emoji-poultry-leg::before {
+  content: "\1f357"; }
+
+.icon-emoji-pound::before {
+  content: "\1f4b7"; }
+
+.icon-emoji-purse::before {
+  content: "\1f45b"; }
+
+.icon-emoji-pushpin::before {
+  content: "\1f4cc"; }
+
+.icon-emoji-radio::before {
+  content: "\1f4fb"; }
+
+.icon-emoji-ramen::before {
+  content: "\1f35c"; }
+
+.icon-emoji-ribbon::before {
+  content: "\1f380"; }
+
+.icon-emoji-rice::before {
+  content: "\1f35a"; }
+
+.icon-emoji-rice-ball::before {
+  content: "\1f359"; }
+
+.icon-emoji-rice-cracker::before {
+  content: "\1f358"; }
+
+.icon-emoji-ring::before {
+  content: "\1f48d"; }
+
+.icon-emoji-rugby-football::before {
+  content: "\1f3c9"; }
+
+.icon-emoji-running-shirt-with-sash::before {
+  content: "\1f3bd"; }
+
+.icon-emoji-sake::before {
+  content: "\1f376"; }
+
+.icon-emoji-sandal::before {
+  content: "\1f461"; }
+
+.icon-emoji-satellite::before {
+  content: "\1f4e1"; }
+
+.icon-emoji-saxophone::before {
+  content: "\1f3b7"; }
+
+.icon-emoji-scissors::before {
+  content: "\2702"; }
+
+.icon-emoji-scroll::before {
+  content: "\1f4dc"; }
+
+.icon-emoji-seat::before {
+  content: "\1f4ba"; }
+
+.icon-emoji-shaved-ice::before {
+  content: "\1f367"; }
+
+.icon-emoji-shirt::before {
+  content: "\1f455"; }
+
+.icon-emoji-shower::before {
+  content: "\1f6bf"; }
+
+.icon-emoji-ski::before {
+  content: "\1f3bf"; }
+
+.icon-emoji-smoking::before {
+  content: "\1f6ac"; }
+
+.icon-emoji-snowboarder::before {
+  content: "\1f3c2"; }
+
+.icon-emoji-soccer::before {
+  content: "\26bd"; }
+
+.icon-emoji-sound::before {
+  content: "\1f509"; }
+
+.icon-emoji-space-invader::before {
+  content: "\1f47e"; }
+
+.icon-emoji-spades::before {
+  content: "\2660"; }
+
+.icon-emoji-spaghetti::before {
+  content: "\1f35d"; }
+
+.icon-emoji-speaker::before {
+  content: "\1f50a"; }
+
+.icon-emoji-stew::before {
+  content: "\1f372"; }
+
+.icon-emoji-straight-ruler::before {
+  content: "\1f4cf"; }
+
+.icon-emoji-strawberry::before {
+  content: "\1f353"; }
+
+.icon-emoji-surfer::before {
+  content: "\1f3c4"; }
+
+.icon-emoji-sushi::before {
+  content: "\1f363"; }
+
+.icon-emoji-sweet-potato::before {
+  content: "\1f360"; }
+
+.icon-emoji-swimmer::before {
+  content: "\1f3ca"; }
+
+.icon-emoji-syringe::before {
+  content: "\1f489"; }
+
+.icon-emoji-tada::before {
+  content: "\1f389"; }
+
+.icon-emoji-tanabata-tree::before {
+  content: "\1f38b"; }
+
+.icon-emoji-tangerine::before {
+  content: "\1f34a"; }
+
+.icon-emoji-tea::before {
+  content: "\1f375"; }
+
+.icon-emoji-telephone-receiver::before {
+  content: "\1f4de"; }
+
+.icon-emoji-telescope::before {
+  content: "\1f52d"; }
+
+.icon-emoji-tennis::before {
+  content: "\1f3be"; }
+
+.icon-emoji-toilet::before {
+  content: "\1f6bd"; }
+
+.icon-emoji-tomato::before {
+  content: "\1f345"; }
+
+.icon-emoji-tophat::before {
+  content: "\1f3a9"; }
+
+.icon-emoji-triangular-ruler::before {
+  content: "\1f4d0"; }
+
+.icon-emoji-trophy::before {
+  content: "\1f3c6"; }
+
+.icon-emoji-tropical-drink::before {
+  content: "\1f379"; }
+
+.icon-emoji-trumpet::before {
+  content: "\1f3ba"; }
+
+.icon-emoji-tv::before {
+  content: "\1f4fa"; }
+
+.icon-emoji-unlock::before {
+  content: "\1f513"; }
+
+.icon-emoji-vhs::before {
+  content: "\1f4fc"; }
+
+.icon-emoji-video-camera::before {
+  content: "\1f4f9"; }
+
+.icon-emoji-video-game::before {
+  content: "\1f3ae"; }
+
+.icon-emoji-violin::before {
+  content: "\1f3bb"; }
+
+.icon-emoji-watch::before {
+  content: "\231a"; }
+
+.icon-emoji-watermelon::before {
+  content: "\1f349"; }
+
+.icon-emoji-wine-glass::before {
+  content: "\1f377"; }
+
+.icon-emoji-womans-clothes::before {
+  content: "\1f45a"; }
+
+.icon-emoji-womans-hat::before {
+  content: "\1f452"; }
+
+.icon-emoji-wrench::before {
+  content: "\1f527"; }
+
+.icon-emoji-yen::before {
+  content: "\1f4b4"; }
+
+.icon-emoji-aerial-tramway::before {
+  content: "\1f6a1"; }
+
+.icon-emoji-airplane::before {
+  content: "\2708"; }
+
+.icon-emoji-ambulance::before {
+  content: "\1f691"; }
+
+.icon-emoji-anchor::before {
+  content: "\2693"; }
+
+.icon-emoji-articulated-lorry::before {
+  content: "\1f69b"; }
+
+.icon-emoji-atm::before {
+  content: "\1f3e7"; }
+
+.icon-emoji-bank::before {
+  content: "\1f3e6"; }
+
+.icon-emoji-barber::before {
+  content: "\1f488"; }
+
+.icon-emoji-beginner::before {
+  content: "\1f530"; }
+
+.icon-emoji-bike::before {
+  content: "\1f6b2"; }
+
+.icon-emoji-blue-car::before {
+  content: "\1f699"; }
+
+.icon-emoji-boat::before {
+  content: "\26f5"; }
+
+.icon-emoji-bridge-at-night::before {
+  content: "\1f309"; }
+
+.icon-emoji-bullettrain-front::before {
+  content: "\1f685"; }
+
+.icon-emoji-bullettrain-side::before {
+  content: "\1f684"; }
+
+.icon-emoji-bus::before {
+  content: "\1f68c"; }
+
+.icon-emoji-busstop::before {
+  content: "\1f68f"; }
+
+.icon-emoji-car::before {
+  content: "\1f697"; }
+
+.icon-emoji-carousel-horse::before {
+  content: "\1f3a0"; }
+
+.icon-emoji-checkered-flag::before {
+  content: "\1f3c1"; }
+
+.icon-emoji-church::before {
+  content: "\26ea"; }
+
+.icon-emoji-circus-tent::before {
+  content: "\1f3aa"; }
+
+.icon-emoji-city-sunrise::before {
+  content: "\1f307"; }
+
+.icon-emoji-city-sunset::before {
+  content: "\1f306"; }
+
+.icon-emoji-construction::before {
+  content: "\1f6a7"; }
+
+.icon-emoji-convenience-store::before {
+  content: "\1f3ea"; }
+
+.icon-emoji-crossed-flags::before {
+  content: "\1f38c"; }
+
+.icon-emoji-department-store::before {
+  content: "\1f3ec"; }
+
+.icon-emoji-european-castle::before {
+  content: "\1f3f0"; }
+
+.icon-emoji-european-post-office::before {
+  content: "\1f3e4"; }
+
+.icon-emoji-factory::before {
+  content: "\1f3ed"; }
+
+.icon-emoji-ferris-wheel::before {
+  content: "\1f3a1"; }
+
+.icon-emoji-fire-engine::before {
+  content: "\1f692"; }
+
+.icon-emoji-fountain::before {
+  content: "\26f2"; }
+
+.icon-emoji-fuelpump::before {
+  content: "\26fd"; }
+
+.icon-emoji-helicopter::before {
+  content: "\1f681"; }
+
+.icon-emoji-hospital::before {
+  content: "\1f3e5"; }
+
+.icon-emoji-hotel::before {
+  content: "\1f3e8"; }
+
+.icon-emoji-hotsprings::before {
+  content: "\2668"; }
+
+.icon-emoji-house::before {
+  content: "\1f3e0"; }
+
+.icon-emoji-house-with-garden::before {
+  content: "\1f3e1"; }
+
+.icon-emoji-japan::before {
+  content: "\1f5fe"; }
+
+.icon-emoji-japanese-castle::before {
+  content: "\1f3ef"; }
+
+.icon-emoji-light-rail::before {
+  content: "\1f688"; }
+
+.icon-emoji-love-hotel::before {
+  content: "\1f3e9"; }
+
+.icon-emoji-minibus::before {
+  content: "\1f690"; }
+
+.icon-emoji-monorail::before {
+  content: "\1f69d"; }
+
+.icon-emoji-mount-fuji::before {
+  content: "\1f5fb"; }
+
+.icon-emoji-mountain-cableway::before {
+  content: "\1f6a0"; }
+
+.icon-emoji-mountain-railway::before {
+  content: "\1f69e"; }
+
+.icon-emoji-moyai::before {
+  content: "\1f5ff"; }
+
+.icon-emoji-office::before {
+  content: "\1f3e2"; }
+
+.icon-emoji-oncoming-automobile::before {
+  content: "\1f698"; }
+
+.icon-emoji-oncoming-bus::before {
+  content: "\1f68d"; }
+
+.icon-emoji-oncoming-police-car::before {
+  content: "\1f694"; }
+
+.icon-emoji-oncoming-taxi::before {
+  content: "\1f696"; }
+
+.icon-emoji-performing-arts::before {
+  content: "\1f3ad"; }
+
+.icon-emoji-police-car::before {
+  content: "\1f693"; }
+
+.icon-emoji-post-office::before {
+  content: "\1f3e3"; }
+
+.icon-emoji-railway-car::before {
+  content: "\1f683"; }
+
+.icon-emoji-rainbow::before {
+  content: "\1f308"; }
+
+.icon-emoji-rocket::before {
+  content: "\1f680"; }
+
+.icon-emoji-roller-coaster::before {
+  content: "\1f3a2"; }
+
+.icon-emoji-rotating-light::before {
+  content: "\1f6a8"; }
+
+.icon-emoji-round-pushpin::before {
+  content: "\1f4cd"; }
+
+.icon-emoji-rowboat::before {
+  content: "\1f6a3"; }
+
+.icon-emoji-school::before {
+  content: "\1f3eb"; }
+
+.icon-emoji-ship::before {
+  content: "\1f6a2"; }
+
+.icon-emoji-slot-machine::before {
+  content: "\1f3b0"; }
+
+.icon-emoji-speedboat::before {
+  content: "\1f6a4"; }
+
+.icon-emoji-stars::before {
+  content: "\1f303"; }
+
+.icon-emoji-station::before {
+  content: "\1f689"; }
+
+.icon-emoji-statue-of-liberty::before {
+  content: "\1f5fd"; }
+
+.icon-emoji-steam-locomotive::before {
+  content: "\1f682"; }
+
+.icon-emoji-sunrise::before {
+  content: "\1f305"; }
+
+.icon-emoji-sunrise-over-mountains::before {
+  content: "\1f304"; }
+
+.icon-emoji-suspension-railway::before {
+  content: "\1f69f"; }
+
+.icon-emoji-taxi::before {
+  content: "\1f695"; }
+
+.icon-emoji-tent::before {
+  content: "\26fa"; }
+
+.icon-emoji-ticket::before {
+  content: "\1f3ab"; }
+
+.icon-emoji-tokyo-tower::before {
+  content: "\1f5fc"; }
+
+.icon-emoji-tractor::before {
+  content: "\1f69c"; }
+
+.icon-emoji-traffic-light::before {
+  content: "\1f6a5"; }
+
+.icon-emoji-train2::before {
+  content: "\1f686"; }
+
+.icon-emoji-tram::before {
+  content: "\1f68a"; }
+
+.icon-emoji-triangular-flag-on-post::before {
+  content: "\1f6a9"; }
+
+.icon-emoji-trolleybus::before {
+  content: "\1f68e"; }
+
+.icon-emoji-truck::before {
+  content: "\1f69a"; }
+
+.icon-emoji-vertical-traffic-light::before {
+  content: "\1f6a6"; }
+
+.icon-emoji-warning::before {
+  content: "\26a0"; }
+
+.icon-emoji-wedding::before {
+  content: "\1f492"; }
+
+.icon-emoji-jp::before {
+  content: "\1f1ef-1f1f5"; }
+
+.icon-emoji-kr::before {
+  content: "\1f1f0-1f1f7"; }
+
+.icon-emoji-cn::before {
+  content: "\1f1e8-1f1f3"; }
+
+.icon-emoji-us::before {
+  content: "\1f1fa-1f1f8"; }
+
+.icon-emoji-fr::before {
+  content: "\1f1eb-1f1f7"; }
+
+.icon-emoji-es::before {
+  content: "\1f1ea-1f1f8"; }
+
+.icon-emoji-it::before {
+  content: "\1f1ee-1f1f9"; }
+
+.icon-emoji-ru::before {
+  content: "\1f1f7-1f1fa"; }
+
+.icon-emoji-gb::before {
+  content: "\1f1ec-1f1e7"; }
+
+.icon-emoji-de::before {
+  content: "\1f1e9-1f1ea"; }
+
+.icon-emoji-100::before {
+  content: "\1f4af"; }
+
+.icon-emoji-1234::before {
+  content: "\1f522"; }
+
+.icon-emoji-a::before {
+  content: "\1f170"; }
+
+.icon-emoji-ab::before {
+  content: "\1f18e"; }
+
+.icon-emoji-abc::before {
+  content: "\1f524"; }
+
+.icon-emoji-abcd::before {
+  content: "\1f521"; }
+
+.icon-emoji-accept::before {
+  content: "\1f251"; }
+
+.icon-emoji-aquarius::before {
+  content: "\2652"; }
+
+.icon-emoji-aries::before {
+  content: "\2648"; }
+
+.icon-emoji-arrow-backward::before {
+  content: "\25c0"; }
+
+.icon-emoji-arrow-double-down::before {
+  content: "\23ec"; }
+
+.icon-emoji-arrow-double-up::before {
+  content: "\23eb"; }
+
+.icon-emoji-arrow-down::before {
+  content: "\2b07"; }
+
+.icon-emoji-arrow-down-small::before {
+  content: "\1f53d"; }
+
+.icon-emoji-arrow-forward::before {
+  content: "\25b6"; }
+
+.icon-emoji-arrow-heading-down::before {
+  content: "\2935"; }
+
+.icon-emoji-arrow-heading-up::before {
+  content: "\2934"; }
+
+.icon-emoji-arrow-left::before {
+  content: "\2b05"; }
+
+.icon-emoji-arrow-lower-left::before {
+  content: "\2199"; }
+
+.icon-emoji-arrow-lower-right::before {
+  content: "\2198"; }
+
+.icon-emoji-arrow-right::before {
+  content: "\27a1"; }
+
+.icon-emoji-arrow-right-hook::before {
+  content: "\21aa"; }
+
+.icon-emoji-arrow-up::before {
+  content: "\2b06"; }
+
+.icon-emoji-arrow-up-down::before {
+  content: "\2195"; }
+
+.icon-emoji-arrow-up-small::before {
+  content: "\1f53c"; }
+
+.icon-emoji-arrow-upper-left::before {
+  content: "\2196"; }
+
+.icon-emoji-arrow-upper-right::before {
+  content: "\2197"; }
+
+.icon-emoji-arrows-clockwise::before {
+  content: "\1f503"; }
+
+.icon-emoji-arrows-counterclockwise::before {
+  content: "\1f504"; }
+
+.icon-emoji-b::before {
+  content: "\1f171"; }
+
+.icon-emoji-baby-symbol::before {
+  content: "\1f6bc"; }
+
+.icon-emoji-baggage-claim::before {
+  content: "\1f6c4"; }
+
+.icon-emoji-ballot-box-with-check::before {
+  content: "\2611"; }
+
+.icon-emoji-bangbang::before {
+  content: "\203c"; }
+
+.icon-emoji-black-circle::before {
+  content: "\26ab"; }
+
+.icon-emoji-black-square-button::before {
+  content: "\1f532"; }
+
+.icon-emoji-cancer::before {
+  content: "\264b"; }
+
+.icon-emoji-capital-abcd::before {
+  content: "\1f520"; }
+
+.icon-emoji-capricorn::before {
+  content: "\2651"; }
+
+.icon-emoji-chart::before {
+  content: "\1f4b9"; }
+
+.icon-emoji-children-crossing::before {
+  content: "\1f6b8"; }
+
+.icon-emoji-cinema::before {
+  content: "\1f3a6"; }
+
+.icon-emoji-cl::before {
+  content: "\1f191"; }
+
+.icon-emoji-clock1::before {
+  content: "\1f550"; }
+
+.icon-emoji-clock10::before {
+  content: "\1f559"; }
+
+.icon-emoji-clock1030::before {
+  content: "\1f565"; }
+
+.icon-emoji-clock11::before {
+  content: "\1f55a"; }
+
+.icon-emoji-clock1130::before {
+  content: "\1f566"; }
+
+.icon-emoji-clock12::before {
+  content: "\1f55b"; }
+
+.icon-emoji-clock1230::before {
+  content: "\1f567"; }
+
+.icon-emoji-clock130::before {
+  content: "\1f55c"; }
+
+.icon-emoji-clock2::before {
+  content: "\1f551"; }
+
+.icon-emoji-clock230::before {
+  content: "\1f55d"; }
+
+.icon-emoji-clock3::before {
+  content: "\1f552"; }
+
+.icon-emoji-clock330::before {
+  content: "\1f55e"; }
+
+.icon-emoji-clock4::before {
+  content: "\1f553"; }
+
+.icon-emoji-clock430::before {
+  content: "\1f55f"; }
+
+.icon-emoji-clock5::before {
+  content: "\1f554"; }
+
+.icon-emoji-clock530::before {
+  content: "\1f560"; }
+
+.icon-emoji-clock6::before {
+  content: "\1f555"; }
+
+.icon-emoji-clock630::before {
+  content: "\1f561"; }
+
+.icon-emoji-clock7::before {
+  content: "\1f556"; }
+
+.icon-emoji-clock730::before {
+  content: "\1f562"; }
+
+.icon-emoji-clock8::before {
+  content: "\1f557"; }
+
+.icon-emoji-clock830::before {
+  content: "\1f563"; }
+
+.icon-emoji-clock9::before {
+  content: "\1f558"; }
+
+.icon-emoji-clock930::before {
+  content: "\1f564"; }
+
+.icon-emoji-congratulations::before {
+  content: "\3297"; }
+
+.icon-emoji-cool::before {
+  content: "\1f192"; }
+
+.icon-emoji-copyright::before {
+  content: "\a9"; }
+
+.icon-emoji-curly-loop::before {
+  content: "\27b0"; }
+
+.icon-emoji-currency-exchange::before {
+  content: "\1f4b1"; }
+
+.icon-emoji-customs::before {
+  content: "\1f6c3"; }
+
+.icon-emoji-diamond-shape-with-a-dot-inside::before {
+  content: "\1f4a0"; }
+
+.icon-emoji-do-not-litter::before {
+  content: "\1f6af"; }
+
+.icon-emoji-eight::before {
+  content: "\38-20e3"; }
+
+.icon-emoji-eight-pointed-black-star::before {
+  content: "\2734"; }
+
+.icon-emoji-eight-spoked-asterisk::before {
+  content: "\2733"; }
+
+.icon-emoji-end::before {
+  content: "\1f51a"; }
+
+.icon-emoji-fast-forward::before {
+  content: "\23e9"; }
+
+.icon-emoji-five::before {
+  content: "\35-20e3"; }
+
+.icon-emoji-four::before {
+  content: "\34-20e3"; }
+
+.icon-emoji-free::before {
+  content: "\1f193"; }
+
+.icon-emoji-gemini::before {
+  content: "\264a"; }
+
+.icon-emoji-hash::before {
+  content: "\23-20e3"; }
+
+.icon-emoji-heart-decoration::before {
+  content: "\1f49f"; }
+
+.icon-emoji-heavy-check-mark::before {
+  content: "\2714"; }
+
+.icon-emoji-heavy-division-sign::before {
+  content: "\2797"; }
+
+.icon-emoji-heavy-dollar-sign::before {
+  content: "\1f4b2"; }
+
+.icon-emoji-heavy-minus-sign::before {
+  content: "\2796"; }
+
+.icon-emoji-heavy-multiplication-x::before {
+  content: "\2716"; }
+
+.icon-emoji-heavy-plus-sign::before {
+  content: "\2795"; }
+
+.icon-emoji-id::before {
+  content: "\1f194"; }
+
+.icon-emoji-ideograph-advantage::before {
+  content: "\1f250"; }
+
+.icon-emoji-information-source::before {
+  content: "\2139"; }
+
+.icon-emoji-interrobang::before {
+  content: "\2049"; }
+
+.icon-emoji-keycap-ten::before {
+  content: "\1f51f"; }
+
+.icon-emoji-koko::before {
+  content: "\1f201"; }
+
+.icon-emoji-large-blue-circle::before {
+  content: "\1f535"; }
+
+.icon-emoji-large-blue-diamond::before {
+  content: "\1f537"; }
+
+.icon-emoji-large-orange-diamond::before {
+  content: "\1f536"; }
+
+.icon-emoji-left-luggage::before {
+  content: "\1f6c5"; }
+
+.icon-emoji-left-right-arrow::before {
+  content: "\2194"; }
+
+.icon-emoji-leftwards-arrow-with-hook::before {
+  content: "\21a9"; }
+
+.icon-emoji-leo::before {
+  content: "\264c"; }
+
+.icon-emoji-libra::before {
+  content: "\264e"; }
+
+.icon-emoji-link::before {
+  content: "\1f517"; }
+
+.icon-emoji-m::before {
+  content: "\24c2"; }
+
+.icon-emoji-mens::before {
+  content: "\1f6b9"; }
+
+.icon-emoji-metro::before {
+  content: "\1f687"; }
+
+.icon-emoji-mobile-phone-off::before {
+  content: "\1f4f4"; }
+
+.icon-emoji-negative-squared-cross-mark::before {
+  content: "\274e"; }
+
+.icon-emoji-new::before {
+  content: "\1f195"; }
+
+.icon-emoji-ng::before {
+  content: "\1f196"; }
+
+.icon-emoji-nine::before {
+  content: "\39-20e3"; }
+
+.icon-emoji-no-bicycles::before {
+  content: "\1f6b3"; }
+
+.icon-emoji-no-entry::before {
+  content: "\26d4"; }
+
+.icon-emoji-no-entry-sign::before {
+  content: "\1f6ab"; }
+
+.icon-emoji-no-mobile-phones::before {
+  content: "\1f4f5"; }
+
+.icon-emoji-no-pedestrians::before {
+  content: "\1f6b7"; }
+
+.icon-emoji-no-smoking::before {
+  content: "\1f6ad"; }
+
+.icon-emoji-non-potable-water::before {
+  content: "\1f6b1"; }
+
+.icon-emoji-o::before {
+  content: "\2b55"; }
+
+.icon-emoji-o2::before {
+  content: "\1f17e"; }
+
+.icon-emoji-ok::before {
+  content: "\1f197"; }
+
+.icon-emoji-on::before {
+  content: "\1f51b"; }
+
+.icon-emoji-one::before {
+  content: "\31-20e3"; }
+
+.icon-emoji-ophiuchus::before {
+  content: "\26ce"; }
+
+.icon-emoji-parking::before {
+  content: "\1f17f"; }
+
+.icon-emoji-part-alternation-mark::before {
+  content: "\303d"; }
+
+.icon-emoji-passport-control::before {
+  content: "\1f6c2"; }
+
+.icon-emoji-pisces::before {
+  content: "\2653"; }
+
+.icon-emoji-potable-water::before {
+  content: "\1f6b0"; }
+
+.icon-emoji-put-litter-in-its-place::before {
+  content: "\1f6ae"; }
+
+.icon-emoji-radio-button::before {
+  content: "\1f518"; }
+
+.icon-emoji-recycle::before {
+  content: "\267b"; }
+
+.icon-emoji-red-circle::before {
+  content: "\1f534"; }
+
+.icon-emoji-registered::before {
+  content: "\ae"; }
+
+.icon-emoji-repeat::before {
+  content: "\1f501"; }
+
+.icon-emoji-repeat-one::before {
+  content: "\1f502"; }
+
+.icon-emoji-restroom::before {
+  content: "\1f6bb"; }
+
+.icon-emoji-rewind::before {
+  content: "\23ea"; }
+
+.icon-emoji-sa::before {
+  content: "\1f202"; }
+
+.icon-emoji-sagittarius::before {
+  content: "\2650"; }
+
+.icon-emoji-scorpius::before {
+  content: "\264f"; }
+
+.icon-emoji-secret::before {
+  content: "\3299"; }
+
+.icon-emoji-seven::before {
+  content: "\37-20e3"; }
+
+.icon-emoji-signal-strength::before {
+  content: "\1f4f6"; }
+
+.icon-emoji-six::before {
+  content: "\36-20e3"; }
+
+.icon-emoji-six-pointed-star::before {
+  content: "\1f52f"; }
+
+.icon-emoji-small-blue-diamond::before {
+  content: "\1f539"; }
+
+.icon-emoji-small-orange-diamond::before {
+  content: "\1f538"; }
+
+.icon-emoji-small-red-triangle::before {
+  content: "\1f53a"; }
+
+.icon-emoji-small-red-triangle-down::before {
+  content: "\1f53b"; }
+
+.icon-emoji-soon::before {
+  content: "\1f51c"; }
+
+.icon-emoji-sos::before {
+  content: "\1f198"; }
+
+.icon-emoji-symbols::before {
+  content: "\1f523"; }
+
+.icon-emoji-taurus::before {
+  content: "\2649"; }
+
+.icon-emoji-three::before {
+  content: "\33-20e3"; }
+
+.icon-emoji-tm::before {
+  content: "\2122"; }
+
+.icon-emoji-top::before {
+  content: "\1f51d"; }
+
+.icon-emoji-trident::before {
+  content: "\1f531"; }
+
+.icon-emoji-twisted-rightwards-arrows::before {
+  content: "\1f500"; }
+
+.icon-emoji-two::before {
+  content: "\32-20e3"; }
+
+.icon-emoji-u5272::before {
+  content: "\1f239"; }
+
+.icon-emoji-u5408::before {
+  content: "\1f234"; }
+
+.icon-emoji-u55b6::before {
+  content: "\1f23a"; }
+
+.icon-emoji-u6307::before {
+  content: "\1f22f"; }
+
+.icon-emoji-u6708::before {
+  content: "\1f237"; }
+
+.icon-emoji-u6709::before {
+  content: "\1f236"; }
+
+.icon-emoji-u6e80::before {
+  content: "\1f235"; }
+
+.icon-emoji-u7121::before {
+  content: "\1f21a"; }
+
+.icon-emoji-u7533::before {
+  content: "\1f238"; }
+
+.icon-emoji-u7981::before {
+  content: "\1f232"; }
+
+.icon-emoji-u7a7a::before {
+  content: "\1f233"; }
+
+.icon-emoji-underage::before {
+  content: "\1f51e"; }
+
+.icon-emoji-up::before {
+  content: "\1f199"; }
+
+.icon-emoji-vibration-mode::before {
+  content: "\1f4f3"; }
+
+.icon-emoji-virgo::before {
+  content: "\264d"; }
+
+.icon-emoji-vs::before {
+  content: "\1f19a"; }
+
+.icon-emoji-wavy-dash::before {
+  content: "\3030"; }
+
+.icon-emoji-wc::before {
+  content: "\1f6be"; }
+
+.icon-emoji-wheelchair::before {
+  content: "\267f"; }
+
+.icon-emoji-white-check-mark::before {
+  content: "\2705"; }
+
+.icon-emoji-white-circle::before {
+  content: "\26aa"; }
+
+.icon-emoji-white-flower::before {
+  content: "\1f4ae"; }
+
+.icon-emoji-white-square-button::before {
+  content: "\1f533"; }
+
+.icon-emoji-womens::before {
+  content: "\1f6ba"; }
+
+.icon-emoji-x::before {
+  content: "\274c"; }
+
+.icon-emoji-zero::before {
+  content: "\30-20e3"; }
+
+/* `.stream-menu` is for backwards-compatibility with very old Wagtail versions. */
+.icon[class^="icon-emoji-"]::before, .icon[class*=" icon-emoji-"]::before, .stream-menu .icon[class^="icon-emoji-"]::before, .stream-menu .icon[class*=" icon-emoji-"]::before {
+  font-family: "NotoEmoji"; }
