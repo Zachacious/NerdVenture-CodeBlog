@@ -79,6 +79,11 @@ class Newsletter(models.Model):
     opens_last = models.IntegerField(_("opens_last"), help_text="total opens since last send", default=0, blank=True, null=True, editable=False)
     last_sent_date = models.DateTimeField(_("last_sent"), blank=True, null=True, editable=False)
     
+    readonly_fields = ('emails_sent_last',
+                       'open_rate_last',
+                       'opens_last',
+                       'last_sent_date',)
+    
     panels = [
         FieldPanel('title'),
         FieldPanel('subject'),
