@@ -20,7 +20,7 @@ try:
 except ImportError:
     pass
  
-WAGTAIL_CACHE = False
+WAGTAIL_CACHE = False 
 
 NEWSLETTER_FROM_EMAIL = 'Zach@Zach.com'
 

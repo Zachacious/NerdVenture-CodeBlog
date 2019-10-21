@@ -59,7 +59,7 @@ ALLOWED_HOSTS = ['www.nerdventure.net', 'nerdventure.net']
 # STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
 # STATICFILES_STORAGE = 'CodeBlog.storage.GZIPStorage'
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
-# COMPRESS_STORAGE = STATICFILES_STORAGE
+COMPRESS_STORAGE = STATICFILES_STORAGE
 
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
@@ -98,3 +98,9 @@ CORS_ORIGIN_WHITELIST = (
     'facebook.net',
     'facebook.com',
 )
+
+NEWSLETTER_FROM_EMAIL = 'Zach@Zach.com'
+
+# Base URL to use when referring to full URLs within the Wagtail admin backend -
+# e.g. in notification emails. Don't include '/admin' or a trailing slash
+BASE_URL = 'https://www.nerdventure.net'
