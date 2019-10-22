@@ -25,8 +25,8 @@
 
         {% include 'open_graph.html' %}
 
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"  crossorigin="anonymous">
-
+        {% comment %} <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"  crossorigin="anonymous"> {% endcomment %}
+        
         {% comment %} {% compress css %}
             <link rel="stylesheet" type="text/css" href="{% static 'css/header.css' %}">
             <link rel="stylesheet" type="text/css" href="{% static 'css/menu.css' %}">
@@ -112,15 +112,16 @@
     </div>
     
     {% compress css %}
-            <link rel="stylesheet" type="text/css" href="{% static 'css/header.css' %}">
-            <link rel="stylesheet" type="text/css" href="{% static 'css/menu.css' %}">
-        {% endcompress %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/header.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/menu.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'blog/css/blog.css' %}">
+    {% endcompress %}
     {% compress css %}
         <link rel="stylesheet" type="text/css" href="{% static 'css/light-modal.min.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/progressive-image.min.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/NerdVenture.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}">
-        <link rel="stylesheet" type="text/css" href="{% static 'blog/css/blog.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'social/css/social.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/anims.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'optin/css/optin.css' %}">

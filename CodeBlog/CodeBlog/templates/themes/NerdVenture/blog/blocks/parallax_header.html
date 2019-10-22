@@ -1,6 +1,6 @@
 {% load static wagtailcore_tags wagtailimages_tags compress %}
 
-<style>
+{% comment %} <style>
         
     @media (max-width: 768px) {
         {% image value.background fill-400x400 jpegquality-20 as headerimg %}
@@ -56,7 +56,7 @@
     }
 
 
-</style>
+</style> {% endcomment %}
 
 <div id="page-header" class="overflow-hidden px-0 container-fluid bg-main-blue-dark text-light skewed-border">
     <div id="page-header-wrap" class="w-100 text-light skewed-border"></div>
