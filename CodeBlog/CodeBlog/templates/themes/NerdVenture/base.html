@@ -27,10 +27,11 @@
 
         {% comment %} <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"  crossorigin="anonymous"> {% endcomment %}
         
-        {% comment %} {% compress css %}
-            <link rel="stylesheet" type="text/css" href="{% static 'css/header.css' %}">
-            <link rel="stylesheet" type="text/css" href="{% static 'css/menu.css' %}">
-        {% endcompress %} {% endcomment %}
+        {% compress css %}
+            <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+            {% comment %} <link rel="stylesheet" type="text/css" href="{% static 'css/header.css' %}">
+            <link rel="stylesheet" type="text/css" href="{% static 'css/menu.css' %}"> {% endcomment %}
+        {% endcompress %} 
         
         {% comment %} {% compress css %}
         <link rel="stylesheet" type="text/css" href="{% static 'css/light-modal.min.css' %}">
@@ -112,13 +113,13 @@
     </div>
     
     {% compress css %}
-        <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+        {% comment %} <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}"> {% endcomment %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/light-modal.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'blog/css/blog.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/header.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/menu.css' %}">
-        <link rel="stylesheet" type="text/css" href="{% static 'blog/css/blog.css' %}">
     {% endcompress %}
     {% compress css %}
-        <link rel="stylesheet" type="text/css" href="{% static 'css/light-modal.min.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/progressive-image.min.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/NerdVenture.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}">
