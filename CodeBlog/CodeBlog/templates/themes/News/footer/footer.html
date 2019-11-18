@@ -1,0 +1,36 @@
+{% load menu_tags %}
+
+{% with settings.siteSettings.SiteSettings.footer as footer %}
+
+    <footer id="footer" class="w100 bk1 color1 p1">
+        <div id="footer-wrap" class="container">
+            {% if footer.menu %}
+                <div id="footer-menu" class="d-iblock">
+                    <ul class="p1">
+                    {% for item in footer.menu.menu_items.all %}
+                            <li class="d-iblock px1 ease grow">
+                                <a class="{% get_menu_item_active_class item page.url %}
+                                {% if item.mobile_only %} menu-item-mobile {% endif %}
+                                {% if item.desktop_only %} menu-item-desktop {% endif %}" href="{{ item.link }}" 
+                                {% if item.open_in_new_tab %} 
+                                target="_blank"{% endif %}
+                                {{ item.extra_attributes }} >
+                                {{ item.title }}
+                                </a>
+                            </li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+
+            <div id="footer-copyright" class="p1">
+                <small>
+                    <span class="">
+                    {{ footer.copyright_text }} &copy;{% now 'Y' %}
+                    </span>
+                </small>
+            </div>
+        </div>
+    </footer>
+
+{% endwith %}

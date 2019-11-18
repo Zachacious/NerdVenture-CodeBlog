@@ -1,0 +1,47 @@
+{% load wagtailcore_tags %}
+{% load static %}
+
+{% block load_last %}
+<svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<symbol id="icon-send" viewBox="0 0 20 20">
+<title>send</title>
+<path d="M0 0l20 10-20 10v-20zM0 8v4l10-2-10-2z"></path>
+</symbol>
+</defs>
+</svg>
+{% endblock %}
+
+<div class="expanding50">
+
+    <form id="optinform" class="m05" name="optinform" method="post">
+        <input type="hidden" id="optinName" name="optinName" value="{{ optinName }}">
+        <input type="hidden" id="apiURL" name="apiURL" value="{{ request.scheme }}://{{ request.get_host }}{% url 'newsletter-createSubscriberView' %}">
+
+        <div class="">
+            <input class="bk-darker1 color1 p05 m05 w100" type="email" name="emailoptin"  
+                placeholder="Email" aria-label="Optin"  required>
+
+            <div class="w100 ease grow m05">
+                <button type="submit" value="Subscribe" 
+                    name="submit" class="w100 btn bk3 p05">
+                     <div class="ease grow">
+                        <span class="">{{ value.cta_text }}</span>
+                        <span id="btn-loader" class="d-none ease" role="status" aria-hidden="true"></span>
+                    </div> 
+                </button>
+
+                    {% if value.cta_action_download %}
+                        <input type="hidden" id="optin-action-download" value="{{ value.cta_action_download.url }}">
+                    {% endif %}
+                    {% if value.cta_action_pageload %}
+                        <input type="hidden" id="optin-action-pageload" value="{{ value.cta_action_pageload.url }}">
+                    {% endif %}
+            </div>
+        
+        </div>
+
+    </form>
+    
+</div>
+

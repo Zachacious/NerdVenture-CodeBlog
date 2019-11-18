@@ -1,0 +1,88 @@
+{% load wagtailimages_tags wagtailroutablepage_tags%}
+{% load menu_tags %}
+{% load compress %}
+
+
+{% with settings.siteSettings.SiteSettings.header as header %}
+<header id="header" class="w100 overflow-hidden bk1 p1 color1 ease">
+    <nav id="navbar" class="container d-grid ease">
+
+        <h1 class="d-grid grid-auto-col ease">
+            <a href="/" class="d-iblock ease grow">{% image header.logo_image width-225 %}</a>
+            <div id="menu-toggler" class="ease grow" onclick="menuToggle()">
+                <div></div>
+            </div>
+        </h1>
+        
+
+        <ul id="nav-links" class="d-none overflow-hidden ease">
+            {% if header.menu %}
+
+                {% for item in header.menu.menu_items.all %}
+                    <li class="p05 ease grow">
+                        <a class="{% get_menu_item_active_class item page.url %}
+                            {% if item.mobile_only %} menu-item-mobile {% endif %}
+                            {% if item.desktop_only %} menu-item-desktop {% endif %}" href="{{ item.link }}" 
+                            {% if item.open_in_new_tab %} 
+                            target="_blank"{% endif %}
+                            {{ item.extra_attributes }} >
+                            {{ item.title }}
+                        </a>
+                    </li>
+                {% endfor %}
+
+            {% endif %}
+        </ul>  
+
+        {% if settings.siteSettings.SiteSettings.header.search %}
+            <form id="search-form" class="d-none ease p-rel" action="{% routablepageurl settings.siteSettings.SiteSettings.search_page.specific "search_post" %}" method="get">
+
+                <input class="bk-darker1 color1 p05" type="text" name="query"  placeholder="Search" aria-label="Search">
+
+                <div id="search-btn-wrap" class="p-abs right">
+                    <button type="submit" value="Search" name="submit"
+                        class="btn bk-lighter1 p05 ">
+                        <svg class="btn-icon ease grow"><use xlink:href="#icon-search"></use></svg>
+                    </button>
+                </div>
+                    
+            </form>
+        {% endif %}
+
+    </nav>
+</header>
+{% endwith %}
+
+
+{% block load_last %}
+<svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<symbol id="icon-search" viewBox="0 0 32 32">
+<title>search</title>
+<path d="M31.715 28.953c0.381 0.381 0.381 0.999 0 1.381l-1.381 1.381c-0.382 0.381-1 0.381-1.381 0l-9.668-9.668c-0.105-0.105-0.175-0.229-0.222-0.361-1.983 1.449-4.418 2.314-7.063 2.314-6.627 0-12-5.373-12-12s5.373-12 12-12c6.627 0 12 5.373 12 12 0 2.645-0.865 5.080-2.314 7.063 0.132 0.047 0.256 0.116 0.361 0.222l9.668 9.668zM12 4c-4.418 0-8 3.582-8 8s3.582 8 8 8 8-3.582 8-8c0-4.418-3.582-8-8-8z"></path>
+</symbol>
+</defs>
+</svg>
+{% endblock %}
+
+<div id="notify-bar" class="row container mx-auto justify-content-center"></div>
+
+{% block extra_js %}
+
+<script>
+
+function menuToggle(){
+    var toggler = document.getElementById('menu-toggler');
+    var header = document.getElementById('header');
+    var navLinks = document.getElementById('nav-links');
+    var search = document.getElementById('search-form');
+
+    header.classList.toggle('header-resp-menu-height');
+    navLinks.classList.toggle('d-none');
+    search.classList.toggle('d-none');
+    toggler.classList.toggle('toggleTrans');
+}
+
+</script>
+
+{% endblock %}

@@ -1,0 +1,9 @@
+{% load wagtailimages_tags %}
+
+{% image value.image original as img %}
+{% image value.image width-55 as imgTiny %}
+<div class="d-block force-align-{{ value.alignment }}"> 
+    <a href="{{ img.url }}" class="progressive replace img-fluid p-2" style="overflow: inherit;">
+        <img {{ imgTiny.attrs }} class="preview img-fluid p-2" /> 
+    </a>
+</div>

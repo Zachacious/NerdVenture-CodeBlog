@@ -1,0 +1,10 @@
+{% load  wagtailcore_tags %}
+
+{% comment %} <div class="row w-100"> {% endcomment %}
+{% for block in value.body %}
+{% include 'blog/block_renderer.html' %}
+    {% comment %} <div class="trans-ease block-{{ block.block_type }}">
+        {% include_block block %}
+    </div> {% endcomment %}
+{% endfor %}
+{% comment %} </div> {% endcomment %}

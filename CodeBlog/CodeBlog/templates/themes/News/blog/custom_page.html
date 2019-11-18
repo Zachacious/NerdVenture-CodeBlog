@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags wagtailimages_tags %}
+{% load wagtailroutablepage_tags %}
+
+{% if self.header %}
+{% block content_top %}
+
+    {% if self.blue_background %}
+    <style>
+    body{
+        background-color: #094ecf !important;
+    }
+    </style>
+    {% endif %}
+
+    <div id="header-contents">
+    {% for block in self.header %}
+        {% with blockcss='' %}
+            {% include 'blog/block_renderer.html' %}
+        {% endwith %}
+    {% endfor %}
+    </div>
+
+{% endblock %}
+{% endif %}
+
+{% block content %}
+
+<div id="page-content" class="">
+
+    <article id="article" class="">
+
+        <div id="custom-page-contents">
+        {% for block in self.body %}
+            {% with blockcss='' %}
+                {% include 'blog/block_renderer.html' %}
+            {% endwith %}
+        {% endfor %}
+        </div>
+    
+    </article>
+    
+    {% include 'sidebar/sidebar.html' %}
+</div>
+{% endblock %}

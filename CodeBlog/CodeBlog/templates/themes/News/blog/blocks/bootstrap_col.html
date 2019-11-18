@@ -1,0 +1,15 @@
+{% load  wagtailcore_tags %}
+
+{% comment %} {% if value.width == 0 %}
+<div class="col">
+{% else %}
+<div class="col-{{ value.width }}">
+{% endif %} {% endcomment %}
+
+{% for block in value.body %}
+{% include 'blog/block_renderer.html' %}
+    {% comment %} <div class="px-4 trans-ease block-{{ block.block_type }}">
+        {% include_block block %}
+    </div> {% endcomment %}
+{% endfor %}
+{% comment %} </div> {% endcomment %}

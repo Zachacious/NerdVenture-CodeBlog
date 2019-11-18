@@ -1,0 +1,16 @@
+{% load wagtailcore_tags subscribe_tags %}
+{% get_subscribed %}
+
+{% if not subscribed or value.dont_hide_from_subscribers%}
+
+<div name='optin' class="text-light p-3 {% if value.blue_background %}bg-main-blue sketch-border{% endif %}">
+    {% for block in value.body %}
+        {% with value as optinName %}
+        {% with blockcss='p-2' %}
+            {% include 'blog/block_renderer.html' %}
+        {% endwith %}
+        {% endwith %}
+    {% endfor %}
+</div>
+
+{% endif %}

@@ -26,20 +26,11 @@
         {% include 'open_graph.html' %}
         
         {% compress css %}
-            <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
-        {% endcompress %} 
-        
-        {% compress css %}
             <link rel="stylesheet" type="text/css" href="{% static 'css/light-modal.min.css' %}">
             <link rel="stylesheet" type="text/css" href="{% static 'css/progressive-image.min.css' %}">
-            <link rel="stylesheet" type="text/css" href="{% static 'css/NerdVenture.css' %}">
-            <link rel="stylesheet" type="text/css" href="{% static 'css/header.css' %}">
-            <link rel="stylesheet" type="text/css" href="{% static 'css/menu.css' %}">
-            <link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}">
-            <link rel="stylesheet" type="text/css" href="{% static 'blog/css/blog.css' %}">
-            <link rel="stylesheet" type="text/css" href="{% static 'social/css/social.css' %}">
-            <link rel="stylesheet" type="text/css" href="{% static 'css/anims.css' %}">
-            <link rel="stylesheet" type="text/css" href="{% static 'optin/css/optin.css' %}">
+            <link rel="stylesheet" type="text/css" href="{% static 'css/News/normalize.css' %}">
+            <link rel="stylesheet" type="text/css" href="{% static 'css/News/reset.css' %}">
+            <link rel="stylesheet" type="text/css" href="{% static 'css/News/main.css' %}">
         {% endcompress %}
 
 
@@ -56,7 +47,7 @@
         {% comment %} if set to false, cookies expire in 1 hour vs 2 min {% endcomment %}
         <script>
             var settings = {
-                debug: false,
+                debug: true,
                 // cookie_domain: 'NerdVenture.net'
             };
         </script>
@@ -69,6 +60,7 @@
     <body class="{% block body_class %}{% endblock %}">
 
     <div id="page-wrapper">
+    
     {% include "header/header.html" %}
     {% include "messages.html" %}
     {% block notifications %}{% endblock %}
@@ -79,7 +71,7 @@
 
         {% block content_top %}{% endblock %}
 
-        <div class="container container-wide fade-in">
+        <div class="container">
             {% block content %}{% endblock %}
         </div>
 
@@ -87,7 +79,7 @@
 
     </div>
 
-    {% include 'blog/contact_modal.html' %}
+    {% comment %} {% include 'blog/contact_modal.html' %} {% endcomment %}
     {% include "footer/footer.html" %}
 
     {% block extra_js %}
@@ -105,7 +97,7 @@
         <script defer type="text/javascript" charset="utf-8" src="{% static 'js/Cookies.js' %}"></script>
         <script defer type="text/javascript" charset="utf-8" src="{% static 'js/header.js' %}"></script>
         <script defer type="text/javascript" charset="utf-8" src="{% static 'optin/js/optin.js' %}"></script>
-        <script defer type="text/javascript" charset="utf-8" src="{% static 'blog/js/contactForm.js' %}"></script>
+        {% comment %} <script defer type="text/javascript" charset="utf-8" src="{% static 'blog/js/contactForm.js' %}"></script> {% endcomment %}
         <script defer type="text/javascript" charset="utf-8" src="{% static 'social/js/social.js' %}"></script>
         <script defer type="text/javascript" charset="utf-8" src="{% static 'js/progressive-image.js' %}"></script>
     {% endcompress %}

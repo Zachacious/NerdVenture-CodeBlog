@@ -1,0 +1,54 @@
+{% load  wagtailcore_tags %}
+{% comment %} you should pull the block from whatever in a for loop {% endcomment %}
+{% comment %} example: {% endcomment %}
+{% comment %} 
+
+{% with blockcss='some extra css' %}
+{% for block in value.body %}
+    {% include 'blog/block_renderer.html' %}
+{% endfor %} 
+{% endwith %}
+
+{% endcomment %}
+
+
+    {% if block.block_type == "Bootstrap_Row" %}
+
+        <style>
+            @media (min-width: 992.1px) {
+                .block-Bootstrap_Row{
+                    width: {{ block.value.mobile_width }}%;
+                }
+            }
+        </style>
+            <div class="block-{{ block.block_type }} {% if blockcss %}{{ blockcss }}{% endif %}">
+                {% include_block block %}
+            </div>
+
+    {% elif block.block_type == "BootstrapCol" %}
+
+        {% if block.value.width == 0 %}
+            <div class="col {% if block.value.vertical_center %}my-auto{% endif %} 
+            trans-ease block-{{ block.block_type }} text-md-{{ block.value.alignment }} 
+            {% if blockcss %}{{ blockcss }}{% endif %}
+            force-align-{{ block.value.alignment }}">
+        {% else %}
+            <div class="col-md-{{ block.value.width }} 
+            {% if block.value.vertical_center %}my-auto{% endif %} 
+            block-{{ block.block_type }} text-md-{{ block.value.alignment }} 
+            {% if blockcss %}{{ blockcss }}{% endif %}
+            force-align-{{ block.value.alignment }}">
+        {% endif %}
+                {% include_block block %}
+            </div>
+
+
+    {% else %}
+
+        <div class="block-{{ block.block_type }} {% if blockcss %}{{ blockcss }}{% endif %}">
+            {% include_block block %}
+        </div>
+
+    {% endif %}
+
+    
