@@ -144,6 +144,7 @@ WAGTAIL_THEME_PATH = 'themes'
 WAGTAIL_THEMES = [
     ('Sketch_Blog', 'Sketchy borders theme'),
     ('NerdVenture', 'NerdVenture.Net Theme'),
+    ('News', 'NerdVenture News Theme'),
 ]
 
 WSGI_APPLICATION = 'CodeBlog.wsgi.application'

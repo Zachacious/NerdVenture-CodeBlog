@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8" />
+        <title>Internal server error</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <style>
+body{
+    background-color: #094ecf !important;
+    font-family: monospace;
+}
+.center-block{
+    width: 100%;
+    height: 70vh;
+    position: relative;
+}
+.content-500{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+span {
+  color: white;
+  font-size: 1.5vw;
+}
+
+.blinker {
+  opacity: 1;
+  margin-bottom: -2px;
+  height: 15px;
+  margin-left: -5px;
+  border-left: 7px solid white;
+  animation: blinker 0.9s steps(2, start) infinite;
+}
+
+@keyframes blinker {
+  to { 
+    visibility: hidden; 
+  }
+}
+</style>
+
+    </head>
+    <body>
+        <div class="center-block mx-auto my-auto text-center align-middle">
+            <div class="content-500">
+                <h1 style="color: #fff;">NerdVenture.net</h1>
+                <span id="consoleTyper" class="typeing"></span><span class='blinker'>&#32;</span>
+            </div>
+        </div>
+
+        <script>
+            var data = [ 
+  {
+    consoleTyper: "<h2 style=\"color: #fff;\">Internal Server Error:</h2><span>It's not you. It's me 👦<br/><br/>The most likely explanation is that<br>I'm updating something...<br><br><b>Check back shortly</b><br>Or report the error to <br><br>Support@NerdVenture.net  "
+  }
+];
+
+var allElements = document.getElementsByClassName("typeing");
+for (var j = 0; j < allElements.length; j++) {
+  var currentElementId = allElements[j].id;
+  var currentElementIdContent = data[0][currentElementId];
+  var element = document.getElementById(currentElementId);
+  var devTypeText = currentElementIdContent;
+
+  // type code
+  var i = 0, isTag, text;
+  (function type() {
+    text = devTypeText.slice(0, ++i);
+    if (text === devTypeText) return;
+    element.innerHTML = text + `<span class='blinker'>&#32;</span>`;
+    var char = text.slice(-1);
+    if (char === "<") isTag = true;
+    if (char === ">") isTag = false;
+    if (isTag) return type();
+    setTimeout(type, 60);
+  })();
+}
+        </script>
+    </body>
+</html>

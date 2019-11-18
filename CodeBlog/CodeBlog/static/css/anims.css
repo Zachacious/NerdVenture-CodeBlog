@@ -136,68 +136,6 @@ Animations
   }
 }
 
-
-  /**
-   * ----------------------------------------
-   * animation slide-fwd-center
-   * ----------------------------------------
-   */
-   /* @keyframes slide-fwd-center {
-    0% {
-      transform: scale(1);
-    }
-    100% {
-      transform: scale(1.25);
-    }
-  } */
-  
-  
-  
-  /* .bounce-in-left {
-      animation: bounce-in-left 0.75s both;
-  } */
-  
-  /**
-   * ----------------------------------------
-   * animation bounce-in-left
-   * ----------------------------------------
-   */
-   /* @keyframes bounce-in-left {
-      0% {
-        transform: translateX(-600px);
-        animation-timing-function: ease-in;
-        opacity: 0;
-      }
-      38% {
-        transform: translateX(0);
-        animation-timing-function: ease-out;
-        opacity: 1;
-      }
-      55% {
-        transform: translateX(-68px);
-        animation-timing-function: ease-in;
-      }
-      72% {
-        transform: translateX(0);
-        animation-timing-function: ease-out;
-      }
-      81% {
-        transform: translateX(-28px);
-        animation-timing-function: ease-in;
-      }
-      90% {
-        transform: translateX(0);
-        animation-timing-function: ease-out;
-      }
-      95% {
-        transform: translateX(-8px);
-        animation-timing-function: ease-in;
-      }
-      100% {
-        transform: translateX(0);
-        animation-timing-function: ease-out;
-      }
-    } */
   
     .swing-in-top-fwd {
       animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;

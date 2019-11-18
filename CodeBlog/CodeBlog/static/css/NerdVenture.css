@@ -1,9 +1,15 @@
+/*
+Main css for NerdVenture theme
+Author: Zach Moore - Zach@NerdVenture.net
+*/
+
 body{
     background-color: #ededef;
     font-size: 1.25em;
     /* -webkit-font-smoothing: antialiased; */
 }
 
+/*============= links =============*/
 .light-links a{
 color: white;
 text-decoration: none;
@@ -22,7 +28,9 @@ text-decoration: none;
   text-decoration: none;
 }
 
-/* forces alignment */
+
+/*============= alignment =============*/
+
 .force-align-left{
   margin-right: auto !important;
   margin-left: 0 !important;
@@ -42,65 +50,6 @@ text-decoration: none;
   margin-left: 0 !important;
   margin-right: 0 !important;
 } */
-
-.bg-darker{
-  background-color: rgba(0,0,0,0.25)
-}
-
-.bg-lighter{
-  background-color: rgba(255,255,255,0.25)
-}
-
-.bg-main-blue{
-  background-color: #094ecf;
-}
-
-.bg-main-blue-dark{
-  /* background-color: #19479b; */
-  background-color: #094ecf;
-}
-
-.bg-alt{
-  background-color: rgba(250,250,0,1) !important;
-}
-
-.bg-transparent{
-  background-color: transparent;
-}
-
-.faded-text{
-    opacity: 0.5;
-}
-
-/* Scrollbars */
-::-webkit-scrollbar {
-  width: 14px;
-  }
-  ::-webkit-scrollbar-track {
-  background-color: #094ecf;
-  border-radius: 9px;
-  }
-  ::-webkit-scrollbar-thumb {
-  background-color: #5387e7;
-  border-radius: 9px;
-  }
-
-@media (min-width: 575.98px)  { 
-    .container-wide{
-        width: 90%;
-    }
-}
-
-@media (min-width: 992px) {
-  /* .container-wide{
-    width: 65%;
-  } */
-}
-
-.full-width{
-  width: 75%;
-  height: auto;
-}
 
 /* Wagtail richtext images and alignment */
 @media (max-width: 768px){
@@ -132,6 +81,68 @@ text-decoration: none;
 }
 /*===================*/
 
+/*============= bkground =============*/
+
+.bg-darker{
+  background-color: rgba(0,0,0,0.25)
+}
+
+.bg-lighter{
+  background-color: rgba(255,255,255,0.25)
+}
+
+.bg-main-blue{
+  background-color: #094ecf;
+}
+
+.bg-main-blue-dark{
+  /* background-color: #19479b; */
+  background-color: #094ecf;
+}
+
+.bg-alt{
+  background-color: rgba(250,250,0,1) !important;
+}
+
+.bg-transparent{
+  background-color: transparent;
+}
+
+/*============= text =============*/
+
+.faded-text{
+    opacity: 0.5;
+}
+
+/*============= scrollbar =============*/
+
+::-webkit-scrollbar {
+  width: 14px;
+  }
+  ::-webkit-scrollbar-track {
+  background-color: #094ecf;
+  border-radius: 9px;
+  }
+  ::-webkit-scrollbar-thumb {
+  background-color: #5387e7;
+  border-radius: 9px;
+  }
+
+/*============= container =============*/
+
+@media (min-width: 575.98px)  { 
+    .container-wide{
+        width: 90%;
+    }
+}
+
+.full-width{
+  width: 75%;
+  height: auto;
+}
+
+/*============= icon / shapes =============*/
+
 .icon {
   display: inline-block;
   width: 1em;
@@ -157,7 +168,8 @@ text-decoration: none;
   border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
 }
 
-/*semi transparent input*/
+/*============= input =============*/
+
 .nd-input, .nd-input:focus{
   background-color: rgba(0,0,0,0.2);
   color: #fff;
@@ -176,6 +188,7 @@ text-decoration: none;
   opacity: 0.25;
 }
 
+/*============= block quote =============*/
 /*block quotations*/
   @media (min-width: 991){
     blockquote{

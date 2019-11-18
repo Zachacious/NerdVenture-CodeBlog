@@ -1,0 +1,136 @@
+{
+            "@context":"https://schema.org",
+            "@graph": [{
+                "@type": "organization",
+                "@id": "{{ page.get_site.root_url }}/#organization",
+                "name": "{{ self.get_site.site_name }}",
+                "url": "{{ page.get_site.root_url }}",
+                "sameAs": [
+                    "facebook url",
+                    "twitter url"
+                ],
+                "logo": {
+                    "@type": "ImageObject",
+                    "@id": "{{ request.build_absolute_uri  }}{{ logoimg.url }}/#logo",
+                    "url": "{{ request.build_absolute_uri  }}{{ logoimg.url }}",
+                    "caption": "{{ page.get_site.site_name }}"
+                },
+                "image":{
+                    "@type": "ImageObject",
+                    "@id": "{{ page.get_site.root_url }}/#logo"
+                }
+            },
+            {
+                "@type": "WebSite",
+                "@id": "{{ page.get_site.root_url }}/#website",
+                "url": "{{ page.get_site.root_url }}",
+                "name": "{{ page.get_site.site_name }}",
+                "publisher": {
+                    "@id": "{{ page.get_site.root_url }}/#organization"
+                },
+                "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": "{{ page.get_site.root_url }}/search/?query={search_term_string}&submit=Search",
+                    "query-input": "required name=search_term_string"
+                }
+            },
+            {
+                "@type": "WebPage",
+                "@id": "{{ request.build_absolute_uri  }}#webpage",
+                "url": "{{ request.build_absolute_uri  }}",
+                "inLanguage": "en-US",
+                "name": "{{ page.title }} &bull; {{ page.get_site.site_name }}",
+                "isPartOf": {
+                    "@id": "{{ page.get_site.root_url }}/#website"
+                },
+                "image": {
+                    "@type": "ImageObject",
+                    "@id": "{{ request.build_absolute_uri  }}#primaryimage",
+                    "url": "{{ request.build_absolute_uri  }}{{ headerimg.url }}",
+                    {% if headerimg %}
+                    "width": {{ headerimg.width }},
+                    "height": {{ headerimg.height }},
+                    {% endif %}
+                    "caption": "{{ page.title }}"
+                },
+                "primaryImageOfPage": {
+                    "@id": "{{ request.build_absolute_uri  }}#primaryimage"
+                },
+                "datePublished": "{{ self.date }}",
+                "dateModified": "{{ self.last_published_at }}",
+                "description": "{{ page.specific.summary }}"
+            }{% if page.is_blog_post %},
+            {
+                "@type": "Article",
+                "@id": "{{ request.build_absolute_uri  }}#article",
+                "isPartOf": {
+                    "@id": "{{ request.build_absolute_uri  }}#webpage"
+                }{% if page.author_profile %},
+                "author": {
+                    "@id": "{{ page.get_site.root_url }}/author/{{ page.author_profile.full_name_condensed }}/#author",
+                    "name": "{{ page.author_profile.full_name }}"
+                }{% endif %},
+                "publisher": {
+                    "@id": "{{ page.get_site.root_url }}/#organization"
+                },
+                "headline": "{{ page.title }}",
+                "datePublished": "{{ self.date }}",
+                "dateModified": "{{ self.last_published_at }}",
+                "commentCount": 0,
+                "mainEntityOfPage": "{{ request.build_absolute_uri  }}#webpage",
+                "image": {
+                    "@id": "{{ request.build_absolute_uri  }}#primaryimage"
+                },
+                "keywords": "{{ page.keywords }}"
+            }{% if page.author_profile %},{
+
+                "@type": "Person",
+                "@id": "{{ page.get_site.root_url }}/author/{{ page.author_profile.full_name_condensed }}/#author",
+                "name": "{{ page.author_profile.full_name }}",
+                "image": {
+                    "@type": "ImageObject",
+                    "@id": "{{ page.get_site.root_url }}/#personlogo",
+                    "url": "{{ request.build_absolute_uri  }}{{ authorpic.url }}",
+                    "caption": "{{ page.author_profile.full_name }}"
+                },
+                "description": "{{ page.author_profile.desc }}",
+                "sameAs": [""]
+
+            }{% endif %},{
+                "@type": "BlogPosting",
+                "mainEntityOfPage": "{{ request.build_absolute_uri  }}#webpage",
+                "headline": "{{ page.title }}",
+                "alternativeHeadline": "{{ page.title }}",
+                "image": "{{ request.build_absolute_uri  }}{{ headerimg.url }}",
+                "genre": "{{ page.genre }}", 
+                "keywords": "{{ page.keywords }}", 
+                "wordcount": "{{ page.wordcount }}",
+                "publisher": {
+                    "type": "organization",
+                    "name": "{{ page.get_site.site_name }}",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "@id": "{{ request.build_absolute_uri  }}{{ logoimg.url }}/#logo",
+                        "url": "{{ request.build_absolute_uri  }}{{ logoimg.url }}",
+                        "caption": "{{ page.get_site.site_name }}"
+                    }
+                },
+                "url": "{{ request.build_absolute_uri }}",
+                "datePublished": "{{ page.date }}",
+                "dateModified": "{{ self.last_published_at }}",
+                "description": "{{ page.summary }}"{% if page.author_profile %},
+                "author": {
+                    "@type": "Person",
+                    "@id": "{{ page.get_site.root_url }}/author/{{ page.author_profile.full_name_condensed }}/#author",
+                    "name": "{{ page.author_profile.full_name }}",
+                    "image": {
+                        "@type": "ImageObject",
+                        "@id": "{{ page.get_site.root_url }}/#personlogo",
+                        "url": "{{ request.build_absolute_uri  }}{{ authorpic.url }}",
+                        "caption": "{{ page.author_profile.full_name }}"
+                    },
+                    "description": "{{ page.author_profile.desc }}",
+                    "sameAs": [""]
+                }{% endif %}                
+            }{% endif %}]
+        }
