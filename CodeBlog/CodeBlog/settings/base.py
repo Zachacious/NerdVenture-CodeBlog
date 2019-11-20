@@ -67,6 +67,7 @@ INSTALLED_APPS = [
     # 'pipeline',
     'compressor',
     'corsheaders',
+    'feeds',
     
     'blog',
     'header',
@@ -80,6 +81,7 @@ INSTALLED_APPS = [
     'social',
     'topic',
     'downloader',
+    'news',
 
 ]
 

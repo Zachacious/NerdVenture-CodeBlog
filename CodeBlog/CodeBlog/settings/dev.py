@@ -42,3 +42,7 @@ DATABASES = {
 # Javascript / CSS assets being served from cache (e.g. after a Wagtail upgrade).
 # See https://docs.djangoproject.com/en/2.2/ref/contrib/staticfiles/#manifeststaticfilesstorage
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
+
+# django feed reader
+FEEDS_USER_AGENT = "testfeeder/1.0"
+FEEDS_SERVER = "https://nerdventure.net"

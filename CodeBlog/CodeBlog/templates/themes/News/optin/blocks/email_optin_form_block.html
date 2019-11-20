@@ -12,22 +12,22 @@
 </svg>
 {% endblock %}
 
-<div class="expanding50">
+<div class="expanding50 mt1">
 
-    <form id="optinform" class="m05" name="optinform" method="post">
+    <form id="optinform" class="m1" name="optinform" method="post">
         <input type="hidden" id="optinName" name="optinName" value="{{ optinName }}">
         <input type="hidden" id="apiURL" name="apiURL" value="{{ request.scheme }}://{{ request.get_host }}{% url 'newsletter-createSubscriberView' %}">
 
         <div class="">
-            <input class="bk-darker1 color1 p05 m05 w100" type="email" name="emailoptin"  
+            <input class="bk-darker1 color1 p05  w100" type="email" name="emailoptin"  
                 placeholder="Email" aria-label="Optin"  required>
 
-            <div class="w100 ease grow m05">
+            <div class="w100 ease grow-light color1 ">
                 <button type="submit" value="Subscribe" 
-                    name="submit" class="w100 btn bk3 p05">
-                     <div class="ease grow">
-                        <span class="">{{ value.cta_text }}</span>
-                        <span id="btn-loader" class="d-none ease" role="status" aria-hidden="true"></span>
+                    name="submit" class="w100 btn bk1 p05">
+                     <div class="ease">
+                        <span class="bold">{{ value.cta_text }}</span>
+                        {% comment %} <span id="btn-loader" class="d-none ease" role="status" aria-hidden="true"></span> {% endcomment %}
                     </div> 
                 </button>
 

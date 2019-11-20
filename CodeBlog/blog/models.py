@@ -69,6 +69,8 @@ from topic.models import Topic
 
 from downloader.blocks import DownloadDisplayBlock
 
+from news.blocks import NewsWallBlock
+
 
 class BlogIndexPage(WagtailCacheMixin, RoutablePageMixin, Page):
     ''' A page to list all the blog post. 
@@ -421,6 +423,7 @@ class CustomPage(WagtailCacheMixin, Page):
         (_('Recent_Post'), BlogPostListBlock()),
         (_('Aligned_Image'), AlignedImageBlock()),
         (_('Download_Display'), DownloadDisplayBlock()),
+        (_('News_Wall'), NewsWallBlock()),
     ],null=True,blank=True)
     
     keywords = models.CharField(_("SEO Keywords"), max_length=255, blank=True)

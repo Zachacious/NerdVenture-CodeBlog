@@ -1,0 +1,54 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+{% load feed_tags %}
+
+{% with page_num=1 %}
+<div id="news-wall" class="d-grid m1 my3">
+
+    {% get_feeds_page page_num %}
+    {% for post in feed_page %}
+        <a href="{{ post.link }}" target="_blank"
+            class="news-item p-rel d-grid wh100 {% get_random_size_cls %} bk4 overflow-hidden ease grow-light">
+
+            <div class="wh100 news-item-top"
+                style="background: url({% get_feed_img_url post %}), #fff no-repeat;
+                background-size: cover; background-position: center center;" >
+            </div>
+
+            <div class="zindex1 w100 m0 p1">
+                <h5>{{ post.title }}</h5>
+                <div class="m1 overflow-hidden ease news-desc">{% get_desc post.body %}</div>
+                <div class="bk2 color1 m1 p05">{{ post.source.name }}</div>
+            </div>
+
+        </a>
+    {% endfor %}
+
+</div>
+
+<script>
+
+function isInView(el){
+    var bounding = elem.getBoundingClientRect();
+    return (
+        bounding.top >= 0 &&
+        bounding.left >= 0 &&
+        bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+(function(){
+
+    var footer = document.getElementById('footer');
+    var newsWall = document.getElementById('news-wall');
+
+    window.addEventListener('scroll', function(){
+        if(isInView(footer)){
+
+        }
+    })
+
+})();
+
+</script>
+{% endwith %}

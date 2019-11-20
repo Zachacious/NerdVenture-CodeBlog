@@ -26,7 +26,8 @@ html5lib = "*"
 csscompressor = "*"
 brotli = "*"
 django-cors-middleware = "*"
-
+wagtail = "*"
+django-feed-reader = "*"
 
 [requires]
 python_version = "3.7"
