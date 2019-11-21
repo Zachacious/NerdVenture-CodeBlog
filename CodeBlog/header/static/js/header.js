@@ -55,37 +55,42 @@ function searchToggle(){
     var hamburger = document.getElementById('nav-menu-icon');
     var navMenuClose = document.getElementById('nav-menu-close');
 
-    menuBtn.onclick = function(e){
-        if(!this.checked){
+    if(menuBtn){
+        menuBtn.onclick = function(e){
+            if(!this.checked){
+                if(navOnTop){
+                    nav.classList.add('bg-transparent');
+                    nav.classList.remove('bg-main-blue');
+                }
+                menu_opened = false;
+                hamburger.classList.remove('d-none');
+                navMenuClose.classList.add('d-none');
+                
+            } else {
+                menu_opened = true;
+                hamburger.classList.add('d-none');
+                navMenuClose.classList.remove('d-none');
+
+                nav.classList.remove('bg-transparent');
+                nav.classList.add('bg-main-blue');
+            }
+            
+        }
+    }
+
+    if(nav){
+        nav.addEventListener('click', function(e){
+            if(!e.target.matches('a,button')) return;
+            menuBtn.checked = false;
+            menu_opened = false;
+            hamburger.classList.remove('d-none');
+            navMenuClose.classList.add('d-none');
+    
             if(navOnTop){
                 nav.classList.add('bg-transparent');
                 nav.classList.remove('bg-main-blue');
             }
-            menu_opened = false;
-            hamburger.classList.remove('d-none');
-            navMenuClose.classList.add('d-none');
-            
-        } else {
-            menu_opened = true;
-            hamburger.classList.add('d-none');
-            navMenuClose.classList.remove('d-none');
-
-            nav.classList.remove('bg-transparent');
-            nav.classList.add('bg-main-blue');
-        }
-        
+        });
     }
-
-    nav.addEventListener('click', function(e){
-        if(!e.target.matches('a,button')) return;
-        menuBtn.checked = false;
-        menu_opened = false;
-        hamburger.classList.remove('d-none');
-        navMenuClose.classList.add('d-none');
-
-        if(navOnTop){
-            nav.classList.add('bg-transparent');
-            nav.classList.remove('bg-main-blue');
-        }
-    });
+    
 })()

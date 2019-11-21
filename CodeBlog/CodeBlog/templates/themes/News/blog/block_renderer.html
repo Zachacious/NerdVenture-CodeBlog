@@ -45,7 +45,7 @@
 
     {% else %}
 
-        <div class="block-{{ block.block_type }} {% if blockcss %}{{ blockcss }}{% endif %}">
+        <div class="block-{{ block.block_type }} {% if blockcss %}{{ blockcss }}{% endif %} ease fade-down-anim">
             {% include_block block %}
         </div>
 

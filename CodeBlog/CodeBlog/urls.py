@@ -9,6 +9,7 @@ from wagtail.documents import urls as wagtaildocs_urls
 
 from newsletter import urls as newsletter_urls
 from blog import urls as blog_urls
+from news import urls as news_urls
 
 from wagtail.contrib.sitemaps.views import sitemap
 
@@ -32,6 +33,7 @@ urlpatterns = [
     url(r'^sitemap\.xml$', nocache_page(sitemap)),
     url(r'^newsletter/api/v1/', include(newsletter_urls)),
     url(r'^contact/api/v1/', include(blog_urls)),
+    url(r'^news/api/v1/', include(news_urls)),
 
     url(r'^jackalope/', admin.site.urls),
 

@@ -26,11 +26,12 @@
         {% include 'open_graph.html' %}
         
         {% compress css %}
-            <link rel="stylesheet" type="text/css" href="{% static 'css/light-modal.min.css' %}">
-            <link rel="stylesheet" type="text/css" href="{% static 'css/progressive-image.min.css' %}">
+            {% comment %} <link rel="stylesheet" type="text/css" href="{% static 'css/light-modal.min.css' %}"> {% endcomment %}
+            {% comment %} <link rel="stylesheet" type="text/css" href="{% static 'css/progressive-image.min.css' %}"> {% endcomment %}
             <link rel="stylesheet" type="text/css" href="{% static 'css/News/normalize.css' %}">
             <link rel="stylesheet" type="text/css" href="{% static 'css/News/reset.css' %}">
             <link rel="stylesheet" type="text/css" href="{% static 'css/News/main.css' %}">
+            <link rel="stylesheet" type="text/css" href="{% static 'css/News/spinner.css' %}">
         {% endcompress %}
 
 
@@ -93,13 +94,14 @@
     </div>
 
     {% compress js %}
-        <script defer type="text/javascript" charset="utf-8" src="{% static 'js/notify.js' %}"></script>
+        <script defer type="text/javascript" charset="utf-8" src="{% static 'js/news/notify.js' %}"></script>
         <script defer type="text/javascript" charset="utf-8" src="{% static 'js/Cookies.js' %}"></script>
         <script defer type="text/javascript" charset="utf-8" src="{% static 'js/header.js' %}"></script>
-        <script defer type="text/javascript" charset="utf-8" src="{% static 'optin/js/optin.js' %}"></script>
+        <script defer type="text/javascript" charset="utf-8" src="{% static 'js/news/optin.js' %}"></script>
         {% comment %} <script defer type="text/javascript" charset="utf-8" src="{% static 'blog/js/contactForm.js' %}"></script> {% endcomment %}
         <script defer type="text/javascript" charset="utf-8" src="{% static 'social/js/social.js' %}"></script>
-        <script defer type="text/javascript" charset="utf-8" src="{% static 'js/progressive-image.js' %}"></script>
+        {% comment %} <script defer type="text/javascript" charset="utf-8" src="{% static 'js/progressive-image.js' %}"></script> {% endcomment %}
+        <script defer type="text/javascript" charset="utf-8" src="{% static 'js/News/newsWall.js' %}"></script>
     {% endcompress %}
 
     </body>
