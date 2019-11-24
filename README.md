@@ -1,6 +1,6 @@
 # Nerdventure Website
 
-A custom CMS built on Django, Wagtail.
+A custom CMS built on Django and Wagtail CMS.
 
 Currently configured as a news(rss) aggregation site.
 
