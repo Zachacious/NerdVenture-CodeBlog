@@ -1,6 +1,8 @@
 # Nerdventure Website
 
-A custom CMS built on Django, Wagtail and Bootstrap.
+A custom CMS built on Django, Wagtail.
+
+Currently configured as a news(rss) aggregation site.
 
 ## features
 - 3 Page Types
@@ -22,5 +24,8 @@ A custom CMS built on Django, Wagtail and Bootstrap.
  - Open Graph
  - Schema.org
  - Social Media Sharing
+ -NewsWall component for pulling in rss feeds
+  - Chron job for refreshing feeds
+  - Chron job for sending weekly emails to subscribers
 
 
