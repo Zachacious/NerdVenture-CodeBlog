@@ -24,10 +24,12 @@
 
             <div class="w100 ease grow-light color1 ">
                 <button type="submit" value="Subscribe" 
-                    name="submit" class="w100 btn bk1 p05">
+                    name="submit" class="w100 btn bk1 p05 mt1">
                      <div class="ease">
                         <span class="bold">{{ value.cta_text }}</span>
-                        <span id="btn-loader" class="d-none ease" role="status" aria-hidden="true"></span>
+                        <span id="btn-loader" name="btn-loader" class="d-none ease" role="status" aria-hidden="true">
+                            <svg class="btn-icon spin-anim"><use xlink:href="#icon-spinner9"></use></svg> <!--originally loaded from contact.html-->
+                        </span>
                     </div> 
                 </button>
 

@@ -26,12 +26,11 @@
         {% include 'open_graph.html' %}
         
         {% compress css %}
-            {% comment %} <link rel="stylesheet" type="text/css" href="{% static 'css/light-modal.min.css' %}"> {% endcomment %}
-            {% comment %} <link rel="stylesheet" type="text/css" href="{% static 'css/progressive-image.min.css' %}"> {% endcomment %}
             <link rel="stylesheet" type="text/css" href="{% static 'css/News/normalize.css' %}">
             <link rel="stylesheet" type="text/css" href="{% static 'css/News/reset.css' %}">
             <link rel="stylesheet" type="text/css" href="{% static 'css/News/main.css' %}">
             <link rel="stylesheet" type="text/css" href="{% static 'css/News/spinner.css' %}">
+            <link rel="stylesheet" type="text/css" href="{% static 'css/News/modal.css' %}">
         {% endcompress %}
 
 
@@ -48,7 +47,7 @@
         {% comment %} if set to false, cookies expire in 1 hour vs 2 min {% endcomment %}
         <script>
             var settings = {
-                debug: true,
+                debug: false,
                 // cookie_domain: 'NerdVenture.net'
             };
         </script>
@@ -60,15 +59,16 @@
 
     <body class="{% block body_class %}{% endblock %}">
 
-    <div id="page-wrapper">
+    <div id="page-wrapper" class="wh100 d-grid">
     
-    {% include "header/header.html" %}
-    {% include "messages.html" %}
-    {% block notifications %}{% endblock %}
+    <div id="head" class="w100">
+        {% include "header/header.html" %}
+        {% include "messages.html" %}
+        {% block notifications %}{% endblock %}
+    </div>
 
-    {% wagtailuserbar %}
 
-    <div id="content-wrap">
+    <div id="content-wrap" class="w100 mt0">
 
         {% block content_top %}{% endblock %}
 
@@ -80,16 +80,18 @@
 
     </div>
 
-    {% comment %} {% include 'blog/contact_modal.html' %} {% endcomment %}
-    {% include "footer/footer.html" %}
+   
+    <div id="foot" class="w100">
+        {% include "footer/footer.html" %}
 
-    {% block extra_js %}
-        {# Override this in templates to add extra javascript #}
-    {% endblock %}
+        {% block extra_js %}
+            {# Override this in templates to add extra javascript #}
+        {% endblock %}
 
-    {% block load_last %}
-        {# Overide #}
-    {% endblock %}
+        {% block load_last %}
+            {# Overide #}
+        {% endblock %}
+        </div>
 
     </div>
 
@@ -102,7 +104,12 @@
         <script defer type="text/javascript" charset="utf-8" src="{% static 'social/js/social.js' %}"></script>
         {% comment %} <script defer type="text/javascript" charset="utf-8" src="{% static 'js/progressive-image.js' %}"></script> {% endcomment %}
         <script defer type="text/javascript" charset="utf-8" src="{% static 'js/News/newsWall.js' %}"></script>
+        <script defer type="text/javascript" charset="utf-8" src="{% static 'js/News/modal.js' %}"></script>
     {% endcompress %}
+
+    {% include 'news/contact.html' %}
+        
+    {% wagtailuserbar %}
 
     </body>
 

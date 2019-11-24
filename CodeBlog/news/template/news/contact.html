@@ -1,0 +1,23 @@
+<div id="contact-modal" class="modal color1 ease">
+    <div id="modal-body" class="modal-content bk1 p1 ease">
+
+        <a class='close-btn bk-lighter1 grow ease' href="#">X</a>
+        <h2>Have Your Say...</h2>
+
+        <form id="contact-form" method="post" class="">
+            <!--<label for="fname">Email</label>-->
+            <input type="email" id="email-input" name="email" placeholder="Email..." class="w100 modal-input bk-darker1" required />
+
+            <textarea name="message" class="w100 modal-input bk-darker1" id="msg-input" rows="10" 
+                placeholder="Message" required></textarea>
+
+            <button name="sendBtn" type="submit" value="submit" name="submit" class="send-btn bk-lighter1 grow">
+                Send
+                <span name="btn-loader" class="ease btn-loader" role="status" aria-hidden="true"></span>
+            </button>
+
+            <input type="hidden" id="contactAPI" value="https://www.nerdventure.net/contact/api/v1/msg/send/" />
+        </form>
+
+    </div><!--modal content-->
+</div><!--contact modal-->

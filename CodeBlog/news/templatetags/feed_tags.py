@@ -12,7 +12,7 @@ register = template.Library()
 
 @register.simple_tag(takes_context=True)
 def get_feeds(context):
-    context['feed_post'] = Post.objects.all()
+    context['feed_posts'] = Post.objects.all()
     return ''
 
 @register.simple_tag(takes_context=True)
