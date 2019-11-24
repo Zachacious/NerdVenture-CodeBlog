@@ -25,7 +25,7 @@ Currently configured as a news(rss) aggregation site.
  - Schema.org
  - Social Media Sharing
  -NewsWall component for pulling in rss feeds
-  - Chron job for refreshing feeds
-  - Chron job for sending weekly emails to subscribers
+    - Chron job for refreshing feeds
+    - Chron job for sending weekly emails to subscribers
 
 
