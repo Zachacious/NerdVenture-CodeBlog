@@ -89,9 +89,9 @@ COMPRESS_ENABLED = True
 
 CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = (
-    'connect.facebook.net',
-    'facebook.net',
-    'facebook.com',
+    'https://connect.facebook.net',
+    'https://facebook.net',
+    'https://facebook.com',
 )
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
