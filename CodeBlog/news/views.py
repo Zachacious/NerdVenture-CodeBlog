@@ -44,7 +44,13 @@ class get_feed_page(APIView):
                 
                 tag_regex = re.compile(r'<[^>]*>') # grab all tags
                 
-                desc = p_regex.search(post.body).group(1) # get the first <p> text
+                first_p = p_regex.search(post.body)
+                
+                if(first_p and first_p.group(1)):
+                    first_p = p_regex.search(post.body).group(1) # get the first <p> text
+                    desc = first_p 
+                else:
+                    desc = first_p 
                 
                 desc = tag_regex.sub('', desc) # remove any other tags within the <p>
                 
