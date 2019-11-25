@@ -134,7 +134,7 @@ dmypy.json
 Dockerfile
 
 media/
-static/
+# static/
 CodeBlog/static/
 cache/
 resources/
