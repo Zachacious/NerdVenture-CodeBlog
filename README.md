@@ -24,7 +24,7 @@ Currently configured as a news(rss) aggregation site.
  - Open Graph
  - Schema.org
  - Social Media Sharing
- -NewsWall component for pulling in rss feeds
+ - NewsWall component for pulling in rss feeds
     - Chron job for refreshing feeds
     - Chron job for sending weekly emails to subscribers
 
