@@ -7,10 +7,23 @@ from django.utils.html import strip_tags
 from django.core.files.storage import get_storage_class
 from django.conf import settings
 
+import datetime 
+import calendar
+import pytz 
+
 class Command(BaseCommand):
     help = 'Create and send the weekly newsletter'
     
     def handle(self, *args, **options):
+        
+        tz = pytz.timezone('America/Chicago')
+        date = datetime.datetime.now()
+        local_date = tz.localize(date)
+        weekday = calendar.day_name[local_date.weekday()]
+        
+        if not(weekday == 'tuesday'):
+            print('Waiting on Tuesday')
+            return
         
         storage_class = get_storage_class(settings.STATICFILES_STORAGE)
         
