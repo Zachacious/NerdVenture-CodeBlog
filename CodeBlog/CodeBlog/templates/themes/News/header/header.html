@@ -2,13 +2,16 @@
 {% load menu_tags %}
 {% load compress %}
 
-
 {% with settings.siteSettings.SiteSettings.header as header %}
+{% image header.logo_image width-225 as logoimg %}
+
 <header id="header" class="w100 overflow-hidden bk1 p1 color1 ease fade-down-anim">
     <nav id="navbar" class="container d-grid ease">
 
         <h1 class="d-grid grid-auto-col ease">
-            <a href="/" class="d-iblock ease grow">{% image header.logo_image width-225 %}</a>
+            <a href="/" class="d-iblock ease grow">
+                <img src="{{ logoimg.url }}" class="w100 hauto" />
+            </a>
             <div id="menu-toggler" class="ease grow" onclick="menuToggle()">
                 <div></div>
             </div>
