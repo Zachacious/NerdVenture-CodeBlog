@@ -69,6 +69,7 @@
 
 {% block extra_js %}
 
+{% compress js inline %}
 <script>
 
 function menuToggle(){
@@ -79,10 +80,13 @@ function menuToggle(){
 
     header.classList.toggle('header-resp-menu-height');
     navLinks.classList.toggle('d-none');
-    search.classList.toggle('d-none');
+    if(search){
+        search.classList.toggle('d-none');
+    }
     toggler.classList.toggle('toggleTrans');
 }
 
 </script>
+{% endcompress %}
 
 {% endblock %}
