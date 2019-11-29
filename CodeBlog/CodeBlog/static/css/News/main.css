@@ -219,7 +219,7 @@ input::placeholder {
     opacity: .5;
 }
 
-/*<===============> containers / display <===============>*/
+/*<===============> font <===============>*/
 
 .bold {
     font-weight: bold;
@@ -279,7 +279,7 @@ input::placeholder {
 
 @media screen and (min-width: 991.9px){
     #navbar {
-        grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(50px, auto));
     }
 
     #navbar ul li {
@@ -365,29 +365,12 @@ input::placeholder {
 }
 
 .news-item {
-    /* flex: 1 0 auto; */
-    /* min-width: 200px; */
-    /* max-width: 300px; */
-    /* min-height: 300px; */
-    /* object-fit: cover; */
     cursor: pointer;
 }
 
 .news-item-top {
     min-height: 200px;
 }
-
-/* .news-desc {
-    opacity: 0.6;
-    max-height: 0px;
-    transition: max-height .2s ease;
-}
-
-.news-item:hover .news-desc {
-    max-height: 1000px;
-    padding: 1em;
-    position: relative;
-} */
 
 @media screen and (min-width: 992px){
     .grid2x1 {
