@@ -16,18 +16,26 @@ function isInView(elem){
 function createItemsFromFeed(page){
     var newsWall = document.getElementById('news-wall');
     var post, idx;
+    var div = document.createElement('div');
+    div.classList.add('wh100');
+    var documentFragment = document.createDocumentFragment();
 
     for(idx in page){
         post = page[idx];
-        newsWall.innerHTML = newsWall.innerHTML + createNewsItem(post);
+        divClone = div.cloneNode(true);
+        divClone.innerHTML = createNewsItem(post);
+        documentFragment.appendChild(divClone);
     }
+
+    newsWall.appendChild(documentFragment);
+    
 }
 
 function createNewsItem(post){
     return (
         '\n \
         <a href="'+post.link+'" target="_blank"\
-            class="news-item p-rel d-grid wh100 bk4 overflow-hidden ease grow-light fade-in-anim">\
+            class="news-item p-rel d-grid wh100 bk4 overflow-hidden ease grow-light fade-down-anim">\
             \
             <div class="wh100 news-item-top"\
                 style="background: url('+post.image+'), #fff no-repeat;\
@@ -92,6 +100,6 @@ function getFeedPage(page_num){
                 getFeedPage(newsWallPage);
             }
         }
-    });
+    }, false);
 
 })();

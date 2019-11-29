@@ -3,6 +3,7 @@
 <!-- Facebook Pixel Code -->
 {% compress js inline %}
 <script defer>
+if(!settings.debug){
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -13,6 +14,7 @@
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '2404968449824391');
     fbq('track', 'PageView');
+}
 </script>
 {% endcompress %}
 <noscript><img height="1" width="1" style="display:none"
