@@ -3,7 +3,7 @@
 
 {% if not subscribed or value.dont_hide_from_subscribers%}
 
-<div name='optin' class="text-light p1 mt1 {% if value.blue_background %}bg-main-blue sketch-border{% endif %}">
+<div name='optin' class="text-light p1 pb0 {% if value.blue_background %}bg-main-blue sketch-border{% endif %}">
     {% for block in value.body %}
         {% with value as optinName %}
         {% with blockcss='p-2' %}

@@ -67,6 +67,10 @@ Author: Zach Moore - zach@nerdventure.net
     padding-right: 1em;
 }
 
+.pb0 {
+    padding-bottom: 0;
+}
+
 .mauto {
     margin: auto;
 }
@@ -257,7 +261,7 @@ input::placeholder {
 /*<===============> header <===============>*/
 
 .header-resp-menu-height {
-    height: 20em !important; /* toggles on or off if the menu is opened. !important to make sure it overides */
+    height: 12em !important; /* toggles on or off if the menu is opened. !important to make sure it overides */
 }
 
 #header {
@@ -266,7 +270,7 @@ input::placeholder {
 
 @media screen and (max-width: 992px) {
     #header {
-        height: 8em;
+        height: auto;
     }
 }
 
