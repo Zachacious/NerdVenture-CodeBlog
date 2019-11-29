@@ -136,6 +136,7 @@ Author: Zach Moore - zach@nerdventure.net
 
 body {
     background-color: #eee;
+    height: 100vh; /* required to push footer to bottom/ make grid full height before content loads */
 }
 
 input {
