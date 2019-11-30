@@ -7,14 +7,16 @@ from django.utils.html import strip_tags
 from django.core.files.storage import get_storage_class
 from django.conf import settings
 
-import datetime 
+import datetime
 import calendar
 import pytz 
+from django.utils import timezone
 
 class Command(BaseCommand):
     help = 'Create and send the weekly newsletter'
     
     def handle(self, *args, **options):
+        # make sure it is a tuesday or pass until it is
         
         tz = pytz.timezone('America/Chicago')
         date = datetime.datetime.now()
@@ -25,13 +27,23 @@ class Command(BaseCommand):
             print('Waiting on Tuesday')
             return
         
+        # remove the previous weeks post
+        
+        old_posts = Post.objects.filter(created__lt=timezone.now()-datetime.timedelta(days=7))
+        for old_post in old_posts:
+            old_post.delete()
+            
+        # get the email template
+        
         storage_class = get_storage_class(settings.STATICFILES_STORAGE)
         
         template_url = 'email_templates/weekly_mail_template.html'
+        
+        # get list of subscriber email addresses
                         
         subs = Subscriber.get_subscriber_emails()
 
-        recipients = list(subs)
+        recipients = list(subs) # TODO: remove
         
         subject = 'The latest nerd news from around the web'
         
@@ -60,5 +72,6 @@ class Command(BaseCommand):
             messages.append(message)
         
         connection.send_messages(messages)
+        
         
         
