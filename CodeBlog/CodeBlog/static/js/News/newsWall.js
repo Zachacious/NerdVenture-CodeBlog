@@ -93,7 +93,7 @@ function getFeedPage(page_num){
         if(isInView(document.getElementById('news-wall-trigger'))){
             if(!feedLoading){
                 // if we've reached the last page of post - do nothing
-                if(feedPage && !feedPage[0].has_next){return;}
+                if((feedPage && !feedPage[0]) || (feedPage && !feedPage[0].has_next)){return;}
                 newsWallPage++;
                 feedLoading = true;
                 feedSpinner.classList.remove('opacity0');

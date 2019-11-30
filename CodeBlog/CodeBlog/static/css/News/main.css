@@ -368,11 +368,16 @@ input::placeholder {
     cursor: pointer;
 }
 
+.news-item:hover{
+    grid-column-end: span 2;
+        grid-row-end: span 2;
+}
+
 .news-item-top {
     min-height: 200px;
 }
 
-@media screen and (min-width: 992px){
+/* @media screen and (min-width: 992px){
     .grid2x1 {
         grid-column-end: span 2;
     }
@@ -408,7 +413,7 @@ input::placeholder {
         grid-column-end: span 3;
         grid-row-end: span 3;
     }
-}
+} */
 
 /*<===============> content <===============>*/
 
