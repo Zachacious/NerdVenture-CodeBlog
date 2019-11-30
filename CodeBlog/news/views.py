@@ -15,7 +15,7 @@ class get_feed_page(APIView):
         try:
             data = request.data
             
-            pages = Paginator(Post.objects.all().order_by('created'), 8)
+            pages = Paginator(Post.objects.all().order_by('-created'), 8)
                         
             page = pages.page(data['page_num'])
             
