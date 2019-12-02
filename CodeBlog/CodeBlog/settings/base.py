@@ -267,17 +267,17 @@ LOGGING = {
     }
 }
 
-REST_FRAMEWORK = {
-    'DEFAULT_THROTTLE_CLASSES': [
-        'rest_framework.throttling.AnonRateThrottle',
-        'rest_framework.throttling.UserRateThrottle',
-        'newsletter.CustomAnonRateThrottle.CustomAnonRateThrottle',
-    ],
-    'DEFAULT_THROTTLE_RATES': {
-        'anon': '10/hour',
-        'user': '1000/day'
-    }
-}
+# REST_FRAMEWORK = {
+#     'DEFAULT_THROTTLE_CLASSES': [
+#         'rest_framework.throttling.AnonRateThrottle',
+#         'rest_framework.throttling.UserRateThrottle',
+#         'newsletter.CustomAnonRateThrottle.CustomAnonRateThrottle',
+#     ],
+#     'DEFAULT_THROTTLE_RATES': {
+#         'anon': '10/hour',
+#         'user': '1000/day'
+#     }
+# }
 
 # Make low-quality but small images
 WAGTAILIMAGES_JPEG_QUALITY = 40

@@ -7,6 +7,7 @@ Author: Zach Moore - zach@nerdventure.net
 
 .expanding50 {
     width: 100%;
+    max-width: 400px;
 }
 
 @media screen and (min-width: 991.9px) {
@@ -69,6 +70,10 @@ Author: Zach Moore - zach@nerdventure.net
 
 .pb0 {
     padding-bottom: 0;
+}
+
+.pt2 {
+    padding-top: 2em;
 }
 
 .mauto {
@@ -135,7 +140,8 @@ Author: Zach Moore - zach@nerdventure.net
 /*<===============> ----------- <===============>*/
 
 body {
-    background-color: #eee;
+    /* background-color: #333; */
+    background-color: #eed;
     height: 100vh; /* required to push footer to bottom/ make grid full height before content loads */
 }
 
@@ -174,17 +180,22 @@ input::placeholder {
 /*<===============> colors <===============>*/
 
 .bk1 {
-    background-color: #46c;
+    /* background-color: #000; */
+    /* background-color: #46c; */
+    /* background-color: #630f1d; */
+    background-color: #1d0f63;
 }
 
 .bk2 {
+    /* background-color: #353535; */
+    /* background-color: rgb(148, 55, 75); */
     /* background-color: #24d; */
-    background-color: #447;
-    /* background-color: #99b; */
+    /* background-color: #447; */
+    background-color: #324b96;
 }
 
 .bk3 {
-    background-color: rgb(61, 27, 139);
+    background-color: #3d1b8b;
 }
 
 .bk4 {
@@ -209,6 +220,10 @@ input::placeholder {
 
 .bk-lighter2 {
     background-color: rgba(255,255,255,0.4);
+}
+
+.lighter2 {
+    color: rgba(255,255,255,.6);
 }
 
 .opacity0 {
@@ -366,12 +381,19 @@ input::placeholder {
 
 .news-item {
     cursor: pointer;
+    grid-template-rows: 1fr;
+    border: solid 2px #324b96;
 }
 
-.news-item:hover{
+.news-item-source {
+    position: relative;
+    top: -50%;
+}
+
+/* .news-item:hover{
     grid-column-end: span 2;
         grid-row-end: span 2;
-}
+} */
 
 .news-item-top {
     min-height: 200px;

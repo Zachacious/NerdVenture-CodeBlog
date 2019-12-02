@@ -1,6 +1,6 @@
 {% load wagtailcore_tags wagtailimages_tags %}
 
-<div id="news-wall" class="d-grid m1 my3 ease">
+<div id="news-wall" class="d-grid m1 ease">
 
     <input type="hidden" id="newsWall-endpoint" name="apiURL" value="{{ request.scheme }}://{{ request.get_host }}{% url 'news-get-feed-page' %}">
 

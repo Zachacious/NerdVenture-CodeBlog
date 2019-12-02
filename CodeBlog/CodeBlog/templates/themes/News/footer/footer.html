@@ -2,11 +2,11 @@
 
 {% with settings.siteSettings.SiteSettings.footer as footer %}
 
-    <footer id="footer" class="w100 bk1 color1 p1">
+    <footer id="footer" class="w100 bk1 lighter2 p1">
         <div id="footer-wrap" class="container">
             {% if footer.menu %}
                 <div id="footer-menu" class="d-iblock">
-                    <ul class="p1">
+                    <ul class="">
                     {% for item in footer.menu.menu_items.all %}
                             <li class="d-iblock px1 ease grow">
                                 <a class="{% get_menu_item_active_class item page.url %}
@@ -23,12 +23,12 @@
                 </div>
             {% endif %}
 
-            <div id="footer-copyright" class="p1">
+            <div id="footer-copyright" class="">
                 <small>
                     <div>
                     {{ footer.copyright_text }} &copy;{% now 'Y' %}
                     </div>
-                    <div class="p1">
+                    <div class="">
                         All images and content are the property of their respective copyright holders. We make no claim of ownership.
                     </div>
                 </small>

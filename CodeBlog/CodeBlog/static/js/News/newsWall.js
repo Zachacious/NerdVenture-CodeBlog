@@ -17,7 +17,7 @@ function createItemsFromFeed(page){
     var newsWall = document.getElementById('news-wall');
     var post, idx;
     var div = document.createElement('div');
-    div.classList.add('wh100');
+    div.classList.add('wh100','ease','grow-light');
     var documentFragment = document.createDocumentFragment();
 
     for(idx in page){
@@ -35,17 +35,17 @@ function createNewsItem(post){
     return (
         '\n \
         <a href="'+post.link+'" target="_blank"\
-            class="news-item p-rel d-grid wh100 bk4 overflow-hidden ease grow-light fade-down-anim">\
+            class="news-item p-rel d-grid wh100 bk4 overflow-hidden  fade-down-anim">\
             \
             <div class="wh100 news-item-top"\
                 style="background: url('+post.image+'), #fff no-repeat;\
                 background-size: cover; background-position: center center;" >\
             </div>\
+            <div class="news-item-source bk2 color1 p05">'+post.source+'</div>\
             \
             <div class="zindex1 w100 m0 p1">\
                 <h5>'+post.title+'</h5>\
                 <div class="m1 overflow-hidden ease news-desc">'+post.desc+'</div>\
-                <div class="bk2 color1 m1 p05">'+post.source+'</div>\
             </div>\
             \
         </a>\
@@ -75,10 +75,14 @@ function getFeedPage(page_num){
 
     // once the ajax request has finished
     xhttp.addEventListener('load', function(event){
-        feedPage = JSON.parse(xhttp.response);
-        createItemsFromFeed(feedPage);
-        feedLoading = false;
-        feedSpinner.classList.add('opacity0');
+        if(xhttp.status > 199 < 300){
+            feedPage = JSON.parse(xhttp.response);
+            createItemsFromFeed(feedPage);
+            feedLoading = false;
+            feedSpinner.classList.add('opacity0');
+        }
+        // TODO: handle failure
+        
     });
 }
 
