@@ -141,7 +141,7 @@ Author: Zach Moore - zach@nerdventure.net
 
 body {
     /* background-color: #333; */
-    background-color: #eed;
+    background-color: #eee;
     height: 100vh; /* required to push footer to bottom/ make grid full height before content loads */
 }
 
@@ -382,7 +382,7 @@ input::placeholder {
 .news-item {
     cursor: pointer;
     grid-template-rows: 1fr;
-    border: solid 2px #324b96;
+    border: dotted 1px #324b96;
 }
 
 .news-item-source {
@@ -442,6 +442,11 @@ input::placeholder {
 #content-wrap {
     /* height: 100%; */
     margin-bottom: 2em;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
 }
 
 /*<===============> ----------- <===============>*/
