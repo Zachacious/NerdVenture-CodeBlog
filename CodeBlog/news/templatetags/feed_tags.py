@@ -16,6 +16,11 @@ def get_feeds(context):
     return ''
 
 @register.simple_tag(takes_context=True)
+def get_top_feeds(context):
+    context['feed_posts'] = Post.objects.all().order_by('-created')[:30]
+    return ''
+
+@register.simple_tag(takes_context=True)
 def get_feeds_page(context, page_num):
     pages = Paginator(Post.objects.all(), 10)
     context['feed_page'] = pages.page(page_num)

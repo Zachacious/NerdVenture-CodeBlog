@@ -1,5 +1,5 @@
 {% load feed_tags %}
-{% get_feeds %}
+{% get_top_feeds %}
 <html>
 
     <head>
@@ -78,7 +78,9 @@
                 </a>
             {% endfor %}
 
-            <a href="https://newsletter/api/v1/unsubscribe/{{ email }}/" class="center w80">
+            <h2><a href="https://nerdventure.net">Load More...</a></h2>
+
+            <a href="https://nerdventure.net/newsletter/api/v1/unsubscribe/{{ email }}/" class="center w80">
                 <small class="center">Unsubscribe</small>
             <a>
         </div>
