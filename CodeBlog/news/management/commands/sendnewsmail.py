@@ -22,9 +22,10 @@ class Command(BaseCommand):
         date = datetime.datetime.now()
         local_date = tz.localize(date)
         weekday = calendar.day_name[local_date.weekday()]
+        print(weekday)
         
-        if not(weekday == 'tuesday'):
-            print('Waiting on Tuesday')
+        if not(weekday == 'Thursday'):
+            print('Waiting on Thursday')
             return
         
         # remove the previous weeks post
