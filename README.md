@@ -4,6 +4,8 @@ A custom CMS built on Django and Wagtail CMS.
 
 Currently configured as a news(rss) aggregation site.
 
+![image](nvscreeen.webp)
+
 ## features
 - 3 Page Types
   - BlogPostIndex
