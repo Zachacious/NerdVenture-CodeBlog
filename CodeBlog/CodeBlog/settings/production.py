@@ -89,10 +89,27 @@ COMPRESS_ENABLED = True
 
 CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = (
+    'https://znmoore.com',
+    'http://znmoore.com',
+    'http://www.znmoore.com',
+    'https://www.znmoore.com',
     'https://connect.facebook.net',
     'https://facebook.net',
     'https://facebook.com',
 )
+
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accepts',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+]
 
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash

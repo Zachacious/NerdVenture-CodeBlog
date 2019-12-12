@@ -44,6 +44,8 @@ class SubscriberCreateView(generics.CreateAPIView):
 
 # Send newsletter email to subscribers
 class SendMassMail(View):
+    permission_classes = [AllowAny]
+    
     def post(self, request):
 
         try:
